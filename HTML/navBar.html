@@ -57,18 +57,15 @@
         margin: 0;
       }
 
-      .navbar a:hover,
-      .dropdown:hover .dropbtn {
-        background-color: red;
-      }
-
       .dropdown-content {
+        border: 1px solid grey;
         display: none;
         /* position: absolute; */
         background-color: #f9f9f9;
         min-width: 100%;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
+        height:520px;
       }
 
       .dropdown-content a {
@@ -80,14 +77,16 @@
         text-align: left;
       }
 
-      .dropdown-content a:hover {
-        background-color: #ddd;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
+        .close {
+          position: absolute;
+          top: 14%;
+          right: 1%;
+          font-size: 42px;
+          color: rgb(15, 15, 15);
+          transform: rotate(45deg);
+          cursor: pointer;
+        }
+        
       .fleft {
         float: left;
         color: white;
@@ -187,9 +186,15 @@
       #ncr-input {
         display: inline-block;
         height: 35px;
-        width: 96%;
-        margin: 2%;
+        width: 80%;
+        /* margin: 2%; */
         color: grey;
+        margin-top:3rem;
+        margin-left: 10%;
+        margin-right:10%;
+        border: 1px solid grey;
+        font-size: 14px;
+        padding-left: 1rem;
       }
 
       .txtCenter {
@@ -233,7 +238,60 @@
         margin-left: 10%;
       }
 
+
+
+
       /* <-------------------------------------- FOOTER -------------------------------------------> */
+
+
+
+            /* <-------------------------------------------- Privacy Note --------------------------------> */
+
+            .privacyNote{
+                padding:10px;
+                padding-left: 110px;
+                background-color: rgb(216, 215, 215);
+            }
+
+            .privacyNote > h4{
+                font-weight: 300;
+                color: rgb(127,127, 127);
+            }
+            
+            .privacyNote > p{
+                font-size: 12px;
+                color: rgb(127,127, 127);
+            }
+            
+    /* <-------------------------------------------- Contact Today --------------------------------*/
+            .contactToday{
+                display: flex;
+                flex-wrap: wrap;
+                padding:20px;
+                padding-left:250px;
+            }
+
+            .contactP{
+                margin-left: 20px;
+                margin-right: 20px;
+                padding-top: 10px;
+            }
+            .contactBtn{
+                background-color:rgb(245, 80, 102);
+                padding:8px;
+                font-size: 14px;
+                margin-top:20px;
+                width:150px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .contactTodaySection{
+                background-color:rgb(49,48,53);
+                color: rgb(212, 212, 212);
+                font-weight: 300;
+            }
+
+
       .footer {
         display: flex;
         gap: 2rem;
@@ -249,11 +307,8 @@
       .lastCol {
         margin-left: 5%;
         margin-right: 10%;
-        /* width:100%; */
       }
-      /* .footer div{
-    width:10%;
-} */
+     
       .icon {
         border: 1px solid grey;
         height: 30px;
@@ -383,6 +438,10 @@
         font-size:12px;
         padding:50px;
       }
+
+      .contentList > p:hover{
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -401,7 +460,7 @@
       </div>
 
       <span id="sideMenu" onclick="openNav()">&#9776;</span>
-      <a href="#news" id="signIn">Sign in</a>
+      <a href="Login.html" id="signIn">Sign in</a>
 
       <input
         type="text"
@@ -409,19 +468,22 @@
         id="userInput"
       />
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          NCR ▼
+      <div class="dropdown" >
+        <button class="dropbtn"id="dropDown" >
+          NCR 
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
+
+        <div class="close" id="close">+</div>
+
+        <div class="dropdown-content" id="ncr-Content">
           <div>
             <input
               type="text"
               placeholder=" 🔍 Search for your city"
               id="ncr-input"
             />
-            <p class="txtCenter">Popular Cities</p>
+            <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
             <div style="margin-left: 20px" class="floatLeft">
               <img
                 src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png"
@@ -457,7 +519,7 @@
               />
               <p>Ahmedabad</p>
             </div>
-            <div class="floatLeft">
+            <div class="floatLeft" style="margin-left: 15%;">
               <img
                 src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png"
                 class="ncr-img"
@@ -479,13 +541,15 @@
               <p>Pune</p>
             </div>
 
-            <p
-              style="color: red; text-align: center; padding-bottom: 20px"
-              class="txtCenter"
-            >
-              View All Cities
-            </p>
+           
           </div>
+           <p
+          style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter"
+        >
+          View All Cities
+        </p>
+
         </div>
       </div>
 
@@ -555,7 +619,51 @@
     <h3>Dropdown Menu inside a Navigation Bar</h3>
     <p>Hover over the "Dropdown" link to see the dropdown menu.</p>
 
+
+
+
+
+
     <!----------------------------------------------- Footer ---------------------------------------->
+
+
+
+
+<!-- <----------------------------- Privacy Note ---------------------------------------- -->
+
+<section>
+  <div class="privacyNote">
+      <h4>Privacy Note</h4>
+      <p>
+          By using www.bookmyshow.com(our website), you are fully accepting the Privacy Policy available at https://bookmyshow.com/privacy governing your access to Bookmyshow and 
+          provision of services by Bookmyshow to you. If you do not accept terms mentioned in the Privacy Policy, you must not share any of your personal information and immediately exit Bookmyshow.
+      </p>
+  </div>
+</section>
+
+
+<!-- <----------------------------- Contact Today ---------------------------------------- -->
+
+<section class="contactTodaySection">
+  <div class="contactToday">
+      <span>
+          <h4 contactH4> 🏠 List your Show</h4>
+      </span>
+      
+      <span>
+          <p class="contactP">Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</p>
+      </span>
+      <span>
+          <button class="contactBtn">
+              Contact Today
+          </button>
+      </span>
+  </div>
+</section>
+
+
+
+
 
     <footer id="footer">
 
@@ -875,7 +983,7 @@
         <div id="footerPara">
           <p>
             Copyright 2021 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
-The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist 
+            The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist 
             shall be implied. Unauthorized use is prohibited and punishable by law.
           </p>
         </div>
@@ -885,6 +993,7 @@ The content and images used on this site are copyright protected and copyrights 
   </body>
 
   <script>
+     document.getElementById("close").style.display = "none";
     function openNav() {
       document.getElementById("mySidenav").style.display = "block";
     }
@@ -892,5 +1001,23 @@ The content and images used on this site are copyright protected and copyrights 
     function closeNav() {
       document.getElementById("mySidenav").style.display = "none";
     }
+
+    let dropDown = document.getElementById("dropDown");
+    dropDown.addEventListener("click",()=>{
+      var ncrContent = document.getElementById("ncr-Content");
+      ncrContent.style.display = "block";
+      document.getElementById("navBarSeconfLine").style.display = "none";
+      document.getElementById("navBarSeconfLine").style.backgroundColor = "white";
+      document.getElementById("close").style.display = "block";
+      // document.getElementById("navBarSeconfLine").style.backgroundColor = ;
+      
+    })
+
+
+    document.querySelector('.close').addEventListener("click", function() {
+	document.getElementById("ncr-Content").style.display = "none";
+  document.getElementById("navBarSeconfLine").style.display = "block";
+  document.getElementById("close").style.display = "none";
+});
   </script>
 </html>

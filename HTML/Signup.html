@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #nav-bar {
+            border: 2px solid rgb(0,0,255);
+            padding: 20px;
+            text-align: right;
+            background-color: black;
+        }
+
+        a{
+            text-decoration: none;
+            border: 2px solid rgb(0,0,255);
+            margin: 5px;
+            padding: 10px;
+            border-radius: 10%;
+            background-color: black;
+            color: white;
+        }
+
+        /* ---------------------------------- Login Page CSS ------------------------------ */
+        .loginPage {
+            height: 550px;
+            background-color: black;
+            padding-top: 70px;
+        }
+
+        .login {
+            height: 500px;
+            background-color: white;
+            margin: auto;
+            width: 400px;
+            padding-top: 15px;
+        }
+
+        .boxes {
+            height: 40px;
+            background-color: white;
+            margin: 15px 25px 15px 25px;
+            width: 350px;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #row1 {
+            font-size: 30px;
+            margin-left: 20px;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #row2 input {
+            height: 100%;
+            width: 95%;
+            padding-left: 5%;
+            border: 1px solid rgb(233, 233, 233);
+        }
+
+        #row2 input {
+            font-size: 14px;
+        }
+
+        #row3 input {
+            height: 100%;
+            width: 95%;
+            padding-left: 5%;
+            border: 1px solid rgb(233, 233, 233);
+        }
+
+        #row3 input {
+            font-size: 14px;
+        }
+
+        #row4 {
+            margin-left: 25px;
+            color: rgb(81, 81, 245);
+            color: rgb(209, 20, 20);
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+        }
+
+        #row5 {
+            /* background-color: green; */
+            color: white;
+            text-align: center;
+            font-weight: 300;
+            padding-top: .1px;
+            height: 50px;
+        }
+
+        #l1 {
+            height: 2px;
+            background-color: rgb(233, 233, 233);
+            width: 160px;
+            margin-top: 8px;
+            margin-left: 25px;
+        }
+
+        #c {
+            width: 30px;
+            height: 16px;
+            text-align: center;
+        }
+
+        #l2 {
+            height: 2px;
+            background-color: rgb(233, 233, 233);
+            width: 160px;
+            margin-top: 8px;
+        }
+
+        .lines {
+            float: left;
+        }
+
+        #row12 {
+            height: 60px;
+            background-color: white;
+            border-top: 1px solid rgb(233, 233, 233);
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        #signup {
+            background-color: white;
+            color: blue;
+            border: none;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        #signUpBtn {
+            background-color: green;
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+        #row6a{
+            background-color: white;
+            border: none;
+            color: blue;
+            padding: 0px;
+            font-weight: 400;
+        }
+        #row6{
+            padding-top: 1px;
+            margin-top: 10px;
+            font-weight: 200;
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section class="loginPage">
+        <div class="login">
+            <div id="row1">
+                <p>Sign Up</p>
+            </div>
+            <div class="boxes" id="row2">
+                <input type="text" placeholder="Name" id="name">
+            </div>
+            <div class="boxes" id="row2">
+                <input type="number" placeholder="Mobile number" id="mobile">
+            </div>
+            <div class="boxes" id="row2">
+                <input type="email" placeholder="Email" id="email">
+            </div>
+            <div class="boxes" id="row3">
+                <input type="text" placeholder="Password" id="password">
+            </div>
+            <div class="boxes" id="row5">
+                <!-- <p>Sign Up</p> -->
+                <p><button id="signUpBtn">Sign Up</button></p>
+            </div>
+            <div class="boxes" id="row6">
+                <p>Already a User ? <a href="Login.html" id="row6a">Log In</a></p>
+            </div>
+
+            <div id="row12">
+                <p>By clicking Sign Up, you agree to our <span class="blue">Terms , Data Policy</span> and <span
+                        class="blue"> Cookie Policy </span>. You may receive SMS notifications from us and can opt out
+                    at any time.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    var userSignUpData = [];
+    var signUpBtn = document.getElementById("signUpBtn");
+    signUpBtn.addEventListener("click", handleStoreData);
+
+    function handleStoreData() {
+        var name = document.getElementById("name");
+        var mobile = document.getElementById("mobile");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var flag = 0;
+        if (!name.value) {
+            alert("Please Enter Your Name, it's mandotary field cannot be empty");
+            flag = 1;
+        }
+        else if (!mobile.value) {
+            alert("Please Enter Your Mobile Number, it's mandotary field cannot be empty");
+            flag = 1;
+        }
+        else if (!email.value) {
+            alert("Please Enter Your Mail, it's mandotary field cannot be empty");
+            flag = 1;
+        }
+        else if (!password.value) {
+            alert("Please Enter a Password, it's mandotary field cannot be empty");
+            flag = 1;
+        }
+        if (flag === 0) {
+            var userData = {
+                userName: name.value,
+                userMobile: mobile.value,
+                userEmail: email.value,
+                userPassword: password.value
+            }
+            userSignUpData.push(userData);
+            localStorage.setItem("userSignUpData", JSON.stringify(userSignUpData));
+            storeDataLocally(userSignUpData);
+            setTimeout(function(){
+                window.location.href = "Login.html";
+            },1000);
+            alert("Congratulation You have successfully Sign Up ...To Explore the website Please Close this window & login");
+        }
+    }
+
+    function storeDataLocally(userSignUpData) {
+        for (let i = 0; i < userSignUpData.length; i++) {
+            var name = `${userSignUpData[i].userName}`;
+            var mobile = `${userSignUpData[i].userMobile}`;
+            var email = `${userSignUpData[i].userEmail}`;
+            var password = `${userSignUpData[i].userPassword}`;
+        }
+        console.log(userSignUpData);
+    }
+
+    window.addEventListener("load", function () {
+        var signUpBtn = document.getElementById("signUpBtn");
+        //signUpBtn.addEventListener("click", handleSignUpDataOnLoad);
+        handleSignUpDataOnLoad();
+    })
+
+    function handleSignUpDataOnLoad() {
+        var data = JSON.parse(localStorage.getItem("userSignUpData"));
+        if (data) {
+            userSignUpData = data;
+            storeDataLocally(userSignUpData);
+        }
+    }
+
+</script>
+
+</html>
