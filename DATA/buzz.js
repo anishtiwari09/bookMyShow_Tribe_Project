@@ -56,7 +56,7 @@ video.addEventListener("click", fetchData);
 
 function fetchData(){
 
-    var url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=latest%20movies%20trailer&key=AIzaSyB2M6fUG-_3ZmsVG3AzaZQCX7nz5MluBEw`;
+    var url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=40&q=latest%20movies%20trailer&key=AIzaSyB2M6fUG-_3ZmsVG3AzaZQCX7nz5MluBEw`;
 
     fetch( url )
     .then( response => response.json() )
