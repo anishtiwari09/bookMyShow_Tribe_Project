@@ -2,6 +2,65 @@ var articles = document.getElementById("articles");
 var video = document.getElementById("video");
 var trending = document.getElementById("trending");
 
+function changeColor(e){
+    var likes = e.nextSibling.nextSibling.innerHTML;
+    var c = e.classList;
+    for( var i = 0; i < c.length; i++ ){
+        if( c[i] === "fa-heart-o"){
+            e.classList.remove( "fa-heart-o" );
+            e.classList.add( "fa-heart" );
+            e.nextSibling.nextSibling.innerHTML = Number(likes) + 1;
+            break;
+        }
+        if( c[i] === "fa-heart"){
+            e.classList.remove( "fa-heart" );
+            e.classList.add( "fa-heart-o" );
+            e.nextSibling.nextSibling.innerHTML -= 1;
+            break;
+        }
+    }
+}
+
+function changeShare(e){
+    var c = e.classList;
+    for( var i = 0; i < c.length; i++ ){
+        if( c[i] === "fa-bookmark-o"){
+            e.classList.remove( "fa-bookmark-o" );
+            e.classList.add( "fa-bookmark" );
+            break;
+        }
+        if( c[i] === "fa-bookmark"){
+            e.classList.remove( "fa-bookmark" );
+            e.classList.add( "fa-bookmark-o" );
+            break;
+        }
+    }
+
+}
+
+var fb = document.getElementsByClassName("fa-facebook")[0];
+var insta = document.getElementsByClassName("fa-instagram")[0];
+var youtube = document.getElementsByClassName("fa-youtube-play")[0];
+var twitter = document.getElementsByClassName("fa-twitter")[0];
+var linkedin = document.getElementsByClassName("fa-linkedin")[0];
+
+fb.addEventListener("click", () =>  {
+    window.open('https://www.facebook.com/BookMyShowIN', '_blank');
+})
+insta.addEventListener("click", () =>  {
+    window.open('https://www.instagram.com/bookmyshowin/', '_blank');
+})
+youtube.addEventListener("click", () =>  {
+    window.open('https://www.youtube.com/user/BookMyShow/featured', '_blank');
+})
+twitter.addEventListener("click", () =>  {
+    window.open('https://twitter.com/BookMyShow/', '_blank');
+})
+linkedin.addEventListener("click", () =>  {
+    window.open('https://www.linkedin.com/company/bookmyshow/', '_blank');
+})
+
+
 var time = ["58 Mins ago", "5 Hours ago", "1 Day ago", "1 Day ago", "2 Days ago", "2 Days ago", "2 Days ago", "3 Days ago", "4 Days ago", "4 Days ago", "4 Days ago", "6 Days ago", "6 Days ago", "6 Days ago", "6 Days ago", "1 Week ago", "2 Weeks ago", "2 Weeks ago"];
 
 var likes = [ 3, 4, 8, 10, 11, 18, 13, 38, 48, 44, 23, 45, 66, 53, 34, 64, 83, 99, 93, 199, 200, 232, 283, 340];
@@ -13,7 +72,6 @@ function displayTredning(){
     fetch( '../DATA/articles.json' )
     .then( res => res.json() )
     .then( res => {
-        console.log( res );
         articles.innerHTML = "";
         for( var i = 0; i < res.length; i++ ){
             makeArticleCard( res[i] );
@@ -32,13 +90,13 @@ function makeArticleCard( {author, heading, image, likes, time} ){
         <p class="article-heading">
             ${heading}
         </p>
-        <i class="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-bookmark-o fa-lg" onclick="changeShare(this)" aria-hidden="true"></i>
     </div>
 
     <div class="flex-2">
         <img src=${author} alt="" class="author">
         <p class="time-flex">${time}</p>
-        <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-heart-o fa-lg" onclick="changeColor(this)" aria-hidden="true"></i>
         <p class="like-flex">${likes}</p>
         <i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>
     </div>
@@ -73,7 +131,6 @@ function displayVideo( arr ){
         var obj = arr[i];
         var id = obj.id.videoId;
         var title = obj.snippet.title;
-        console.log( obj );
         var thumbnail;
         if( i % 2 == 0 ){
             thumbnail = "https://secure.gravatar.com/avatar/91d9647d48311247adced62f7e9fdbbb?s=96&d=mm&r=g";
@@ -111,15 +168,15 @@ function createCard( id, title, thumbnail, timing, like ){
         <p class="article-heading">
             ${title}
         </p>
-        <i class="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-bookmark-o fa-lg" onclick="changeShare(this)" aria-hidden="true"></i>
     </div>
 
     <div class="flex-2">
         <img src=${thumbnail} alt="" class="author">
         <p class="time-flex">${timing}</p>
-        <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-heart-o fa-lg" onclick="changeColor(this)" aria-hidden="true"></i>
         <p class="like-flex">${like}</p>
-        <i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-share-alt fa-lg"  aria-hidden="true"></i>
     </div>
 
     </div>`;
