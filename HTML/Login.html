@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Page</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #nav-bar{
+            border: 2px solid rgb(0,0,255);
+            padding: 20px;
+            text-align: right;
+            background-color: black;
+        }
+        a{
+            text-decoration: none;
+            border: 2px solid rgb(0,0,255);
+            margin: 5px;
+            padding: 10px;
+            border-radius: 10%;
+            background-color: black;
+            color: white;
+        }
+
+         /* ---------------------------------- Login Page CSS ------------------------------ */
+        .loginPage{
+            height: 823px;
+            background-color: black;
+            padding-top: 70px;
+            /* opacity: 0.6; */
+        }
+        .login{
+            height: 723px;
+            background-color: white;
+            margin: auto;
+            width: 400px;
+            padding-top: 15px;
+            border: 1px solid rgb(0,0,255);
+            /* opacity: 1; */
+        }
+       
+        .boxes{
+            height: 40px;
+            background-color: white;
+            margin: 15px 25px 15px 25px;
+            width: 350px;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #row1{
+            font-size: 30px;
+            margin-left: 20px;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        #row2 input{
+            height: 100%;
+            width: 95%;
+            padding-left: 5%;
+            border: 1px solid rgb(233, 233, 233);
+        }
+        #row2 input{
+            font-size: 14px;
+        }
+        #row3 input{
+            height: 100%;
+            width: 95%;
+            padding-left: 5%;
+            border: 1px solid rgb(233, 233, 233);
+        }
+        #row3 input{
+            font-size: 14px;
+        }
+
+        #row4{
+            margin-left: 25px;
+            color: rgb(81, 81, 245);
+            color: rgb(209, 20, 20);
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+        }
+        #row5{
+            color: white;
+            text-align: center;
+            font-weight: 300;
+            height: 50px;
+        }
+        #row6{
+            padding-top: 5px;
+            height: 25px;
+            font-weight: 300;
+        }
+        #row7{
+            height: 16px;
+        } 
+        #l1{
+            height: 2px;
+            background-color: rgb(233, 233, 233);
+            width: 160px;
+            margin-top: 8px;
+            margin-left: 25px;
+        }
+        #c{
+            width: 30px;
+            height: 16px;
+            text-align: center;
+        }
+        #l2{
+            height: 2px;
+            background-color: rgb(233, 233, 233);
+            width: 160px;
+            margin-top: 8px;
+        }
+        .lines{
+            float: left;
+        }
+        #row8{
+            text-align: center;
+            padding-top: .5px;
+            font-size: 16px;
+            font-weight: 300;
+            background-color: black;
+            color: white;
+            height: 52px;
+            border-radius: 10px;
+        }
+        #row9{
+            text-align: center;
+            padding-top: .5px;
+            font-size: 16px;
+            font-weight: 300;
+            background-color: rgb(48, 54, 134);
+            color: white;
+            height: 52px;
+            border-radius: 10px;
+        }
+
+        #row10{
+            height: 90px;
+            margin-left: 25px;
+            margin-right: 15px;
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+        #row10 p+p{
+            line-height: 0;
+           font-size: 14px;
+           color: rgb(70, 110, 218);
+           font-weight: bold;
+        }
+        #row11{
+            height: 60px;
+            background-color: white;
+            /* border-left: 1px solid rgb(207, 203, 203); */
+            border-top: 1px solid rgb(233, 233, 233);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        #row11 > div{
+            width: 50%;
+            float: left;
+        }
+        #row11 > div{
+            text-align: right;
+        }
+        #row11 > div+div{
+            text-align: left;
+            color: rgb(63, 63, 253);
+        }
+        #row12{
+            height: 60px;
+            background-color: white;
+            border-top: 1px solid rgb(233, 233, 233);   
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        #signup{
+            background-color: white;
+            color: blue;
+            border: none;
+        }
+
+        #logInBtn{
+            background-color: green;
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            color: white;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<!-- <nav id="nav-bar">
+    <a href="Home.html">Home</a>
+    <a href="Login.html">Login</a>
+    <a href="Signup.html">Signup</a>
+</nav> -->
+<body>
+    <section class="loginPage">
+    <div class="login">
+        <div id="row1">
+            <p>Log in</p>
+        </div>
+        <div class="boxes" id="row2">
+            <input type="email" placeholder="Email" id="mail">
+        </div>
+        <div class="boxes" id="row3">
+            <input type="text" placeholder="Password" id="password">
+        </div>
+        <div id="row4">
+            <p>Forgot your password?</p>
+        </div>
+        <div class="boxes" id="row5">
+            <p><button id="logInBtn">Log in</button></p>
+        </div>
+        <div class="boxes" id="row6">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Remember me</label><br>
+        </div>
+        <div id="row7">
+             <div class="lines" id="l1"></div>
+             <div class="lines" id="c">or</div>
+             <div class="lines" id="l2"></div>
+        </div>
+        <div class="boxes" id="row8">
+            <p> <i class="fa fa-apple"></i> Sign in with Apple </p>
+        </div>
+        <div class="boxes" id="row9">
+            <p> <i class="fa fa-facebook-square"></i> Continue with Facebook</p>
+        </div>
+        <div id="row10">
+            <p>Get notified when your friends back and launch projects. We'll never post anything on Facebook without your permission. </p>
+            <p>Read more</p>
+        </div>
+        <div id="row11">
+            <div><p>New to Movie Website ? </p></div>
+            <div><p><a href="Signup.html" id="signup"> Signup</a></p></div>
+        </div>
+        <div id="row12">
+            <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        </div>
+    </div>
+</section>
+</body>
+
+<script>
+    var logInBtn = document.getElementById("logInBtn");
+    logInBtn.addEventListener("click", checkCredenatial);
+
+    function checkCredenatial(params) {
+        var mail = document.getElementById("mail").value;
+        var pass = document.getElementById("password").value;
+        var userSignUpData = JSON.parse(localStorage.getItem("userSignUpData"));
+        console.log(userSignUpData);
+        for(let i=0;i<userSignUpData.length;i++)
+        {
+            console.log(`${userSignUpData[i].userEmail}`);
+            if(mail == `${userSignUpData[i].userEmail}`  && pass== `${userSignUpData[i].userPassword}`){
+                window.location.href = "Home.html";
+                return;
+            }
+        }
+        alert("invalid Credentials");
+    }
+</script>
+
+</html>

@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <style>
+      /*<-------------------------------- universal font family----------------------------> */
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* <------------------------------- body color and margin padding of body element ---------------------------------------> */
+      body {
+        background-color: rgb(245,245,245);
+        margin: 0;
+        padding: 0;
+      }
+
+      /* <----------------------------------- NavBar CSS -------------------------------------------> */
+      .navbar {
+        overflow: hidden;
+        background-color: rgb(50, 53, 69);
+      }
+
+      .navbar a {
+        float: right;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: right;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+
+      .dropdown-content {
+        border: 1px solid grey;
+        display: none;
+        /* position: absolute; */
+        background-color: #f9f9f9;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        height:520px;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+        .close {
+          position: absolute;
+          top: 14%;
+          right: 1%;
+          font-size: 42px;
+          color: rgb(15, 15, 15);
+          transform: rotate(45deg);
+          cursor: pointer;
+        }
+        
+      .fleft {
+        float: left;
+        color: white;
+        padding-top: 10px;
+        font-size: 28px;
+        /* font-weight: 600; */
+      }
+      #logoDiv {
+        margin-left: 20px;
+      }
+      #logobyJchy {
+        height: 40px;
+        width: 40px;
+      }
+
+      #userInput {
+        height: 30px;
+        width: 50%;
+        margin-top: 10px;
+        margin-left: 20px;
+        border-radius: 5px;
+        padding-left: 10px;
+        font-size: 14px;
+      }
+      #signIn {
+        height: 10px;
+        width: 50px;
+        font-size: 14px;
+        margin-top: 8px;
+        background-color: rgb(248, 67, 100);
+        border-radius: 3px;
+        padding-top: 4px;
+        margin-right: 20px;
+      }
+
+      #sideMenu {
+        font-size: 30px;
+        cursor: pointer;
+        float: right;
+        margin-right: 20px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .sidenav {
+        display: none;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        text-decoration: none;
+        text-align: left;
+        font-size: 16px;
+        color: black;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+      }
+
+      .sidenav div > a {
+        display: block;
+        width: 200px;
+        text-align: left;
+        border-bottom: 0.1px solid grey;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+
+      .ncr-img {
+        height: 100px;
+        width: 100%;
+        margin: 0.5%;
+      }
+      #ncr-input {
+        display: inline-block;
+        height: 35px;
+        width: 80%;
+        /* margin: 2%; */
+        color: grey;
+        margin-top:3rem;
+        margin-left: 10%;
+        margin-right:10%;
+        border: 1px solid grey;
+        font-size: 14px;
+        padding-left: 1rem;
+      }
+
+      .txtCenter {
+        text-align: center;
+        padding-right: 35%;
+      }
+
+      .floatLeft {
+        float: left;
+        text-align: center;
+        /* width:11%; */
+      }
+
+      #navBarSeconfLine {
+        background-color: rgb(34, 37, 57);
+        padding-bottom: 10px;
+        padding-top: 15px;
+        font-size: 14px;
+      }
+
+      #navBarSeconfLine > a {
+        text-decoration: none;
+        color: black;
+        height: 30px;
+        width: 8%;
+        color: white;
+        padding: 10px;
+      }
+
+      .floatRyt {
+        float: right;
+        padding-bottom: 10px;
+        padding-top: 15px;
+        height: 25px;
+      }
+
+      #buzz {
+        margin-right: 28%;
+      }
+      #nav2MoviesTag {
+        margin-left: 10%;
+      }
+      /* --------------------------------------------HORIZONTAL SLIDING BAR------------------------------------------- */
+
+        /* NO CSS FOR THIS THING IT ONLY NEEDS LIBRARY TO BE IMPORTED FROM Flickity */
+        .slidingImages{
+            margin-left: 10px;
+        }
+        .slidingImagesParentDiv{
+            margin-bottom: 40px;
+        }
+
+        /* <------------------------------------- Recommended Movies -----------------------------------------------> */
+
+        .p{
+            margin:15px;
+        }
+        .f{
+            margin-left:80px;
+            margin-right: 20px;
+        }
+        .recH1{
+            margin-left: 110px;
+        }
+        .moviePoster{
+            height:380px;
+            width:220px;
+            border-radius: 10px;
+        }
+
+
+        /* <---------------------------------------IMG Strip Class ----------------------------------------> */
+
+            .imgStrip{
+                height:100px;
+                /* width:80%; */
+                margin: auto;
+            }
+            .imgStripClass{
+                margin: 60px;
+                margin-left: 8%;
+                margin-right: 8%;
+
+            }
+
+            /* --------------------------------------------------Entertainment Poster ---------------------------------------- */
+            
+
+            .entertainmentPoster{
+                height:230px;
+                width:230px;
+                border-radius: 10px;
+            }
+            #enterTainLastPoster{
+                padding-right: 160px;
+                width:250;
+            }
+
+
+        /* ----------------------------------------- Premeire Shows ----------------------------------------- */
+
+        .paymentImg{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width:90%;
+        }
+        .paymentImgDiv{
+            margin:auto;
+            padding-left: 8%;
+        }
+        .premiereSection{
+            background-color : rgb(43,49,72);
+            color: white;
+            margin-top: 50px;
+        }
+        .premiereLastPoster{
+            padding-right:160px
+        }
+        .premeireMoviePoster{
+            height:320px;
+            width:220px;
+            border-radius: 10px;
+        }
+
+        /* ------------------------------------------------ Online Streaming Section -------------------------------- */
+
+
+        .onlineStreamingSection{
+            margin-top: 50px;
+        }
+        .onlineStreamingLastDiv{
+            padding-right:150px;
+        }
+        .onlineMovieStreaming{
+            height:380px;
+            width:231px;
+            border-radius: 10px;
+        }
+
+        /* <-----------------------------------------Trending Searches Section -------------------------------- >*/
+
+            .trendingDiv{
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 110px;
+            }
+            .trendingSearchSpan{
+                height:75px;
+                /* border: 0.1px solid grey; */
+                padding: 10px;
+                margin: 10px;
+                background-color: white;
+            }
+            .trendingSearchSpan > h3{
+                font-size:16px;
+                color : red;
+                font-weight: 300;
+            }
+            .trendingSearchSpan > p{
+                font-size:14px;
+                color: rgb(87, 86, 86);
+            }
+
+
+            /* <-------------------------------------------- Privacy Note --------------------------------> */
+
+            .privacyNote{
+                padding:10px;
+                padding-left: 110px;
+                background-color: rgb(216, 215, 215);
+            }
+
+            .privacyNote > h4{
+                font-weight: 300;
+                color: rgb(127,127, 127);
+            }
+            
+            .privacyNote > p{
+                font-size: 12px;
+                color: rgb(127,127, 127);
+            }
+            
+    /* <-------------------------------------------- Contact Today --------------------------------*/
+            .contactToday{
+                display: flex;
+                flex-wrap: wrap;
+                padding:20px;
+                padding-left:250px;
+            }
+
+            .contactP{
+                margin-left: 20px;
+                margin-right: 20px;
+                padding-top: 10px;
+            }
+            .contactBtn{
+                background-color:rgb(245, 80, 102);
+                padding:8px;
+                font-size: 14px;
+                margin-top:20px;
+                width:150px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .contactTodaySection{
+                background-color:rgb(49,48,53);
+                color: rgb(212, 212, 212);
+                font-weight: 300;
+            }
+
+      /* <-------------------------------------- FOOTER -------------------------------------------> */
+      .footer {
+        display: flex;
+        gap: 2rem;
+        color: white;
+        background-color: rgb(51,51,56);
+      }
+      .footer h4 {
+        color: rgb(90, 89, 89);
+      }
+      .firstCol {
+        margin-left: 10%;
+      }
+      .lastCol {
+        margin-left: 5%;
+        margin-right: 10%;
+      }
+     
+      .icon {
+        border: 1px solid grey;
+        height: 30px;
+        width: 40px;
+        border: 1px solid grey;
+        float: left;
+        text-align: center;
+        padding-top: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+      }
+      #lastP {
+        clear: both;
+        margin-top: 100px;
+      }
+
+      .widthFooter {
+        width: 30%;
+      }
+      #logoFooter {
+        height: 60px;
+        width: 80px;
+        background-color: rgb(31, 31, 46);
+        margin-top: 20px;
+        border: 1px solid grey;
+        border-radius: 20px;
+      }
+
+      .footerTop{
+          background-color:rgb(49,48,53);
+          padding:50px;
+          font-size: 12px;
+          color: rgb(101,101,103);
+      }
+      #footer{
+          background-color:rgb(51,51,56);
+          padding-top: 20px;
+          /* padding: 20px; */
+      }
+
+
+      #foooterIconBar{
+        display: flex;
+        gap: 12rem;
+        text-align:center;
+        color:rgb(134,137,141);
+        font-size: 11px;
+        background-color:rgb(64,64,67);
+        padding:20px;
+        /* background-color:black; */
+      }
+      
+
+      #foooterIconBar > div > img{
+        border-radius: 30px;
+        padding:3px;
+      }
+
+
+      #customerCare{
+          margin-left: 12rem;
+      }
+      .footer > div > h4{
+        font-size:12px;
+        color:rgb(165,165,165,165);
+        /* color: red; */
+      }
+      .footer > div > p{
+        font-size: 11px;
+        color: rgb(101,101,103);
+        /* color: red; */
+      }
+     
+      #logoDiv2 {
+        margin-left: 20px;
+        background-color:rgb(64,64,67);
+        color:red;
+      }
+      #logobyJchy2 {
+        height: 40px;
+        width: 40px;
+      }
+
+      .fltLft{
+          float: left;
+      }
+
+      #footerLogo{
+          background-color:rgb(88,89,91);
+          height: 60px;
+      }
+
+      .line{
+          height: 0.5px;
+          background-color:rgb(169, 169, 170);
+          margin-top:30px;
+      }
+
+      #pdLft{
+          padding-left: 20px;
+      }
+      #pdRyt{
+          padding-right: 20px;
+      }
+      #footerIcons{
+        padding-top: 50px;
+        display: flex;
+        clear: both;
+        padding-left:35%;
+      }
+      #footerIcons > div{
+        height: 50px;
+        width: 58px;
+        font-size:30px;
+        background-color:rgb(93,93,95);
+        border-radius: 34px;
+        text-align:center; 
+        margin: 10px;
+        border: 1px solid black;
+        padding-top: 10px;
+      }
+      #footerIcons > div:hover{
+        background-color:white;
+      }
+
+      #footerPara{
+        font-size:12px;
+        padding:50px;
+      }
+
+      .contentList > p:hover{
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!------------------------------------------------ Navbar first Row -------------------------------------------->
+
+    <div class="navbar">
+      <div id="logoDiv">
+        <div class="fleft">book</div>
+        <div class="fleft">
+          <img
+            src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
+            id="logobyJchy"
+          />
+        </div>
+        <div class="fleft">show</div>
+      </div>
+
+      <span id="sideMenu" onclick="openNav()">&#9776;</span>
+      <a href="Login.html" id="signIn">Sign in</a>
+
+      <input
+        type="text"
+        placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities"
+        id="userInput"
+      />
+
+      <div class="dropdown" >
+        <button class="dropbtn"id="dropDown" >
+          NCR 
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="close" id="close">+</div>
+
+        <div class="dropdown-content" id="ncr-Content">
+          <div>
+            <input
+              type="text"
+              placeholder=" 🔍 Search for your city"
+              id="ncr-input"
+            />
+            <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
+            <div style="margin-left: 20px" class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png"
+                class="ncr-img"
+              />
+              <p>Mumbai</p>
+            </div>
+            <div class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr-selected.png"
+                class="ncr-img"
+              />
+              <p>NCR</p>
+            </div>
+            <div class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png"
+                class="ncr-img"
+              />
+              <p>Bengaluru</p>
+            </div>
+            <div class="floatLeft" class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png"
+                class="ncr-img"
+              />
+              <p>Hyderabad</p>
+            </div>
+            <div class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png"
+                class="ncr-img"
+              />
+              <p>Ahmedabad</p>
+            </div>
+            <div class="floatLeft" style="margin-left: 15%;">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png"
+                class="ncr-img"
+              />
+              <p>Chandigarh</p>
+            </div>
+            <div class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png"
+                class="ncr-img"
+              />
+              <p>Chennai</p>
+            </div>
+            <div class="floatLeft">
+              <img
+                src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png"
+                class="ncr-img"
+              />
+              <p>Pune</p>
+            </div>
+
+           
+          </div>
+           <p
+          style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter"
+        >
+          View All Cities
+        </p>
+
+        </div>
+      </div>
+
+      <!----------------------------------------- Side Navbar  ------------------------------------------------------->
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+
+        <div>
+          <a href="#"> <h2>Hey!</h2> </a>
+        </div>
+
+        <div>
+          <a href="#">Unlock special offers and great benefits</a>
+        </div>
+
+        <div>
+          <a href="#">Notifications</a>
+        </div>
+
+        <div>
+          <a href="#">QuickPay</a>
+        </div>
+
+        <div>
+          <a href="#">Booking History</a>
+        </div>
+
+        <div>
+          <a href="#">Stream Library</a>
+        </div>
+
+        <div>
+          <a href="#">Rewards</a>
+        </div>
+
+        <div>
+          <a href="#">BookASmile</a>
+        </div>
+        <div>
+          <a href="#">Help & Support</a>
+        </div>
+        <div>
+          <a href="#">Settings</a>
+        </div>
+      </div>
+    </div>
+
+    <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
+
+    <div id="navBarSeconfLine">
+      <a href="" id="nav2MoviesTag">Movies</a>
+      <a href="">Stream</a>
+      <a href="">Events</a>
+      <a href="">Plays</a>
+      <a href="">Sports</a>
+      <a href="">Activities</a>
+      <a href="./Buzz.html" id="buzz">Buzz</a>
+      <a href="">ListYourShow </a>
+      <a href="">Corporates</a>
+      <a href="">Offers</a>
+      <a href="">Gift Cards</a>
+    </div>
+
+    <!-- --------------------------- Sliding horizontal bar ---------------------------------- -->
+    <section>
+
+    <!-- Flickity HTML init -->
+    <div class=" js-flickity slidingImagesParentDiv" data-flickity-options='{ "wrapAround": true }' data-flickity='{ "autoPlay": true }'>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1634218468007_movieseternals_incinemas5thnovknowmore_webshowcase_1240x300.jpg" alt="">
+        </div>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1635404166430_bollyboomdektop.jpg" alt="">
+        </div>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1633590513692_moviemunchies_webshowcase_1240x300_7oct.jpg" alt="">
+        </div>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1635405147427_indiadriveinhpdesktop.jpg" alt="">
+        </div>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1633590513692_moviemunchies_webshowcase_1240x300_7oct.jpg" alt="">
+        </div>
+        <div class="slidingImages">
+            <img src="https://in.bmscdn.com/promotions/cms/creatives/1635516222490_nft_webshowcase_1240x300.jpg" alt="">
+        </div>
+    </div> 
+    </section>
+
+    <!-- --------------------------------------------Recommended Movies ----------------------------------------- -->
+    <section>
+        <h1 class="recH1">Recommended Movies</h1>
+
+        <!-- Flickity HTML init -->
+        <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzYlICAyMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00056556-fsejcgdqcb-portrait.jpg" class="moviePoster"  alt="">
+            <h3>Fast and Furious 9</h3> 
+            <p>
+                Action/Adventure/Crime/Thriller
+            </p>
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-ODYlICA4ayB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00122526-trnrsgzgje-portrait.jpg" class="moviePoster" alt="">
+            <h3>Dune</h3> 
+            <p>
+                Action/Adventure/Drama/Sci-Fi
+            </p>    
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-ODIlICAzNmsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00110039-xxzwyffbcl-portrait.jpg" class="moviePoster" alt="">
+            <h3>No Time To Die</h3> 
+            <p>
+                Action/Adventure/Drama/Sci-Fi
+            </p>
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MTY1ayBsaWtlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00097952-aysarzzgtn-portrait.jpg" class="moviePoster" alt="">
+            <h3>Sooryavanshi</h3> 
+            <p>
+                Action/Comedy/Drama
+            </p>  
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-ODElICA0MWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00122532-txvupaccvr-portrait.jpg" class="moviePoster" alt="">
+            <h3>Venom: Let There Be Carnage</h3> 
+            <p>
+                Action/Horror/Sci-Fi/Thriller
+            </p> 
+        </div>
+        <div class="carousel-cell p" style="padding-left: 150px;">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-OThrIGxpa2Vz,ots-29,otc-FFFFFF,oy-612,ox-70/et00122524-merfymvzjl-portrait.jpg" class="moviePoster" alt="">
+            <h3>Eternals</h3> 
+            <p>
+                Action/Adventure/Fantasy
+            </p>  
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzklICAzMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00117102-xbcngvsuyn-portrait.jpg" class="moviePoster" alt="">
+            <h3>Bell Bottom</h3> 
+            <p>
+                Action/Thriller
+            </p>  
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzElICAzayB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00312665-xsgtrjeshj-portrait.jpg" class="moviePoster" alt="">
+            <h3>Don`t Breathe 2</h3> 
+            <p>
+                Horror/Thriller
+            </p>  
+        </div>
+
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MzYxIGxpa2Vz,ots-29,otc-FFFFFF,oy-612,ox-70/et00122537-sjfxckxhyb-portrait.jpg" class="moviePoster" alt="">
+            <h3>Ron`s Gone Wrong</h3> 
+            <p>
+                Animation/Comedy/Family
+            </p>  
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-OTAlICA2NGsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00122566-shmjengpey-portrait.jpg" class="moviePoster" alt="">
+            <h3>Shang-Chi and the Legend of the Ten Rings</h3> 
+            <p>
+                Action/Adventure/Fantasy
+            </p>  
+        </div>
+        </div>
+    </section>
+
+
+    <!-- <------------------------------------------------ Img Strip -------------------------------------------------- -->
+
+    <section class="imgStripClass">
+        <div class="imgStrip">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/lead-in-v3-collection-202102040828.png" class="imgStrip">
+        </div>
+    </section>
+
+
+    <!-- ------------------------------------------------The Best of Entertainment ----------------------------------------------- -->
+
+    <section>
+        <h1 class="recH1">The Best of Entertainment</h1>
+
+        <!-- Flickity HTML init -->
+        <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTAwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/workshops-collection-202007231330.png" class="entertainmentPoster" alt="">
+            
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/kids-collection-202007220710.png" class="entertainmentPoster"  alt="">
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-OCBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/fitness-collection-2020081150.png" class="entertainmentPoster" alt="">
+               
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-ODUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/comedy-shows-collection-202007220710.png" class="entertainmentPoster" alt="">
+            
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/self-improvement-collection-202007220710.png" class="entertainmentPoster" alt="">
+           
+        </div>
+        
+        <div class="carousel-cell p" style="padding-left: 150px;">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/art-and-crafts-collection-202007220710.png" class="entertainmentPoster" alt="">
+            
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/esports-collection-202011150107.png" class="entertainmentPoster" alt="">
+           
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/music-shows-collection-202007220710.png" class="entertainmentPoster" alt="">
+            
+        </div>
+
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-OSBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/adventure-collection-202010140844.png" class="entertainmentPoster" alt="">
+           
+        </div>
+
+        <div class="carousel-cell p" id="enterTainLastPoster">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MSBFdmVudA%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/cooking-collection-202007222211.png" class="entertainmentPoster" alt="">
+        </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------Premeire Shows ---------------------------------------------------- -->
+
+    <section class="premiereSection">
+
+        <div class="paymentImgDiv">
+            <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png" class="paymentImg" alt="">
+        </div>
+
+        <h1 class="recH1">Premieres</h1>
+        <p class="recH1">Brand new releases every Friday</p>
+
+        <!-- Flickity HTML init -->
+        <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+        
+        <div class="carousel-cell p">
+                <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00122455-lwtatstyvd-portrait.jpg" class="premeireMoviePoster" alt="">
+                <h3>The Conjuring</h3> 
+                <p>
+                    English
+                </p>    
+        </div>
+
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00312665-xsgtrjeshj-portrait.jpg" class="premeireMoviePoster"  alt="">
+            <h3>Don`t Breathe 2</h3> 
+            <p>
+               English
+            </p>
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00122449-mbvnedwdec-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Malignant</h3> 
+            <p>
+                English
+            </p>
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/zack-snyder-s-justice-league-et00047164-10-04-2021-03-22-49.jpg" class="premeireMoviePoster" alt="">
+            <h3>Zack Synder`s</h3> 
+            <p>
+                English
+            </p>  
+        </div>
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00310901-lvctbfwtyb-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Ammonite</h3> 
+            <p>
+                English
+            </p> 
+        </div>
+        <div class="carousel-cell p" style="padding-left: 150px;">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00301282-dnzbnayacy-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Kabullywood</h3> 
+            <p>
+                Farsi
+            </p>  
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00312065-scvrrhkcsf-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Clementine</h3> 
+            <p>
+                English
+            </p>  
+        </div>
+       
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00304964-sppgefaccr-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Rewind</h3> 
+            <p>
+                Kannada
+            </p>  
+        </div>
+
+        <div class="carousel-cell p">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00122511-tvdfbfcfxg-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Godzilla vs. Kong</h3> 
+            <p>
+                English
+            </p>  
+        </div>
+        <div class="carousel-cell p premiereLastPoster">
+            <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00138770-kfmhzakdwj-portrait.jpg" class="premeireMoviePoster" alt="">
+            <h3>Tailgate</h3> 
+            <p>
+                English
+            </p>  
+        </div>
+        </div>
+    </section>
+
+
+<!-- -------------------------------------------------Online Streams ---------------------------------------------------- -->
+
+<section class="onlineStreamingSection">
+    <h1 class="recH1">Online Streaming Events</h1>
+
+    <!-- Flickity HTML init -->
+    <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00313611-umnnbhscjq-portrait.jpg" class="onlineMovieStreaming"  alt="">
+        <h3>FrontRow Open Mics</h3> 
+        <p>
+            Watch on Zoom
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00145545-catfgpxmpy-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Online Martial Art</h3> 
+        <p>
+            Online Streaming
+        </p>    
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00308749-rnqyuhslld-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Improve Mental Health</h3> 
+        <p>
+            Online Streaming
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAxIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00312317-fuptdsajsf-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Skincare Masterclass</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00145540-scazasalgl-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Online Yoga</h3> 
+        <p>
+            Online Streaming
+        </p> 
+    </div>
+    <div class="carousel-cell p" style="padding-left: 150px;">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00310652-xmlxwxwagv-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Digi Open</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312316-sawezllxdj-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Guitar Masterclass</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00137585-qpbsvmnqyq-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Learn Data Analytics</h3> 
+        <p>
+            Online Streaaming
+        </p>  
+    </div>
+
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA3IE5vdg%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00311636-rxtpmyarwc-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Developing Creativity</h3> 
+        <p>
+            Watch ton Zoom
+        </p>  
+    </div>
+    <div class="carousel-cell p onlineStreamingLastDiv">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAxIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00301604-ubuzcwjmym-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Pimple and Skin</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+    </div>
+</section>
+
+
+<!-- ------------------------------------------------- Outdoor Events ---------------------------------------------------- -->
+
+<section class="onlineStreamingSection">
+    <h1 class="recH1">Outdoor Events</h1>
+
+    <!-- Flickity HTML init -->
+    <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00315217-gdyhhbvccb-portrait.jpg" class="onlineMovieStreaming"  alt="">
+        <h3>Hamley Play</h3> 
+        <p>
+            Hamley Play, Jio BKC
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00127447-cxlccayjbw-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Bounce</h3> 
+        <p>
+            Bounce India: Mumbai
+        </p>    
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCA2IE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00305112-zdjpcrhucj-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>UrbsPrima</h3> 
+        <p>
+            Municipal Corporation: Mumbai
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAxIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00022344-uxzphhqpnf-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Mumbai Filmcity Tour</h3> 
+        <p>
+            Dadasaheb Phalke: Mumbai
+        </p>  
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00114840-sjrwuvuzzl-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Singularity -VR Gaming</h3> 
+        <p>
+            Zero Latency: Mumbai
+        </p> 
+    </div>
+    <div class="carousel-cell p" style="padding-left: 150px;">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00302244-pqbujbeqna-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Dine In Blu</h3> 
+        <p>
+            Radisson Blu Mumbai
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA3IEphbiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00314859-fgdhxmuukt-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Chadar Trek</h3> 
+        <p>
+            Leh Ladakh
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00126554-emznweyqxu-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Pawani Camping</h3> 
+        <p>
+            Pawana Lake: Pune
+        </p>  
+    </div>
+
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00089073-yabayhqhpq-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>No Escape Bandra</h3> 
+        <p>
+            No Escape Bandra: Mumbai
+        </p>  
+    </div>
+    <div class="carousel-cell p onlineStreamingLastDiv">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00109138-ljeglmbxvy-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Zombie Survival</h3> 
+        <p>
+            Zero Latency India: Mumbai
+        </p>  
+    </div>
+    </div>
+</section>
+
+
+<!-- ------------------------------------------------- Laughter Therapy ---------------------------------------------------- -->
+
+<section class="onlineStreamingSection">
+    <h1 class="recH1">Laughter Therapy</h1>
+
+    <!-- Flickity HTML init -->
+    <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00313289-nrssqbpptw-portrait.jpg" class="onlineMovieStreaming"  alt="">
+        <h3>Kunal Kamra Live</h3> 
+        <p>
+            The Comedy Club
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAyOCBOb3Y%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00314160-eyhhcsxfxl-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Vijay Yadav</h3> 
+        <p>
+            Mitron Bar: Bandra
+        </p>    
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA1IE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00146235-hrbjdqgfma-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Anirban Dasgupta: Live</h3> 
+        <p>
+            That Comedy Club
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMyBOb3Y%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00315189-pqgxtyvuny-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Rajat Chauhan</h3> 
+        <p>
+            Above Habitat: Mumbai
+        </p>  
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-VHVlLCAyIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00313557-zmszayedap-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>8 Minute funnies</h3> 
+        <p>
+            The J Spot
+        </p> 
+    </div>
+    <div class="carousel-cell p" style="padding-left: 150px;">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00313711-ykerhastfh-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Punit Pania Live</h3> 
+        <p>
+            Bandra West
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCA1IE5vdg%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00315159-hwbzndpeck-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Prashasti Singh Live</h3> 
+        <p>
+            The Habitat: Mumbai
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAxIE5vdg%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00316781-npppcgbrem-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Srikiran K</h3> 
+        <p>
+            Dorangos: Bandra
+        </p>  
+    </div>
+
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxNCBOb3Ygb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00311041-cbqrqnbmck-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Women Slay</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+    <div class="carousel-cell p onlineStreamingLastDiv">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAyMCBOb3Y%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00316036-naltkbpwkc-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>OMG Yarr!</h3> 
+        <p>
+            Backspace:Thane
+        </p>  
+    </div>
+    </div>
+</section>
+
+<!-- <------------------------------ Trending Searches Right Now ------------------------------------------ -->
+
+<section class="trendingSearches">
+    <h1 class="recH1">Trending Searches Right Now</h1>
+    <div class="trendingDiv">
+        <span class="trendingSearchSpan">
+            <h3>
+                Venom: Let There Be Carnage
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Sooryavanshi
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Dune
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Annaatthe
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Eternals
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                ICC T20 - India vs New Zealand
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Shang-Chi and the Legend of Ten Rings
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Demon Slayer: Mugen Train
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                Honsla Rakh
+            </h3>
+            <p>Movies</p>
+        </span>
+        <span class="trendingSearchSpan">
+            <h3>
+                No Time To Die
+            </h3>
+            <p>Movies</p>
+        </span>
+    </div>
+</section>
+
+
+
+<!-- ------------------------------------------------- Explore Fun Activity ---------------------------------------------------- -->
+
+<section class="onlineStreamingSection">
+    <h1 class="recH1">Explore Fun Activitie</h1>
+
+    <!-- Flickity HTML init -->
+    <div class="carousel f" data-flickity='{ "groupCells": 5,"pageDots": false}'>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312049-zxmskgjfck-portrait.jpg" class="onlineMovieStreaming"  alt="">
+        <h3>Maa Kamkhya Devi</h3> 
+        <p>
+            Online
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAzIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311443-drwuknwhds-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Explore Hagia Sophia</h3> 
+        <p>
+            Watch on Zoom
+        </p>    
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAzIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311447-gmueevazgw-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Victoria Falls</h3> 
+        <p>
+            Watch on Zoom
+        </p>
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAzIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311414-zjpbvnxhka-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Kyoto: Gion District</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAxIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00312645-gcbawmcynv-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Mastery Rooms</h3> 
+        <p>
+            Mastery Rooms: Mumbai
+        </p> 
+    </div>
+    <div class="carousel-cell p" style="padding-left: 150px;">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312054-bljtbfphgq-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Prasad From Puri</h3> 
+        <p>
+           Online
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAzIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311451-sxntjtssfb-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Fair City: Dublin</h3> 
+        <p>
+            Watch on Zoom 
+        </p>  
+    </div>
+   
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAzIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311436-unxzuctsrv-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Scenic: Hamburg</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+
+    <div class="carousel-cell p">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAzMSBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00312048-yqduqysyjj-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Kashi Prasad</h3> 
+        <p>
+            Online
+        </p>  
+    </div>
+    <div class="carousel-cell p onlineStreamingLastDiv">
+        <img src="https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-VHVlLCAyIE5vdiBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24/et00311432-bnxaclqqcd-portrait.jpg" class="onlineMovieStreaming" alt="">
+        <h3>Amazon River</h3> 
+        <p>
+            Watch on Zoom
+        </p>  
+    </div>
+    </div>
+</section>
+
+
+
+<!-- <----------------------------- Privacy Note ---------------------------------------- -->
+
+<section>
+    <div class="privacyNote">
+        <h4>Privacy Note</h4>
+        <p>
+            By using www.bookmyshow.com(our website), you are fully accepting the Privacy Policy available at https://bookmyshow.com/privacy governing your access to Bookmyshow and 
+            provision of services by Bookmyshow to you. If you do not accept terms mentioned in the Privacy Policy, you must not share any of your personal information and immediately exit Bookmyshow.
+        </p>
+    </div>
+</section>
+
+
+<!-- <----------------------------- Contact Today ---------------------------------------- -->
+
+<section class="contactTodaySection">
+    <div class="contactToday">
+        <span>
+            <h4 contactH4> 🏠 List your Show</h4>
+        </span>
+        
+        <span>
+            <p class="contactP">Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</p>
+        </span>
+        <span>
+            <button class="contactBtn">
+                Contact Today
+            </button>
+        </span>
+    </div>
+</section>
+
+
+
+
+
+    <!----------------------------------------------- Footer ---------------------------------------->
+
+    <footer id="footer">
+
+        <div id="foooterIconBar">
+            <div id="customerCare">
+                <img src="https://library.kissclipart.com/20180912/wjq/kissclipart-customer-services-icon-clipart-customer-service-ca-55a1d16250a29475.png" height="60px" width="60px">
+                <p>24/7 CUSTOMER CARE</p>
+            </div>
+            <div>
+                <img src="https://static.thenounproject.com/png/210570-200.png" height="60px" width="60px">
+                <p>RESEND BOOKING CONFIRMATION</p>
+            </div>
+            <div>
+                <img src="https://www.netclipart.com/pp/m/31-313150_letter-send-inbox-newsletter-svg-png-icon-email.png" height="60px" width="60px">
+                <p>SUBSCRIBE TO THE NEWSLETTER</p>
+            </div>
+        </div>
+
+        <div class="footerTop">
+            <p>
+                Online Movie Ticket Booking Mumbai|Online Movie Ticket Booking Delhi|Online Movie Ticket Booking Bengaluru
+                |Online Movie Ticket Booking Hyderabad|Online Movie Ticket Booking Chennai|
+                Online Movie Ticket Booking Kolkata|Online Movie Ticket Booking Noida|Online Movie Ticket Booking Ahmedabad|Online Movie Ticket Booking Pune
+            </p>
+        </div>
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+
+          <h4>BEST LANGUAGE GENRE MOVIES</h4>
+          <p>
+            Hindi Comedy Movies
+            |<br>
+            Hindi Action Movies
+            |<br>
+            English Animated Movies
+            |<br>
+            English Fantasy Movies
+            |<br>
+            English Comedy Movies
+            |<br>
+            English Action Movies
+            |<br>
+            Tamil Action Movies
+            |<br>
+            Tamil Comedy Movies
+            |<br>
+            Telugu Action Movies
+            |<br>
+            Gujarati Comedy Movies
+            |<br>
+            Marathi Drama Movies
+            |<br>
+            Marathi Comedy Movies
+            |<br>
+            Hindi Animated Movies
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>MOVIES BY GENRE</h4>
+          <p>
+            Best Action Movies
+            |<br>
+            Best Romantic Movies
+            |<br>
+            Best Comedy Movies
+            |<br>
+            Best Adult Movies
+            |<br>
+            Best Adventure Movies
+            |<br>
+            Best Biography Movies
+            |<br>
+            Best Classic Movies
+            |<br>
+            Best Crime Movies
+            |<br>
+            Best Drama Movies
+            |<br>
+            Best Family Movies
+            |<br>
+            Best Fantasy Movies
+            |<br>
+            Best History Movies
+            |<br>
+            Best Musical Movies
+            |<br>
+            Best Mystery Movies
+            |<br>
+            Best Sci-Fi Movies
+            |<br>
+            Best Suspense Movies
+            |<br>
+            Best Thriller Movies
+            |<br>
+            Best Western Movies</p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>POPULAR MOVIES BY LANGUAGE</h4>
+          <p>
+            Popular Hindi Movies
+            |<br>
+            Popular English Movies
+            |<br>
+            Popular Marathi Movies
+            |<br>
+            Popular Bengali Movies
+            |<br>
+            Popular Tamil Movies
+            |<br>
+            Popular Telugu Movies
+            |<br>
+            Popular Malayalam Movies
+            |<br>
+            Popular Bhojpuri Movies
+            |<br>
+            Popular Kannada Movies
+            |<br>
+            Popular Punjabi Movies
+            |<br>
+            Popular Gujarati Movies
+            |<br>
+            Popular Sindhi Movies
+          </p>
+        </div>
+
+        <div class="contentList widthFooter">
+          <h4>MOVIE REVIEWS</h4>
+          <p>
+            Trending Articles
+            |<br>
+            Latest News on Movies, Events, Plays & Sports
+            |<br>
+            Rajeev Masand Movie Reviews
+            |<br>
+            Anupama Chopra Movie Review
+            |<br>
+            Film Reviews
+            |<br>
+            Guest Blogging
+          </p>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+          <h4>THINGS TO DO</h4>
+          <p>
+            Adventure Activities
+            |<br>
+            Food Events
+            |<br>
+            Family Tours
+            |<br>
+            Amusement Parks
+            |<br>
+            Gaming Events
+            |<br>
+            Nightlife Events
+            |<br>
+            Places To Visit
+            |<br>
+            Tourist Attractions
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>EVENTS TICKETS BOOKING ONLINE</h4>
+         <p>
+            Upcoming Events in Mumbai
+            |<br>
+            Upcoming Events in Delhi
+            |<br>
+            Upcoming Events in Bengaluru
+            |<br>
+            Upcoming Events in Chennai
+            |<br>
+            Upcoming Events in Hyderabad
+            |<br>
+            Upcoming Events in Pune
+            |<br>
+            Upcoming Events in Noida
+            |<br>
+            Upcoming Events in Ahmedabad
+         </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4> MOVIES, CINEMAS & CELEBRITY</h4>
+          <p>
+            Latest Upcoming Movies
+            |<br>
+            Best Now Showing Movies
+            |<br>
+            Cinemas & Theatres
+            |<br>
+            Movie Stars & Celebrities
+            |<br>
+            Cinema Chains
+            |<br>
+            All regions Cinemas 
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>ARCHIVED COLLECTION</h4>
+          <p>
+            Old Movies
+            |<br>
+            Past Events
+            |<br>
+            Classic Sports Events
+            |<br>
+            Old Theatre Plays
+            |<br>
+            Best Movies 2016
+            |<br>
+            Best Movies 2017
+            |<br>
+            Best Movies 2018
+          </p>
+        </div>
+        </div>
+      </div>
+
+      
+
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+          <h4> BOOKMYSHOW APP</h4>
+         <p>
+            BMS Ticketing iOS App
+            |<br>
+            BMS Ticketing Android App
+         </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>BOOKMYSHOW NEWS</h4>
+          <p>
+            Buzz
+            |<br>
+            Press Release
+            |<br>
+            Press Coverage
+            |<br>
+            Current Openings
+            |<br>
+            Contact Us
+            |<br>
+            About Us
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>EXCLUSIVES</h4>
+          <p>
+            BookASmile
+            |<br>
+            Superstar
+            |<br>
+            Corporate Vouchers
+            |<br>
+            Gift Cards
+            |<br>
+            My Coupons
+            |<br>
+            Box Office Collection
+            |<br>
+            Watch Guide
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>HELP</h4>
+          <p>
+            Sitemap
+            |<br>
+            FAQs
+            |<br>
+            Terms and Conditions
+            |<br>
+            Privacy Policy
+          </p>
+        </div>
+        </div>
+
+        <div id="footerLogo">
+            <div style="width: 40%;" class="fltLft">
+                <div  class="line" id="pdLft">
+                </div>
+            </div>
+            <div style="width: 20%;" class="fltLft">
+                <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/4/21/w900X450/logo-on-gray.jpg?w=400&dpr=2.6" height="60px" width="100%">
+            </div>
+            <div style="width:40%" class="fltLft">
+               <div class="line" id="pdRyt"></div>
+            </div>
+        </div>
+        <div id="footerIcons">
+          <div>
+            <i class="fa fa-facebook-f"></i>
+          </div>
+          <div>
+            <i class="fa fa-twitter"></i>
+          </div>
+          <div>
+            <i class="fa fa-instagram"></i>
+          </div>
+          <div>
+            <i class="fa fa-youtube"></i>
+          </div>
+          <div>
+            <i class="fa fa-pinterest-p"></i>
+          </div>
+          <div>
+            <i class="fa fa-linkedin"></i>
+          </div>
+        </div>
+        <div id="footerPara">
+          <p>
+            Copyright 2021 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+            The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist 
+            shall be implied. Unauthorized use is prohibited and punishable by law.
+          </p>
+        </div>
+
+
+    </footer>
+  </body>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
+
+  </script>
+
+  <script>
+
+
+     document.getElementById("close").style.display = "none";
+    function openNav() {
+      document.getElementById("mySidenav").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.display = "none";
+    }
+
+    let dropDown = document.getElementById("dropDown");
+    dropDown.addEventListener("click",()=>{
+      var ncrContent = document.getElementById("ncr-Content");
+      ncrContent.style.display = "block";
+      document.getElementById("navBarSeconfLine").style.display = "none";
+      document.getElementById("navBarSeconfLine").style.backgroundColor = "white";
+      document.getElementById("close").style.display = "block";
+      // document.getElementById("navBarSeconfLine").style.backgroundColor = ;
+      
+    })
+
+
+    document.querySelector('.close').addEventListener("click", function() {
+	document.getElementById("ncr-Content").style.display = "none";
+  document.getElementById("navBarSeconfLine").style.display = "block";
+  document.getElementById("close").style.display = "none";
+});
+  </script>
+</html>
