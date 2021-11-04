@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Stream.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+
+</head>
+
+<body>
+  <!------------------------------------------------ Navbar first Row -------------------------------------------->
+
+  <div class="navbar">
+    <div id="logoDiv">
+      <div class="fleft">book</div>
+      <div class="fleft">
+        <img
+          src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
+          id="logobyJchy" />
+      </div>
+      <div class="fleft">show</div>
+    </div>
+
+    <span id="sideMenu" onclick="openNav()">&#9776;</span>
+    <a href="Login.html" id="signIn">Sign in</a>
+
+    <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
+
+    <div class="dropdown">
+      <button class="dropbtn" id="dropDown">
+        NCR
+        <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="close" id="close">+</div>
+
+      <div class="dropdown-content" id="ncr-Content">
+        <div>
+          <input type="text" placeholder=" 🔍 Search for your city" id="ncr-input" />
+          <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
+          <div style="margin-left: 20px" class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" class="ncr-img" />
+            <p>Mumbai</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr-selected.png" class="ncr-img" />
+            <p>NCR</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png" class="ncr-img" />
+            <p>Bengaluru</p>
+          </div>
+          <div class="floatLeft" class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" class="ncr-img" />
+            <p>Hyderabad</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" class="ncr-img" />
+            <p>Ahmedabad</p>
+          </div>
+          <div class="floatLeft" style="margin-left: 15%;">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" class="ncr-img" />
+            <p>Chandigarh</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" class="ncr-img" />
+            <p>Chennai</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" class="ncr-img" />
+            <p>Pune</p>
+          </div>
+
+
+        </div>
+        <p style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter">
+          View All Cities
+        </p>
+
+      </div>
+    </div>
+
+    <!----------------------------------------- Side Navbar  ------------------------------------------------------->
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <div>
+        <a href="#">
+          <h2>Hey!</h2>
+        </a>
+      </div>
+
+      <div>
+        <a href="#">Unlock special offers and great benefits</a>
+      </div>
+
+      <div>
+        <a href="#">Notifications</a>
+      </div>
+
+      <div>
+        <a href="#">QuickPay</a>
+      </div>
+
+      <div>
+        <a href="#">Booking History</a>
+      </div>
+
+      <div>
+        <a href="#">Stream Library</a>
+      </div>
+
+      <div>
+        <a href="#">Rewards</a>
+      </div>
+
+      <div>
+        <a href="#">BookASmile</a>
+      </div>
+      <div>
+        <a href="#">Help & Support</a>
+      </div>
+      <div>
+        <a href="#">Settings</a>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
+
+  <div id="navBarSeconfLine">
+    <a href="movies.html" id="nav2MoviesTag">Movies</a>
+    <a href="#">Stream</a>
+    <a href="">Events</a>
+    <a href="">Plays</a>
+    <a href="">Sports</a>
+    <a href="">Activities</a>
+    <a href="" id="buzz">Buzz</a>
+    <a href="">ListYourShow </a>
+    <a href="">Corporates</a>
+    <a href="">Offers</a>
+    <a href="">Gift Cards</a>
+  </div>
+  <!-- My  Code  -->
+  <section id="carosel" >
+    <i class="fa fa fa-chevron-right" id="a-next-btn"></i>
+    <i class="fas fa fa-chevron-left" id="a-prev-btn"></i>
+    
+<div id="inner-stream">
+    <div class="stream-box" >
+      <div class="image-box">
+        <img src="image/carosel1.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Cry Macho</h2>
+          <p>1h 44m
+            •
+            Drama, Thriller, Western
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>In 1978, a one-time rodeo star and washed-up horse breeder take up a job from an ex-boss to bring the man's
+            young son home and away from his alcoholic mum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden">
+      <div class="image-box">
+        <img src="image/carosel2.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Lucky</h2>
+          <p>1h 23m
+            •
+            horror
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>A suburban woman finds herself stalked by a threatening figure who returns to her house night after night. When she can`t get help, she is forced to take matters into her own hands.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel3.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Night Drive</h2>
+          <p>1h 20m
+            •
+            Thriller
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>A rideshare driver picks up a mysterious young woman who takes him on a wild and dangerous trip.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel4.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Venom</h2>
+          <p>1h 52m
+            •
+            Action, Sci-Fi, Thriller
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>Eddie Brock, a journalist, stumbles upon a story that lands him in big trouble and leads him to become the host to an alien symbiote, which in turn gives him unimaginable powers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel5.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Snake Eyes: G.I.  Joe Origins</h2>
+          <p>2h 1m
+            •
+            Action, Adventure, Fantasy, Sci-Fi
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>To defeat the terrorist group Cobra, Snake Eyes becomes the ultimate warrior, but when his past is revealed, he risks everything he has been fighting for.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel6.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Peter Rabbit 2: The Runaway</h2>
+          <p>1h 44m
+            •
+            Adventure, Animation, Comedy
+            •
+            U
+          </p>
+          <p>English</p>
+          <p>Based on the stories by Beatrix Potter, the film revolves around Peter Rabbit as he runs away from home. On his journey, he meets another rabbit who turns out to be an old friend of Peter`s father.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel7.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Saint Maud</h2>
+          <p>1h 24m
+            •
+            Drama, Horror, Mystery
+            •
+            16+
+          </p>
+          <p>English</p>
+          <p>Maud, a young religious nurse, becomes dangerously fixated with saving the soul of her dying patient Amanda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel9.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Shorta</h2>
+          <p>1h 48m
+            •
+            Action, Thriller
+            •
+            18+
+          </p>
+          <p>Danish</p>
+          <p>Two officers are on patrol when the news of a 19-year-old`s death under police custody spreads. As the ghetto`s youth want revenge, the two end up trapped in a maze of buildings.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel10.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Malignant</h2>
+          <p>1h 51m
+            •
+            Horror, Thriller
+            •
+            A
+          </p>
+          <p>English</p>
+          <p>Malignant is an English movie starring Annabelle Wallis, Jake Abel, George Young in prominent roles. It is a drama directed by James Wan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel11.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Flight</h2>
+          <p>1h 56m
+            •
+            Action, Thriller
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>Malignant is an English movie starring Annabelle Wallis, Jake Abel, George Young in prominent roles. It is a drama directed by James Wan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel12.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Promising Young Woman</h2>
+          <p>1h 53m
+            •
+            Comedy, Thriller
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>A wickedly smart woman who leads a secret double life by the night gets into an unexpected encounter which gives her the chance to right her wrongs from the past.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel13.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>The Conjuring: The Devil Made Me Do It</h2>
+          <p>1h 54m
+            •
+            Horror,Thriller
+            •
+            A
+          </p>
+          <p>English</p>
+          <p>Paranormal investigators Ed and Lorraine Warren are faced with one of their most challenging cases when a murder suspect claims to be possessed by a demon. The movie is also available in 4K on BMS stream.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel14.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Reminiscence</h2>
+          <p>1h 56m
+            •
+            Mystery, Romantic, Sci-Fi
+            •
+            13+
+          </p>
+          <p>English</p>
+          <p>INick Bannister, a private investigator of the mind, navigates the darkly alluring world of the past by helping his clients access lost memories. When he takes on a new client, a simple matter of lost and found becomes a dangerous obsession.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel15.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>The Suicide Squad</h2>
+          <p>2h 14m
+            •
+            Action, Adventure, Comedy,Sci-Fi
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>Amanda Waller dispatch the Task Force X members to the Corto Maltese island to destroy Jotunheim, a Nazi-era prison and laboratory. Available in 4K.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel16.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Escape Plan 2: Hades</h2>
+          <p>1h 36m
+            •
+           Action
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>Security expert Ray Breslin forms a team of skilled personnel after escaping The Tomb. However, when one of his colleagues goes missing, he must revisit the group that imprisoned him.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel17.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Shardula</h2>
+          <p>2h 10m
+            •
+           Horror, Thriller
+            •
+            13+
+          </p>
+          <p>Kannada</p>
+          <p>The movie revolves around four youngsters and their connection with a strange place called Shardula. Do ghosts exist? Or are they just a figment of our imagination?</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel18.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Zola</h2>
+          <p>1h 26m
+            •
+            Drama
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>Zola, a Detroit waitress, strikes up a new friendship with a customer, Stefani, who seduces her to join a weekend of partying in Florida.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel19.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>I Carry You With Me</h2>
+          <p>1h 51m
+            •
+            Drama
+            •
+            18+
+          </p>
+          <p>Spanish</p>
+          <p>Based on a true story, this decades-spanning romance between an aspiring chef and a teacher follows a treacherous journey from Mexico to New York with dreams, hopes, and memories in tow.</p>
+        </div>
+      </div>
+    </div>
+    <div class="stream-box hidden ">
+      <div class="image-box">
+        <img src="image/carosel20.jpg" class="visible">
+      </div>
+      <div class="content">
+        <div class="premium-box">
+          <img src="image/prem.jpeg">
+          <p style="color:white">Brand new release every Friday</p>
+        </div>
+        <div class="stream-title">
+          <h2>Run Hide Fight</h2>
+          <p>1h 49m
+            •
+            Drama, Thriller
+            •
+            18+
+          </p>
+          <p>English</p>
+          <p>17-year-old Zoe Hull uses her wits, survival skills, and compassion to fight for her life, and those of her fellow classmates, against a group of live-streaming school shooters.</p>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+  <!-- premire week -->
+  <section id="a-premiure-week" class="a-outer-contaianer">
+    <div id="a-premiure-inner-container" class="a-inner-container">
+      <h2>Premiere of the week</h2>
+      <div id="a-prem-stream-container" class="a-movie-inner-box">
+        <div class="a-image-box">
+          <img src="image/p1.jpg">
+          <h4>Lucky</h4>
+          <p>English</p>
+
+        </div>
+        <div class="a-image-box">
+          <img src="image/p2.jpg">
+          <h4>Zola</h4>
+          <p>English</p>
+        </div>
+        <div class="a-image-box">
+          <img src="image/p3.jpg">
+          <h4>Night Drive</h4>
+          <p>English</p>
+        </div>
+        <div class="a-image-box">
+          <img src="image/p4.jpg">
+          <h4>Cry Macho</h4>
+          <p>English</p>
+        </div>
+        <div class="a-image-box">
+          <img src="image/p5.jpg">
+          <h4>Cry Macho</h4>
+          <p>English</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Browse Movie Language -->
+  <section id="bMoviesLang">
+    <div id="b-inner">
+      <h2 class="browse">Browse By Movies Languages </h2>
+      <div id="b-button">
+        <button class="one4f filter-color" name="0">English</button>
+        <button class="one4f filter-color" name="0">Hindi</button>
+        <button class="one4f filter-color" name="0">Regional</button>
+        <button class="one4f filter-color" name="0">Foreign</button>
+        
+      </div>
+    </div>
+  </section>
+<!-- stream coming soon -->
+<section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div class="a-inner-container">
+    <h2>Coming Soon</h2>
+    <div class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/c1.jpg">
+        <h4>Don't Breath 2</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/c2.jpg">
+        <h4>The Sunlit Night</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/c3.jpg">
+        <h4>Promising Young Woman</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/c4.jpg">
+        <h4>City of Lies</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/c5.jpg">
+        <h4>NoBody</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Free Access for Limited -->
+
+<section id="a-fAFL" class="a-outer-contaianer">
+  <div id="a-faFl-inner-container" class="a-inner-container">
+    <h2>Free Acess For Limited Period</h2>
+    <div id="a-faFl-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/fafl1.jpg">
+        <h4>Run Hide Fight</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl2.jpg">
+        <h4>The Spacewalker </h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl3.jpg">
+        <h4>Breaking Surface</h4>
+        <p>Swedish</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl4.jpg">
+        <h4>32 Malasana Street</h4>
+        <p>Spanish</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl5.jpg">
+        <h4>Assassins</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Movies on Discount -->
+
+<section id="pMOD" class="a-outer-contaianer">
+  <div id="a-pMOD-inner-container" class="a-inner-container">
+    <h2>Premium Movies Oon Discount</h2>
+    <div id="a-pMOD-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/omod1.jpg">
+        <h4>Venom</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/pmod2.jpg">
+        <h4>Tom & Jerry</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/pmod3.jpg">
+        <h4>Mission Imposible - Fallout</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/pmod4.jpg">
+        <h4>Zack Snyder's Justice League</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/pmod5.jpg">
+        <h4>The Little Things</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spotlight -->
+
+<section id="slight" class="a-outer-contaianer">
+  <div id="a-slight-inner-container" class="a-inner-container">
+    <h2>Spotlight</h2>
+    <div id="a-slight-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/slight1.jpg">
+        <h4>A Quiet Place</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/slight2.jpg">
+        <h4>The Guilty</h4>
+        <p>Danish</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/slight3.jpg">
+        <h4>Don't Breathe</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/slight4.jpg">
+        <h4>Snake Eyes: G.I. Joe Origin</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/slight5.jpg">
+        <h4>Shorta</h4>
+        <p>Danish</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- From The Vault -->
+
+<section id="a-ftv" class="a-outer-contaianer">
+  <div id="a-ftv-inner-container" class="a-inner-container">
+    <h2>From The Vault</h2>
+    <div id="a-ftv-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/ftv1.jpg">
+        <h4>Stand and Deliver
+        </h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/ftv2.jpg">
+        <h4>Midnight Express</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/ft3.jpg">
+        <h4>Moscow On The Hudson</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/ft4.jpg">
+        <h4>Rear Window</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/ftv4.jpg">
+        <h4>The Ten Comandments (1956)</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Tv Series -->
+<section id="a-tvs-contaianr" class="a-outer-contaianer">
+  <div id="a-tvs-inner-container" class="a-inner-container">
+    <h2>Tv Series</h2>
+    <div id="a-tvs-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/tvs1.jpg">
+        <h4>After Bhramhasmi</h4>
+        <p>Telugu</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/tvs2.jpg">
+        <h4>Undercover Session 1</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stream Recommends -->
+
+<section id="a-Sr-contaianr" class="a-outer-contaianer">
+  <div id="a-sr-container" class="a-inner-container">
+    <h2>Stream Recommends</h2>
+    <div class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/sr1.jpg">
+        <h4>Burning</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/sr2.jpg">
+        <h4>The Hard Way</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/sr3.jpg">
+        <h4>Scent of a Woman</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/sr4.jpg">
+        <h4>Donnie Brasco</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/sr5.jpg">
+        <h4>Before Sunset</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Exclusive  -->
+
+<!-- Movies on Reduced Rental -->
+<section id="a-morr" class="a-outer-contaianer">
+  <div id="a-morr-inner-container" class="a-inner-container">
+    <h2>Movies on Reduce Rental </h2>
+    <div id="a-morr-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/morr1.jpg">
+        <h4>Berlin, I Love You</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/morr2.jpg">
+        <h4>Sister of the Groom</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/morr3.jpg">
+        <h4>Battle Drone</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/morr4.jpg">
+        <h4>The Villainess</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/morr5.jpg">
+        <h4>Man Camp</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Browse Movies By Genres -->
+
+<section id="bMoviesLang">
+  <div id="b-inner">
+    <h2 class="browse">Browse movies by genre based title </h2>
+    <div id="b-button">
+      <button class="one4f filter-color" name="0">Action</button>
+      <button class="one4f filter-color" name="0">Comedy</button>
+      <button class="one4f filter-color" name="0">Drama</button>
+      <button class="one4f filter-color" name="0">Thriller</button>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Kid's Movies -->
+<section id="a-kid-contaianr" class="a-outer-contaianer">
+  <div id="a-kid-inner-container" class="a-inner-container">
+    <h2>Kid's Movies </h2>
+    <div id="a-kid-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/kid1.jpg">
+        <h4>How To Train Your Dragon: The Hidden World</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/kid2.jpg">
+        <h4>Spider-Man; Into The Spider-Verse</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/kid3.jpg">
+        <h4>Kindergarten Cop</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/kid4.jpg">
+        <h4>The Croods</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/kid5.jpg">
+        <h4>Annie</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collector's Edition -->
+<section id="a-collEdi-contaianr" class="a-outer-contaianer">
+  <div id="a-collEdi-inner-container" class="a-inner-container2">
+    <h2>Collector's Edition </h2>
+    <p>Buy movie bundles on the go!</p>
+    <div id="a-CollEdi-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/coll1.jpg">
+        <h4>Robert Langdon Movie Collection</h4>
+        <p>3 movies</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/coll2.jpg">
+        <h4>Sherlock Holmes 2 Film Collection</h4>
+        <p>2 movies</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/coll3.jpg">
+        <h4>IT 2-Film Collection</h4>
+        <p>2 movies</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/coll4.jpg">
+        <h4>Birds of Prey & Suicide Squad 2-Film Bundle</h4>
+        <p>2 movies</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/coll5.jpg">
+        <h4>Wonder Woman 2-Film Bundle</h4>
+        <p>2 movies</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trending Right Now -->
+
+<section id="a-trr" class="a-outer-contaianer">
+  <div id="a-trr-inner-container" class="a-inner-container">
+    <h2>Trending Right Now</h2>
+    <div id="a-trr-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/fafl1.jpg">
+        <h4>Run Hide Fight</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl2.jpg">
+        <h4>The Spacewalker </h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl3.jpg">
+        <h4>Breaking Surface</h4>
+        <p>Swedish</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl4.jpg">
+        <h4>32 Malasana Street</h4>
+        <p>Spanish</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fafl5.jpg">
+        <h4>Assassins</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flashback hollywood -80s-90s -->
+
+<section id="a-fbackh-contaianr" class="a-outer-contaianer">
+  <div id="a-fbackh-inner-container" class="a-inner-container">
+    <h2>Flashback - Hollywood 80s 90s </h2>
+    <div id="a-fbackh-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/fbackh1.jpg">
+        <h4>Patch Adams</h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackh2.jpg">
+        <h4>Tootsie</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackh3.jpg">
+        <h4>The Hunt For Red October</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackh4.jpg">
+        <h4>Out of Africa</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackh5.jpg">
+        <h4>The Secret of My Success</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- flashback bollywood 80s 90s -->
+
+<section id="a-fbackb-contaianr" class="a-outer-contaianer">
+  <div id="a-fbackb-inner-container" class="a-inner-container">
+    <h2>Flashback - Bollywood 80s 90s </h2>
+    <div id="a-fbackb-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/fbackb1.jpg">
+        <h4>
+          Babul
+        </h4>
+        <p>Hindi</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackb2.jpg">
+        <h4>Nadiya Ke Paar</h4>
+        <p>Hindi</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackb3.jpg">
+        <h4>Jawaab</h4>
+        <p>Hindi</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackb4.jpg">
+        <h4>Mandi - The Market Place</h4>
+        <p>Hindi</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/fbackb5.jpg">
+        <h4>Saath Saath</h4>
+        <p>Hindi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Premiure -->
+
+<section id="a-recentPrem-contaianr" class="a-outer-contaianer">
+  <div id="a-recentPrem-inner-container" class="a-inner-container">
+    <h2>Recent Premiere </h2>
+    <div id="a-recentPrem-stream-container" class="a-movie-inner-box">
+      <div class="a-image-box">
+        <img src="image/rec1.jpg">
+        <h4>
+          Malignant
+        </h4>
+        <p>English</p>
+
+      </div>
+      <div class="a-image-box">
+        <img src="image/rec2.jpg">
+        <h4>The Conjuring: The Devil Made Me Do It</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/rec3.jpg">
+        <h4>Aunty Sudha Aunty Radha</h4>
+        <p>Hindi</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/rec4.jpg">
+        <h4>Lost Girls & Love Hotels</h4>
+        <p>English</p>
+      </div>
+      <div class="a-image-box">
+        <img src="image/rec5.jpg">
+        <h4>The Kid Detactive</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Browse Movies By Collection -->
+
+<!-- <section id="bMovieCollection">
+  <div id="b-inner-collection">
+    <h2>Browse movies by Collections </h2>
+    <div id="b-button">
+      <button class="one4f filter-color" name="0">All Time Favorites</button>
+      <button class="one4f filter-color" name="0">Festival Favorites</button>
+      <button class="one4f filter-color" name="0">Editor's Choice</button>
+      <button class="one4f filter-color" name="0">Award Winning Movies</button>
+      
+    </div>
+  </div>
+</section> -->
+
+<!-- A Journey Through Time -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>A Journey Through Time</h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- World Cinemas -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>World Cinema </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Missed in Theatre -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Missed in Theatres </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Top Picks For You -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Top Picks For You </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Get Spooked -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Get Spooked </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Rediscover Indian Cinema -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Rediscover Indian Cinema </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Complete Collection of The Karate Kid Movies -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Complete Karate Kid Movies </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- The Ultimate Final Destination Films Collection -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>The Ultimate Final Destination Films Collection </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Movies in Dubbed Language -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Movies in Dubbed Language </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- BlockBusters -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Blockbusters </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Best of Regional Cinemas -->
+
+<!-- <section id="a-coming-soon-contaianr" class="a-outer-contaianer">
+  <div id="a-premiure-inner-container">
+    <h2>Best of Regional Cinemas </h2>
+    <div id="a-prem-stream-container">
+      <div class="prem-img">
+        <img src="image/p1.jpg">
+        <h4>Lucky</h4>
+        <p>English</p>
+
+      </div>
+      <div class="prem-img">
+        <img src="image/p2.jpg">
+        <h4>Zola</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p3.jpg">
+        <h4>Night Drive</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p4.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+      <div class="prem-img">
+        <img src="image/p5.jpg">
+        <h4>Cry Macho</h4>
+        <p>English</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+<section id="white-space">
+  
+</section>
+  <!----------------------------------------------- Footer ---------------------------------------->
+
+
+
+
+  <!-- <----------------------------- Privacy Note ---------------------------------------- -->
+
+  <section>
+    <div class="privacyNote">
+      <h4>Privacy Note</h4>
+      <p>
+        By using www.bookmyshow.com(our website), you are fully accepting the Privacy Policy available at
+        https://bookmyshow.com/privacy governing your access to Bookmyshow and
+        provision of services by Bookmyshow to you. If you do not accept terms mentioned in the Privacy Policy, you must
+        not share any of your personal information and immediately exit Bookmyshow.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- <----------------------------- Contact Today ---------------------------------------- -->
+
+  <section class="contactTodaySection">
+    <div class="contactToday">
+      <span>
+        <h4 contactH4> 🏠 List your Show</h4>
+      </span>
+
+      <span>
+        <p class="contactP">Got a show, event, activity or a great experience? Partner with us & get listed on
+          BookMyShow</p>
+      </span>
+      <span>
+        <button class="contactBtn">
+          Contact Today
+        </button>
+      </span>
+    </div>
+  </section>
+
+
+
+
+
+  <footer id="footer">
+
+    <div id="foooterIconBar">
+      <div id="customerCare">
+        <img
+          src="https://library.kissclipart.com/20180912/wjq/kissclipart-customer-services-icon-clipart-customer-service-ca-55a1d16250a29475.png"
+          height="60px" width="60px">
+        <p>24/7 CUSTOMER CARE</p>
+      </div>
+      <div>
+        <img src="https://static.thenounproject.com/png/210570-200.png" height="60px" width="60px">
+        <p>RESEND BOOKING CONFIRMATION</p>
+      </div>
+      <div>
+        <img src="https://www.netclipart.com/pp/m/31-313150_letter-send-inbox-newsletter-svg-png-icon-email.png"
+          height="60px" width="60px">
+        <p>SUBSCRIBE TO THE NEWSLETTER</p>
+      </div>
+    </div>
+
+    <div class="footerTop">
+      <p>
+        Online Movie Ticket Booking Mumbai|Online Movie Ticket Booking Delhi|Online Movie Ticket Booking Bengaluru
+        |Online Movie Ticket Booking Hyderabad|Online Movie Ticket Booking Chennai|
+        Online Movie Ticket Booking Kolkata|Online Movie Ticket Booking Noida|Online Movie Ticket Booking
+        Ahmedabad|Online Movie Ticket Booking Pune
+      </p>
+    </div>
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+
+        <h4>BEST LANGUAGE GENRE MOVIES</h4>
+        <p>
+          Hindi Comedy Movies
+          |<br>
+          Hindi Action Movies
+          |<br>
+          English Animated Movies
+          |<br>
+          English Fantasy Movies
+          |<br>
+          English Comedy Movies
+          |<br>
+          English Action Movies
+          |<br>
+          Tamil Action Movies
+          |<br>
+          Tamil Comedy Movies
+          |<br>
+          Telugu Action Movies
+          |<br>
+          Gujarati Comedy Movies
+          |<br>
+          Marathi Drama Movies
+          |<br>
+          Marathi Comedy Movies
+          |<br>
+          Hindi Animated Movies
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>MOVIES BY GENRE</h4>
+        <p>
+          Best Action Movies
+          |<br>
+          Best Romantic Movies
+          |<br>
+          Best Comedy Movies
+          |<br>
+          Best Adult Movies
+          |<br>
+          Best Adventure Movies
+          |<br>
+          Best Biography Movies
+          |<br>
+          Best Classic Movies
+          |<br>
+          Best Crime Movies
+          |<br>
+          Best Drama Movies
+          |<br>
+          Best Family Movies
+          |<br>
+          Best Fantasy Movies
+          |<br>
+          Best History Movies
+          |<br>
+          Best Musical Movies
+          |<br>
+          Best Mystery Movies
+          |<br>
+          Best Sci-Fi Movies
+          |<br>
+          Best Suspense Movies
+          |<br>
+          Best Thriller Movies
+          |<br>
+          Best Western Movies</p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>POPULAR MOVIES BY LANGUAGE</h4>
+        <p>
+          Popular Hindi Movies
+          |<br>
+          Popular English Movies
+          |<br>
+          Popular Marathi Movies
+          |<br>
+          Popular Bengali Movies
+          |<br>
+          Popular Tamil Movies
+          |<br>
+          Popular Telugu Movies
+          |<br>
+          Popular Malayalam Movies
+          |<br>
+          Popular Bhojpuri Movies
+          |<br>
+          Popular Kannada Movies
+          |<br>
+          Popular Punjabi Movies
+          |<br>
+          Popular Gujarati Movies
+          |<br>
+          Popular Sindhi Movies
+        </p>
+      </div>
+
+      <div class="contentList widthFooter">
+        <h4>MOVIE REVIEWS</h4>
+        <p>
+          Trending Articles
+          |<br>
+          Latest News on Movies, Events, Plays & Sports
+          |<br>
+          Rajeev Masand Movie Reviews
+          |<br>
+          Anupama Chopra Movie Review
+          |<br>
+          Film Reviews
+          |<br>
+          Guest Blogging
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+        <h4>THINGS TO DO</h4>
+        <p>
+          Adventure Activities
+          |<br>
+          Food Events
+          |<br>
+          Family Tours
+          |<br>
+          Amusement Parks
+          |<br>
+          Gaming Events
+          |<br>
+          Nightlife Events
+          |<br>
+          Places To Visit
+          |<br>
+          Tourist Attractions
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>EVENTS TICKETS BOOKING ONLINE</h4>
+        <p>
+          Upcoming Events in Mumbai
+          |<br>
+          Upcoming Events in Delhi
+          |<br>
+          Upcoming Events in Bengaluru
+          |<br>
+          Upcoming Events in Chennai
+          |<br>
+          Upcoming Events in Hyderabad
+          |<br>
+          Upcoming Events in Pune
+          |<br>
+          Upcoming Events in Noida
+          |<br>
+          Upcoming Events in Ahmedabad
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4> MOVIES, CINEMAS & CELEBRITY</h4>
+        <p>
+          Latest Upcoming Movies
+          |<br>
+          Best Now Showing Movies
+          |<br>
+          Cinemas & Theatres
+          |<br>
+          Movie Stars & Celebrities
+          |<br>
+          Cinema Chains
+          |<br>
+          All regions Cinemas
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>ARCHIVED COLLECTION</h4>
+        <p>
+          Old Movies
+          |<br>
+          Past Events
+          |<br>
+          Classic Sports Events
+          |<br>
+          Old Theatre Plays
+          |<br>
+          Best Movies 2016
+          |<br>
+          Best Movies 2017
+          |<br>
+          Best Movies 2018
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+        <h4> BOOKMYSHOW APP</h4>
+        <p>
+          BMS Ticketing iOS App
+          |<br>
+          BMS Ticketing Android App
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>BOOKMYSHOW NEWS</h4>
+        <p>
+          Buzz
+          |<br>
+          Press Release
+          |<br>
+          Press Coverage
+          |<br>
+          Current Openings
+          |<br>
+          Contact Us
+          |<br>
+          About Us
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>EXCLUSIVES</h4>
+        <p>
+          BookASmile
+          |<br>
+          Superstar
+          |<br>
+          Corporate Vouchers
+          |<br>
+          Gift Cards
+          |<br>
+          My Coupons
+          |<br>
+          Box Office Collection
+          |<br>
+          Watch Guide
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>HELP</h4>
+        <p>
+          Sitemap
+          |<br>
+          FAQs
+          |<br>
+          Terms and Conditions
+          |<br>
+          Privacy Policy
+        </p>
+      </div>
+    </div>
+
+    <div id="footerLogo">
+      <div style="width: 40%;" class="fltLft">
+        <div class="line" id="pdLft">
+        </div>
+      </div>
+      <div style="width: 20%;" class="fltLft">
+        <img
+          src="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/4/21/w900X450/logo-on-gray.jpg?w=400&dpr=2.6"
+          height="60px" width="100%">
+      </div>
+      <div style="width:40%" class="fltLft">
+        <div class="line" id="pdRyt"></div>
+      </div>
+    </div>
+    <div id="footerIcons">
+      <div>
+        <i class="fa fa-facebook-f"></i>
+      </div>
+      <div>
+        <i class="fa fa-twitter"></i>
+      </div>
+      <div>
+        <i class="fa fa-instagram"></i>
+      </div>
+      <div>
+        <i class="fa fa-youtube"></i>
+      </div>
+      <div>
+        <i class="fa fa-pinterest-p"></i>
+      </div>
+      <div>
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </div>
+    <div id="footerPara">
+      <p>
+        Copyright 2021 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+        The content and images used on this site are copyright protected and copyrights vests with the respective
+        owners. The usage of the content and images on this website is intended to promote the works and no endorsement
+        of the artist
+        shall be implied. Unauthorized use is prohibited and punishable by law.
+      </p>
+    </div>
+
+
+  </footer>
+  <script></script>
+  <script type="text/javascript" src="stream.js"></script>
+</body>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
+
+</script>
+<script>
+  document.getElementById("close").style.display = "none";
+  function openNav() {
+    document.getElementById("mySidenav").style.display = "block";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.display = "none";
+  }
+
+  let dropDown = document.getElementById("dropDown");
+  dropDown.addEventListener("click", () => {
+    var ncrContent = document.getElementById("ncr-Content");
+    ncrContent.style.display = "block";
+    document.getElementById("navBarSeconfLine").style.display = "none";
+    document.getElementById("navBarSeconfLine").style.backgroundColor = "white";
+    document.getElementById("close").style.display = "block";
+    // document.getElementById("navBarSeconfLine").style.backgroundColor = ;
+
+  })
+
+
+  document.querySelector('.close').addEventListener("click", function () {
+    document.getElementById("ncr-Content").style.display = "none";
+    document.getElementById("navBarSeconfLine").style.display = "block";
+    document.getElementById("close").style.display = "none";
+  });
+</script>
+
+</html>
