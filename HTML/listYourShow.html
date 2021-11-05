@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <style>
+    /*<-------------------------------- universal font family----------------------------> */
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+
+    /* <------------------------------- body color and margin padding of body element ---------------------------------------> */
+    body {
+      background-color: rgb(245, 245, 245);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* <----------------------------------- NavBar CSS -------------------------------------------> */
+    .navbar {
+      overflow: hidden;
+      background-color: rgb(50, 53, 69);
+    }
+
+    .navbar a {
+      float: right;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: right;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .dropdown-content {
+      border: 1px solid grey;
+      display: none;
+      /* position: absolute; */
+      background-color: #f9f9f9;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      height: 520px;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .close {
+      position: absolute;
+      top: 14%;
+      right: 1%;
+      font-size: 42px;
+      color: rgb(15, 15, 15);
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    .fleft {
+      float: left;
+      color: white;
+      padding-top: 10px;
+      font-size: 22px;
+      font-weight: 200;
+    }
+
+    #logoDiv {
+      margin-left: 80px;
+    }
+
+    #logobyJchy {
+      height: 30px;
+      width: 30px;
+    }
+
+    #userInput {
+      height: 30px;
+      width: 50%;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+
+    #signIn {
+      height: 10px;
+      width: 50px;
+      font-size: 14px;
+      margin-top: 8px;
+      background-color: rgb(248, 67, 100);
+      border-radius: 3px;
+      padding-top: 4px;
+      margin-right: 20px;
+    }
+
+    #sideMenu {
+      font-size: 30px;
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+      color: white;
+      font-weight: 300;
+    }
+
+    .sidenav {
+      display: none;
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: white;
+      overflow-x: hidden;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      text-decoration: none;
+      text-align: left;
+      font-size: 16px;
+      color: black;
+    }
+
+    .sidenav a:hover {
+      color: white;
+    }
+    .sidenav :hover {
+      background-color: rgb(193, 80, 80);
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+    }
+
+    .sidenav div>a {
+      display: block;
+      width: 200px;
+      text-align: left;
+      border-bottom: 0.1px solid grey;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+
+    .ncr-img {
+      height: 100px;
+      width: 100%;
+      margin: 0.5%;
+    }
+
+    #ncr-input {
+      display: inline-block;
+      height: 35px;
+      width: 80%;
+      /* margin: 2%; */
+      color: grey;
+      margin-top: 3rem;
+      margin-left: 10%;
+      margin-right: 10%;
+      border: 1px solid grey;
+      font-size: 14px;
+      padding-left: 1rem;
+    }
+
+    .txtCenter {
+      text-align: center;
+      padding-right: 35%;
+    }
+
+    .floatLeft {
+      float: left;
+      text-align: center;
+      /* width:11%; */
+    }
+
+    #navBarSeconfLine {
+      background-color: rgb(34, 37, 57);
+      padding-bottom: 10px;
+      padding-top: 15px;
+      font-size: 14px;
+    }
+
+    #navBarSeconfLine>a {
+      text-decoration: none;
+      color: black;
+      height: 30px;
+      width: 8%;
+      color: white;
+      padding: 10px;
+    }
+
+    .floatRyt {
+      float: right;
+      padding-bottom: 10px;
+      padding-top: 15px;
+      height: 25px;
+    }
+
+    #buzz {
+      margin-right: 28%;
+    }
+
+    #nav2MoviesTag {
+      margin-left: 10%;
+    }
+
+    /* --------------------------------------------HORIZONTAL SLIDING BAR------------------------------------------- */
+
+    /* NO CSS FOR THIS THING IT ONLY NEEDS LIBRARY TO BE IMPORTED FROM Flickity */
+    .slidingImages {
+      margin-left: 10px;
+    }
+
+    .slidingImagesParentDiv {
+      margin-bottom: 40px;
+    }
+
+    .slidingHorizontalBarSection {
+      background-color: rgb(242, 245, 249);
+    }
+
+    /* ------------------------------------------------ What you can host ------------------------------------------------ */
+
+    .calign {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .whatCanHostSection {
+      background-color: white;
+      padding: 10px;
+      padding-left: 22%;
+      padding-right: 10%;
+    }
+
+    .container {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hostContent {
+      text-align: center;
+      height: 150px;
+      width: 150px;
+      border: 1px solid rgb(194, 192, 192);
+      padding: 50px;
+      background-color: rgb(236, 245, 255);
+    }
+
+    .hostContent:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .hostContent>img {
+      height: 80px;
+      width: 80px;
+    }
+
+    .hostContent>h1+img {
+      height: 25px;
+      width: 25px;
+    }
+
+    .bf{
+      font-size: 48px;
+      font-weight: 900;
+      padding-left: 0%;
+      padding-right: 20%;
+    }
+
+    .conferenceSection {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .service {
+      background-color: rgb(252, 240, 241);
+      height: 210px;
+      width: 230px;
+      padding: 10px;
+      padding-top: 20px;
+      padding-bottom: 28px;
+    }
+
+    /* <----------------------------------- List Your Shows --------------------------------> */
+
+    .listShowSection {
+      background-color: white;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 50px;
+    }
+
+    .listShowBtn {
+      background-color: rgb(220, 54, 89);
+      color: white;
+      height: 50px;
+      width: 250px;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 1px solid rgb(220, 54, 89);
+    }
+
+    .listShowBtn:hover {
+      height: 48px;
+      width: 240px;
+      cursor: pointer;
+    }
+
+    /* ------------------------------------------ Comment Section ------------------------------------------ */
+
+    .commentSection {
+      box-sizing: border-box;
+    }
+
+    .carousel {
+      background: white;
+    }
+
+    .pimg {
+      border-radius: 25px;
+    }
+
+    .carousel-cell {
+      width: 100%;
+      height: 400px;
+      margin-right: 10px;
+      background: #8C8;
+      border-radius: 5px;
+      counter-increment: carousel-cell;
+    }
+
+    /* cell number */
+    .carousel-cell:before {
+      display: block;
+      text-align: center;
+      content: counter(carousel-cell);
+      line-height: 200px;
+      font-size: 80px;
+      color: white;
+    }
+
+
+    /* ---------------------------------------SIT Back ---------------------------------------- */
+    #sitbackSection {
+      background-color: white;
+      padding: 80px;
+      padding-top: 0px;
+    }
+
+    .sitBack {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    #sitBackP {
+      font-size: 18px;
+      font-weight: normal;
+      font-weight: 300;
+    }
+
+    #sitbackH1 {
+      width: 70%;
+      background-image: url('https://in.bmscdn.com/static/2021/06/security-imag.jpeg');
+      font-weight: 900;
+      margin: auto;
+    }
+
+
+    /* ---------------------------------- We are Proud of what we do -------------------------------- */
+    #proudSection {
+      background-color: white;
+      background-color: rgb(231, 54, 77);
+      color: white;
+      padding: 100px;
+    }
+
+    #h1p {
+      text-align: center;
+    }
+
+    .proudp {
+      font-size: 18px;
+    }
+
+    .proudh1 {
+      font-size: 48px;
+      font-weight: 900;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+    }
+
+    .stats>div {
+      margin: 40px;
+      text-align: center;
+    }
+
+    #popupForm {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #popupForm a:link,
+    a:visited {
+      text-decoration: none;
+    }
+
+    .popupmodal {
+      background-color: rgba(0, 0, 0, .8);
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+    }
+
+    .popupmodal__content {
+      width: 400px;
+      height: 60%;
+      background-color: #fff;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 56px 32px;
+      border-radius: 1em;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+    }
+
+    #popupmodal:target {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #popupmodal:target .popupmodal__content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popupmodal__close {
+      color: #363636;
+      font-size: 24px;
+      border: 1px solid grey;
+      padding: 5px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: rgb(252, 112, 5);
+      position: absolute;
+      top: 80%;
+      right: 26%;
+    }
+
+    .popupmodal__heading {
+      font-weight: bold;
+    }
+
+    .popupmodal__paragraph {
+      line-height: 1.5em;
+    }
+
+
+    .proudBtn {
+      text-align: center;
+      padding-left: 80px;
+      padding-Right: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      background-color: white;
+      color: rgb(231, 54, 77);
+      border: 1px solid rgb(231, 54, 77);
+    }
+
+    #proudBtnDiv {
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .proudBtn:hover {
+      padding-left: 75px;
+      padding-Right: 75px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .popup-flex-box {
+      display: flex;
+    }
+
+    /* <-------------------------------------- FOOTER -------------------------------------------> */
+
+
+
+    /* <-------------------------------------------- Privacy Note --------------------------------> */
+
+    .privacyNote {
+      padding: 10px;
+      padding-left: 110px;
+      background-color: rgb(216, 215, 215);
+    }
+
+    .privacyNote>h4 {
+      font-weight: 300;
+      color: rgb(127, 127, 127);
+    }
+
+    .privacyNote>p {
+      font-size: 12px;
+      color: rgb(127, 127, 127);
+    }
+
+    /* <-------------------------------------------- Contact Today --------------------------------*/
+    .contactToday {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      padding-left: 250px;
+    }
+
+    .contactP {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 10px;
+    }
+
+    .contactBtn {
+      background-color: rgb(245, 80, 102);
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 20px;
+      width: 150px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 1px solid rgb(245, 80, 102);
+    }
+
+    .contactBtn:hover {
+      width: 145px;
+    }
+
+    .contactTodaySection {
+      background-color: rgb(49, 48, 53);
+      color: rgb(212, 212, 212);
+      font-weight: 300;
+    }
+
+
+    .footer {
+      display: flex;
+      gap: 2rem;
+      color: white;
+      background-color: rgb(51, 51, 56);
+    }
+
+    .footer h4 {
+      color: rgb(90, 89, 89);
+    }
+
+    .firstCol {
+      margin-left: 10%;
+    }
+
+    .lastCol {
+      margin-left: 5%;
+      margin-right: 10%;
+    }
+
+    .icon {
+      border: 1px solid grey;
+      height: 30px;
+      width: 40px;
+      border: 1px solid grey;
+      float: left;
+      text-align: center;
+      padding-top: 10px;
+      margin-right: 10px;
+      border-radius: 20px;
+    }
+
+    #lastP {
+      clear: both;
+      margin-top: 100px;
+    }
+
+    .widthFooter {
+      width: 30%;
+    }
+
+    #logoFooter {
+      height: 60px;
+      width: 80px;
+      background-color: rgb(31, 31, 46);
+      margin-top: 20px;
+      border: 1px solid grey;
+      border-radius: 20px;
+    }
+
+    .footerTop {
+      background-color: rgb(49, 48, 53);
+      padding: 50px;
+      font-size: 12px;
+      color: rgb(101, 101, 103);
+    }
+
+    #footer {
+      background-color: rgb(51, 51, 56);
+      padding-top: 20px;
+      /* padding: 20px; */
+    }
+
+
+    #foooterIconBar {
+      display: flex;
+      gap: 12rem;
+      text-align: center;
+      color: rgb(134, 137, 141);
+      font-size: 11px;
+      background-color: rgb(64, 64, 67);
+      padding: 20px;
+      /* background-color:black; */
+    }
+
+
+    #foooterIconBar>div>img {
+      border-radius: 30px;
+      padding: 3px;
+    }
+
+
+    #customerCare {
+      margin-left: 12rem;
+    }
+
+    .footer>div>h4 {
+      font-size: 12px;
+      color: rgb(165, 165, 165, 165);
+      /* color: red; */
+    }
+
+    .footer>div>p {
+      font-size: 11px;
+      color: rgb(101, 101, 103);
+      /* color: red; */
+    }
+
+    #logoDiv2 {
+      margin-left: 20px;
+      background-color: rgb(64, 64, 67);
+      color: red;
+    }
+
+    #logobyJchy2 {
+      height: 40px;
+      width: 40px;
+    }
+
+    .fltLft {
+      float: left;
+    }
+
+    #footerLogo {
+      background-color: rgb(88, 89, 91);
+      height: 60px;
+    }
+
+    .line {
+      height: 0.5px;
+      background-color: rgb(169, 169, 170);
+      margin-top: 30px;
+    }
+
+    #pdLft {
+      padding-left: 20px;
+    }
+
+    #pdRyt {
+      padding-right: 20px;
+    }
+
+    #footerIcons {
+      padding-top: 50px;
+      display: flex;
+      clear: both;
+      padding-left: 35%;
+
+    }
+
+    #footerIcons>div {
+      height: 50px;
+      width: 58px;
+      font-size: 30px;
+      background-color: rgb(93, 93, 95);
+      border-radius: 34px;
+      margin: 10px;
+      border: 1px solid black;
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    #footerIcons>div:hover {
+      background-color: white;
+    }
+
+    #footerPara {
+      font-size: 12px;
+      padding: 50px;
+    }
+
+    .contentList>p:hover {
+      cursor: pointer;
+    }
+
+
+    /* <----------------------------------------------------POPUP Form btn ----------------------------------------------------------------> */
+
+    .popup2modal__closeListYourShow {
+      color: white;
+      font-size: 24px;
+      border: 1px solid grey;
+      padding: 5px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: rgb(231, 54, 77);
+      text-decoration: none;
+      margin-left: 24%;
+    }
+
+    #popup2Form {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #popup2Form a:link,
+    a:visited {
+      text-decoration: none;
+    }
+
+    .popup2modal {
+      background-color: rgba(0, 0, 0, .8);
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+    }
+
+    .popup2modal__content {
+      width: 400px;
+      height: 60%;
+      background-color: #fff;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 56px 32px;
+      border-radius: 1em;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+      text-align: left;
+      overflow-y: scroll;
+    }
+
+    #popup2modal:target {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #popup2modal:target .popup2modal__content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup2modal__heading {
+      font-weight: bold;
+    }
+
+    .popup2modal__paragraph {
+      line-height: 1.5em;
+    }
+
+
+    .proudBtn2 {
+      text-align: center;
+      padding-left: 80px;
+      padding-Right: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      background-color: white;
+      color: rgb(231, 54, 77);
+      border: 1px solid rgb(231, 54, 77);
+    }
+
+    #proudBtn2Div {
+      /* text-align: center; */
+      padding-top: 80px;
+    }
+
+    .proudBtn2:hover {
+      padding-left: 75px;
+      padding-Right: 75px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .popup2-flex-box {
+      display: flex;
+    }
+    .popUp2Bg {
+      color: white;
+      text-decoration: none;
+      background-color: rgb(245, 80, 102);
+    }
+    .lysBtnDblock{
+      display: block;
+    }
+    .inputWidth{
+      width: 380px;
+      height:40px;
+      margin: auto;
+      border: 1px solid white;
+      border-bottom: 1px solid grey;
+      font-size: 16px;
+      padding-left: 10px;
+    }
+    #description{
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!------------------------------------------------ Navbar first Row -------------------------------------------->
+
+  <div class="navbar">
+    <div id="logoDiv">
+      <div class="fleft">book</div>
+      <div class="fleft">
+        <img
+          src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
+          id="logobyJchy" />
+      </div>
+      <div class="fleft">show</div>
+    </div>
+
+    <span id="sideMenu" onclick="openNav()">&#9776;</span>
+    <a href="Login.html" id="signIn">Sign in</a>
+
+    <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
+
+    <div class="dropdown">
+      <button class="dropbtn" id="dropDown">
+        NCR
+        <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="close" id="close">+</div>
+
+      <div class="dropdown-content" id="ncr-Content">
+        <div>
+          <input type="text" placeholder=" 🔍 Search for your city" id="ncr-input" />
+          <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
+          <div style="margin-left: 20px" class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" class="ncr-img" />
+            <p>Mumbai</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr-selected.png" class="ncr-img" />
+            <p>NCR</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png" class="ncr-img" />
+            <p>Bengaluru</p>
+          </div>
+          <div class="floatLeft" class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" class="ncr-img" />
+            <p>Hyderabad</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" class="ncr-img" />
+            <p>Ahmedabad</p>
+          </div>
+          <div class="floatLeft" style="margin-left: 15%;">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" class="ncr-img" />
+            <p>Chandigarh</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" class="ncr-img" />
+            <p>Chennai</p>
+          </div>
+          <div class="floatLeft">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" class="ncr-img" />
+            <p>Pune</p>
+          </div>
+
+
+        </div>
+        <p style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter">
+          View All Cities
+        </p>
+
+      </div>
+    </div>
+
+    <!----------------------------------------- Side Navbar  ------------------------------------------------------->
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <div>
+        <a href="#">
+          <h2>Hey!</h2>
+        </a>
+      </div>
+
+      <div>
+        <a href="#">Unlock special offers and great benefits</a>
+      </div>
+
+      <div>
+        <a href="#">Notifications</a>
+      </div>
+
+      <div>
+        <a href="#">QuickPay</a>
+      </div>
+
+      <div>
+        <a href="#">Booking History</a>
+      </div>
+
+      <div>
+        <a href="#">Stream Library</a>
+      </div>
+
+      <div>
+        <a href="#">Rewards</a>
+      </div>
+
+      <div>
+        <a href="#">BookASmile</a>
+      </div>
+      <div>
+        <a href="#">Help & Support</a>
+      </div>
+      <div>
+        <a href="#">Settings</a>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
+
+  <div id="navBarSeconfLine">
+    <a href="" id="nav2MoviesTag">Movies</a>
+    <a href="">Stream</a>
+    <a href="">Events</a>
+    <a href="">Plays</a>
+    <a href="">Sports</a>
+    <a href="">Activities</a>
+    <a href="" id="buzz">Buzz</a>
+    <a href="">ListYourShow </a>
+    <a href="">Corporates</a>
+    <a href="">Offers</a>
+    <a href="">Gift Cards</a>
+  </div>
+
+
+  <!----------------------------- Sliding horizontal bar ------------------------------------>
+  <section class="slidingHorizontalBarSection">
+
+    <!-- Flickity HTML init -->
+    <div class=" js-flickity slidingImagesParentDiv" data-flickity-options='{ "wrapAround": true }'
+      data-flickity='{ "autoPlay": true }'>
+      <div class="slidingImages">
+        <img src="https://in.bmscdn.com/promotions/cms/creatives/1635328594298_valleyrundesktop.jpg" alt="">
+      </div>
+      <div class="slidingImages">
+        <img
+          src="https://in.bmscdn.com/promotions/cms/creatives/1629887023798_rugbyworldcuplisting_webshowcasenew_1240x300.jpg"
+          alt="">
+      </div>
+      <div class="slidingImages">
+        <img
+          src="https://in.bmscdn.com/promotions/cms/creatives/1633590513692_moviemunchies_webshowcase_1240x300_7oct.jpg"
+          alt="">
+      </div>
+      <div class="slidingImages">
+        <img src="https://in.bmscdn.com/promotions/cms/creatives/1635405147427_indiadriveinhpdesktop.jpg" alt="">
+      </div>
+      <div class="slidingImages">
+        <img
+          src="https://in.bmscdn.com/promotions/cms/creatives/1633590513692_moviemunchies_webshowcase_1240x300_7oct.jpg"
+          alt="">
+      </div>
+      <div class="slidingImages">
+        <img src="https://in.bmscdn.com/promotions/cms/creatives/1635516222490_nft_webshowcase_1240x300.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <----------------------------- What can You Host --------------------------------------------------- -->
+  <section class="whatCanHostSection">
+    <h1 class="calign bf">What can you host?</h1>
+    <p class="calign">
+      As the purveyor of entertainment, BookMyShow enables your event with end to end solutions from the time you
+      register to the completion of the event. Let’s look at what you can host.
+    </p>
+
+    <div class="container">
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/online-stream-play.png" alt="">
+        <h1>Streaming</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/perf.png" alt="">
+        <h1>Performance</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/experiencess.png" alt="">
+        <h1>Experience</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/expositionss.png" alt="">
+        <h1>Expositions</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/partiess.png" alt="">
+        <h1>Parties</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent">
+        <img src="https://in.bmscdn.com/static/2021/06/sport.png" alt="">
+        <h1>Sports</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+
+      </div>
+    </div>
+  </section>
+
+  <section class="conferenceSection">
+    <div class="hostContent conference">
+      <img src="https://in.bmscdn.com/static/2021/06/conferencess.png" alt="">
+      <h1>Conference</h1>
+      <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+    </div>
+  </section>
+
+
+  <!-- ------------------------------------------------ List Your Shows -- ------------------------------------------------>
+  <section class="listShowSection">
+    <section class="popup2Form">
+
+      <div id="proudBtn2Div">
+        <a href="#popup2modal" class="proudBtn2 popUp2Bg">List your show</a>
+      </div>
+
+
+      <div class="popup2modal" id="popup2modal">
+        <div class="popup2modal__content">
+          <h2 class="popup2modal__heading">Please fill in the following details</h2>
+          <div >
+            <p>Your name </p>
+            <input type="text" placeholder="Full name" class="inputWidth">
+          </div>
+
+          <div>
+            <p>Email </p>
+            <input type="email" placeholder="name@example.com" class="inputWidth">
+          </div>
+
+          <div >
+            <p >Phone number</p>
+            <input type="number" placeholder="9876543210" class="inputWidth">
+          </div>
+
+          <p>Event Region</p>
+          <select name="Select Region" id="eventRegion" class="inputWidth">
+            <option value="">East</option>
+            <option value="">West</option>
+            <option value="">North</option>
+            <option value="">South</option>
+          </select>
+
+          <p>Event City</p>
+          <select name="Select City" id="eventCity" class="inputWidth">
+            <option value="">Mumbai</option>
+            <option value="">Pune</option>
+            <option value="">Delhi</option>
+            <option value="">Bangalore</option>
+          </select>
+
+          <p>Expected Audience</p>
+          <select name="Select City" id="evetAudience" class="inputWidth">
+            <option value="">Less than 100</option>
+            <option value="">100 to 1500</option>
+            <option value="">1500 to 5000</option>
+            <option value="">More than 5000</option>
+          </select>
+
+          <p>Event Date</p>
+          <select name="Select City" id="eventDate" class="inputWidth">
+            <option value="">This Week</option>
+            <option value="">Within 15 days</option>
+            <option value="">Within next 2 month</option>
+            <option value="">Within next 6 Months</option>
+          </select>
+
+          <p>Event Short Description</p>
+          <input type="textarea" name="description" id="description" placeholder="Minimum 50 characters" class="inputWidth">
+          <br>
+          <a href="#" class="popup2modal__closeListYourShow" onclick="welcomeMsg()">Submit</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+
+  <!-- <----------------------------- What are the services we offer --------------------------------------------------- -->
+  <section class="whatCanHostSection">
+    <h1 class="calign bf">What are the services we offer?</h1>
+    <p class="calign">
+      After successful collaborations with the best event organisers over the past decade and a half, we’re well equipped to bring your vision to life.
+    </p>
+
+    <div class="container">
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/online-saless.png" alt="">
+        <h1>Online Sales & Marketing</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/pricings.png" alt="">
+        <h1>Pricing</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/food.png" alt="">
+        <h1>Food & beverages, stalls and the works!</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/on-ground-support.png" alt="">
+        <h1>On ground support & gate entry management</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/report.png" alt="">
+        <h1>Report & business insights</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+      <div class="hostContent service">
+        <img src="https://in.bmscdn.com/static/2021/06/rfids.png" alt="">
+        <h1>POS, RFID, Turnstiles & more...</h1>
+        <img src="https://in.bmscdn.com/static/2021/06/info.png" alt="">
+      </div>
+    </div>
+    <p class="calign">
+      As the purveyor of entertainment, BookMyShow enables your event with end to end solutions from the time you
+      register to the completion of the event. Let’s look at what you can host.
+    </p>
+
+  </section>
+
+  <!-- ------------------------------------------------ List Your Shows -- ------------------------------------------------>
+  <section class="listShowSection">
+    <!-- <button class="listShowBtn">List your show</button> -->
+    <section class="popup2Form">
+
+      <div id="proudBtn2Div">
+        <a href="#popup2modal" class="proudBtn2 popUp2Bg">List your show</a>
+      </div>
+
+
+      <div class="popup2modal" id="popup2modal">
+        <div class="popup2modal__content">
+          <h2 class="popup2modal__heading">Please fill in the following details</h2>
+          <div >
+            <p>Your name </p>
+            <input type="text" placeholder="Full name" class="inputWidth">
+          </div>
+
+          <div>
+            <p>Email </p>
+            <input type="email" placeholder="name@example.com" class="inputWidth">
+          </div>
+
+          <div >
+            <p >Phone number</p>
+            <input type="number" placeholder="9876543210" class="inputWidth">
+          </div>
+
+          <p>Event Region</p>
+          <select name="Select Region" id="eventRegion" class="inputWidth">
+            <option value="">East</option>
+            <option value="">West</option>
+            <option value="">North</option>
+            <option value="">South</option>
+          </select>
+
+          <p>Event City</p>
+          <select name="Select City" id="eventCity" class="inputWidth">
+            <option value="">Mumbai</option>
+            <option value="">Pune</option>
+            <option value="">Delhi</option>
+            <option value="">Bangalore</option>
+          </select>
+
+          <p>Expected Audience</p>
+          <select name="Select City" id="evetAudience" class="inputWidth">
+            <option value="">Less than 100</option>
+            <option value="">100 to 1500</option>
+            <option value="">1500 to 5000</option>
+            <option value="">More than 5000</option>
+          </select>
+
+          <p>Event Date</p>
+          <select name="Select City" id="eventDate" class="inputWidth">
+            <option value="">This Week</option>
+            <option value="">Within 15 days</option>
+            <option value="">Within next 2 month</option>
+            <option value="">Within next 6 Months</option>
+          </select>
+
+          <p>Event Short Description</p>
+          <input type="textarea" name="description" id="description" placeholder="Minimum 50 characters" class="inputWidth">
+          <br>
+          <a href="#" class="popup2modal__closeListYourShow" onclick="welcomeMsg()">Submit</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+  <!-------------------------------------------------- Comment Section ---------------------------------------------------->
+  <section id="commentSection">
+    <div class="carousel" data-flickity='{ "autoPlay": true,"pageDots": false,"wrapAround": true }'
+      style="padding:80px;font-size: 20px;">
+
+      <div class="carousel-cell" style="display: flex;background-color:white">
+
+        <div style="background-color:white">
+          <div>Hello World, BMS and Prithvi Theatre’s partnership goes back many years - to the very beginning - We are
+            proud to be one of the first theatres to go online with our bookings.
+            BMS has been our backbone for our online presence, a phone call away for all troubleshooting and continue to
+            guide and support our endeavours online. BMS has evolved into a multinational success but at the same time
+            been loyal to all the independent players in the arts and culture scene.
+          </div>
+          <div style="display:flex; padding:10px">
+            <div class="pimg">
+              <img class="pimg" src="https://www.whistlingwoods.net/wp-content/uploads/2019/06/smriti-kiran.jpg"
+                height="80px" width="80px" style="border-radius:80px;margin-top:10px;">
+            </div>
+            <div style="margin-left:10px">
+              <h3> Smriti Kiran</h3>
+              <h4> Artistic Director - Mumbai Academy of Moving
+                Image (MAMI) Jio MAMI Mumbai Film Festival with Star </h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://in.bmscdn.com/static/2021/06/jio.jpeg" height="400px" width="400px">
+        </div>
+      </div>
+
+      <div class="carousel-cell" style="display: flex;background-color:white">
+
+        <div style="background-color:white">
+          <div>The NCPA shares a cherished 13 year bond with BMS, its online ticketing partner that has helped art
+            lovers book their seats for their favourite shows in a seamless manner. The presence of a team from
+            Bookmyshow in the NCPA premises on the day of the event further ensures the smooth-functioning of
+            ticket-related formalities.”
+          </div>
+          <div style="display:flex; padding:10px">
+            <div style="margin-left:10px">
+              <h3>NCPA- National Centre for the
+                Performing Arts.</h3>
+              <h4>Performing Arts.</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://in.bmscdn.com/static/2021/06/ncpas.jpeg" height="300px" width="300px">
+        </div>
+      </div>
+
+
+      <div class="carousel-cell" style="display: flex;background-color:white">
+
+        <div style="background-color:white">
+          <div>It’s been eight fantastic years of RED FM working with Bookmyshow for listing and promoting its events
+            and IPs through BMS. It has never felt like a client-vendor relationship. Both the brands have been equal
+            partners, bringing incredible synergies to the projects. And both being leaders in their respective
+            industries, RED FM and BMS have always set examples for other brands to follow.”
+          </div>
+          <div style="display:flex; padding:10px">
+            <div class="pimg">
+              <img class="pimg"
+                src="https://gumlet.assettype.com/afaqs%2Fimport%2Fall%2Fnews%2Fimages%2Fnews_story_grfx%2F2013%2F01%2F36575%2FRajat-Uppal.jpg?auto=format%2Ccompress&w=360&dpr=2.6"
+                height="80px" width="80px" style="border-radius:80px;margin-top:10px;">
+            </div>
+            <div style="margin-left:10px">
+              <h3>Rajat Uppal</h3>
+              <h4> National Marketing Head - RED FM</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://in.bmscdn.com/static/2021/06/red-fmm.jpeg" height="300px" width="400px">
+        </div>
+      </div>
+
+
+      <div class="carousel-cell" style="display: flex;background-color:white">
+
+        <div style="background-color:white">
+          <div>Apart from being market leaders and pioneers of the entertainment segment, Bookmyshow has also helped
+            evolve Indian markets to consume fresh and different content. Sunburn and Bookmyshow’s association are years
+            strong, and we will continue to work together, and grow together. Bookmyshow today not just offers to be a
+            ticketing platform for Sunburn, put a partner with many more integrated offerings like marketing, planning
+            and on ground operations support. We at Sunburn are proud and grateful to be associated with Bookmyshow!”
+          </div>
+          <div style="display:flex; padding:10px">
+            <div class="pimg">
+              <img class="pimg" src="https://in.bmscdn.com/static/2021/06/kar.jpeg" height="80px" width="80px"
+                style="border-radius:80px;margin-top:10px;">
+            </div>
+            <div style="margin-left:10px">
+              <h3> Karan Singh</h3>
+              <h4> COO - Percept Live & CEO - Sunburn Percept Live Pvt. Ltd.</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://in.bmscdn.com/static/2021/06/perceptn.jpeg" height="300px" width="300px">
+        </div>
+      </div>
+
+
+      <div class="carousel-cell" style="display: flex;background-color:white">
+
+        <div style="background-color:white">
+          <div>BMS and Prithvi Theatre’s partnership goes back many years - to the very beginning - We are proud to be
+            one of the first theatres to go online with our bookings.
+            BMS has been our backbone for our online presence, a phone call away for all troubleshooting and continue to
+            guide and support our endeavours online. BMS has evolved into a multinational success but at the same time
+            been loyal to all the independent players in the arts and culture scene.
+            We hope that BMS will continue to empower performers and audiences alike. We, Prithvi Theatre, are grateful
+            toward the BMS team for their support and are proud to have BMS as part of our family!”
+          </div>
+          <div style="display:flex; padding:10px">
+            <div style="margin-left:10px">
+              <h3> Rahul Singh </h3>
+              <h4> CEO : Facility Theatre</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://in.bmscdn.com/static/2021/06/prithvi.jpeg" height="300px" width="300px">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!----------------------------------------------- Sit Back Section ------------------------------------->
+
+  <section id="sitbackSection">
+    <div class="sitBack">
+      <div>
+        <h1 id="sitbackH1">
+          Sit back and watch your event come to life
+        </h1>
+        <p id="sitBackP">
+          Events maybe all fun and games, but we take it seriously. We ensure our customer’s security so that you don’t
+          have to.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------------------------We are proud of What we do -------------------------------->
+
+  <section id="proudSection">
+    <div id="h1p">
+      <h1 class="proudh1">
+        We're proud of what we do
+      </h1>
+      <p class="proudp">
+        As the country's largest integrated ticketing portal and we're proud to share these stats!
+      </p>
+    </div>
+    <div class="proud">
+      <div class="stats">
+        <div>
+          <h1 class="proudh1">90%</h1>
+          <p class="proudp">Market share</p>
+        </div>
+        <div>
+          <h1 class="proudh1">15M</h1>
+          <p class="proudp">Monthly active users</p>
+        </div>
+        <div>
+          <h1 class="proudh1">95M</h1>
+          <p class="proudp">Tickets sold annually</p>
+        </div>
+        <div>
+          <h1 class="proudh1">2L</h1>
+          <p class="proudp">Ticketed events</p>
+        </div>
+      </div>
+      <section id="popupForm">
+
+        <div id="proudBtnDiv">
+          <a href="#popupmodal" class="proudBtn">Contact us today!</a>
+        </div>
+
+
+        <div class="popupmodal" id="popupmodal">
+          <div class="popupmodal__content">
+            <h2 class="popupmodal__heading">This is how it will work</h2>
+            <div class="popup-flex-box">
+              <div>
+                <img src="https://in.bmscdn.com/m6/list-your-show/fill-form.png" alt="">
+              </div>
+              <div>
+                <h4>Fill the form</h4>
+                <p>Give us the details of your event</p>
+              </div>
+            </div>
+
+            <div class="popup-flex-box">
+              <div>
+                <img src="https://in.bmscdn.com/m6/list-your-show/confirm-submit.png" alt="">
+              </div>
+              <div>
+                <h4>Confirm & submit</h4>
+                <p>Review your details and submit</p>
+              </div>
+            </div>
+
+            <div class="popup-flex-box">
+              <div>
+                <img src="https://in.bmscdn.com/m6/list-your-show/connect-back.png">
+              </div>
+              <div>
+                <h4>We’ll connect back shortly</h4>
+                <p>We’ll get back to you in no time!</p>
+              </div>
+            </div>
+            <a href="#" class="popupmodal__close">List your show</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+
+
+
+
+  <!----------------------------------------------- Footer ---------------------------------------->
+
+
+
+
+  <!-- <----------------------------- Privacy Note ---------------------------------------- -->
+
+  <section>
+    <div class="privacyNote">
+      <h4>Privacy Note</h4>
+      <p>
+        By using www.bookmyshow.com(our website), you are fully accepting the Privacy Policy available at
+        https://bookmyshow.com/privacy governing your access to Bookmyshow and
+        provision of services by Bookmyshow to you. If you do not accept terms mentioned in the Privacy Policy, you must
+        not share any of your personal information and immediately exit Bookmyshow.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- <----------------------------- Contact Today ---------------------------------------- -->
+
+  <section class="contactTodaySection">
+    <div class="contactToday">
+      <span>
+        <h4 contactH4> 🏠 List your Show</h4>
+      </span>
+
+      <span>
+        <p class="contactP">Got a show, event, activity or a great experience? Partner with us & get listed on
+          BookMyShow</p>
+      </span>
+      <span>
+        <button class="contactBtn">
+          Contact Today
+        </button>
+      </span>
+    </div>
+  </section>
+
+
+
+
+
+  <footer id="footer">
+
+    <div id="foooterIconBar">
+      <div id="customerCare">
+        <img
+          src="https://library.kissclipart.com/20180912/wjq/kissclipart-customer-services-icon-clipart-customer-service-ca-55a1d16250a29475.png"
+          height="60px" width="60px">
+        <p>24/7 CUSTOMER CARE</p>
+      </div>
+      <div>
+        <img src="https://static.thenounproject.com/png/210570-200.png" height="60px" width="60px">
+        <p>RESEND BOOKING CONFIRMATION</p>
+      </div>
+      <div>
+        <img src="https://www.netclipart.com/pp/m/31-313150_letter-send-inbox-newsletter-svg-png-icon-email.png"
+          height="60px" width="60px">
+        <p>SUBSCRIBE TO THE NEWSLETTER</p>
+      </div>
+    </div>
+
+    <div class="footerTop">
+      <p>
+        Online Movie Ticket Booking Mumbai|Online Movie Ticket Booking Delhi|Online Movie Ticket Booking Bengaluru
+        |Online Movie Ticket Booking Hyderabad|Online Movie Ticket Booking Chennai|
+        Online Movie Ticket Booking Kolkata|Online Movie Ticket Booking Noida|Online Movie Ticket Booking
+        Ahmedabad|Online Movie Ticket Booking Pune
+      </p>
+    </div>
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+
+        <h4>BEST LANGUAGE GENRE MOVIES</h4>
+        <p>
+          Hindi Comedy Movies
+          |<br>
+          Hindi Action Movies
+          |<br>
+          English Animated Movies
+          |<br>
+          English Fantasy Movies
+          |<br>
+          English Comedy Movies
+          |<br>
+          English Action Movies
+          |<br>
+          Tamil Action Movies
+          |<br>
+          Tamil Comedy Movies
+          |<br>
+          Telugu Action Movies
+          |<br>
+          Gujarati Comedy Movies
+          |<br>
+          Marathi Drama Movies
+          |<br>
+          Marathi Comedy Movies
+          |<br>
+          Hindi Animated Movies
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>MOVIES BY GENRE</h4>
+        <p>
+          Best Action Movies
+          |<br>
+          Best Romantic Movies
+          |<br>
+          Best Comedy Movies
+          |<br>
+          Best Adult Movies
+          |<br>
+          Best Adventure Movies
+          |<br>
+          Best Biography Movies
+          |<br>
+          Best Classic Movies
+          |<br>
+          Best Crime Movies
+          |<br>
+          Best Drama Movies
+          |<br>
+          Best Family Movies
+          |<br>
+          Best Fantasy Movies
+          |<br>
+          Best History Movies
+          |<br>
+          Best Musical Movies
+          |<br>
+          Best Mystery Movies
+          |<br>
+          Best Sci-Fi Movies
+          |<br>
+          Best Suspense Movies
+          |<br>
+          Best Thriller Movies
+          |<br>
+          Best Western Movies</p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>POPULAR MOVIES BY LANGUAGE</h4>
+        <p>
+          Popular Hindi Movies
+          |<br>
+          Popular English Movies
+          |<br>
+          Popular Marathi Movies
+          |<br>
+          Popular Bengali Movies
+          |<br>
+          Popular Tamil Movies
+          |<br>
+          Popular Telugu Movies
+          |<br>
+          Popular Malayalam Movies
+          |<br>
+          Popular Bhojpuri Movies
+          |<br>
+          Popular Kannada Movies
+          |<br>
+          Popular Punjabi Movies
+          |<br>
+          Popular Gujarati Movies
+          |<br>
+          Popular Sindhi Movies
+        </p>
+      </div>
+
+      <div class="contentList widthFooter">
+        <h4>MOVIE REVIEWS</h4>
+        <p>
+          Trending Articles
+          |<br>
+          Latest News on Movies, Events, Plays & Sports
+          |<br>
+          Rajeev Masand Movie Reviews
+          |<br>
+          Anupama Chopra Movie Review
+          |<br>
+          Film Reviews
+          |<br>
+          Guest Blogging
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+        <h4>THINGS TO DO</h4>
+        <p>
+          Adventure Activities
+          |<br>
+          Food Events
+          |<br>
+          Family Tours
+          |<br>
+          Amusement Parks
+          |<br>
+          Gaming Events
+          |<br>
+          Nightlife Events
+          |<br>
+          Places To Visit
+          |<br>
+          Tourist Attractions
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>EVENTS TICKETS BOOKING ONLINE</h4>
+        <p>
+          Upcoming Events in Mumbai
+          |<br>
+          Upcoming Events in Delhi
+          |<br>
+          Upcoming Events in Bengaluru
+          |<br>
+          Upcoming Events in Chennai
+          |<br>
+          Upcoming Events in Hyderabad
+          |<br>
+          Upcoming Events in Pune
+          |<br>
+          Upcoming Events in Noida
+          |<br>
+          Upcoming Events in Ahmedabad
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4> MOVIES, CINEMAS & CELEBRITY</h4>
+        <p>
+          Latest Upcoming Movies
+          |<br>
+          Best Now Showing Movies
+          |<br>
+          Cinemas & Theatres
+          |<br>
+          Movie Stars & Celebrities
+          |<br>
+          Cinema Chains
+          |<br>
+          All regions Cinemas
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>ARCHIVED COLLECTION</h4>
+        <p>
+          Old Movies
+          |<br>
+          Past Events
+          |<br>
+          Classic Sports Events
+          |<br>
+          Old Theatre Plays
+          |<br>
+          Best Movies 2016
+          |<br>
+          Best Movies 2017
+          |<br>
+          Best Movies 2018
+        </p>
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="footer">
+      <div class="contentList widthFooter firstCol">
+        <h4> BOOKMYSHOW APP</h4>
+        <p>
+          BMS Ticketing iOS App
+          |<br>
+          BMS Ticketing Android App
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>BOOKMYSHOW NEWS</h4>
+        <p>
+          Buzz
+          |<br>
+          Press Release
+          |<br>
+          Press Coverage
+          |<br>
+          Current Openings
+          |<br>
+          Contact Us
+          |<br>
+          About Us
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>EXCLUSIVES</h4>
+        <p>
+          BookASmile
+          |<br>
+          Superstar
+          |<br>
+          Corporate Vouchers
+          |<br>
+          Gift Cards
+          |<br>
+          My Coupons
+          |<br>
+          Box Office Collection
+          |<br>
+          Watch Guide
+        </p>
+      </div>
+      <div class="contentList widthFooter">
+        <h4>HELP</h4>
+        <p>
+          Sitemap
+          |<br>
+          FAQs
+          |<br>
+          Terms and Conditions
+          |<br>
+          Privacy Policy
+        </p>
+      </div>
+    </div>
+
+    <div id="footerLogo">
+      <div style="width: 40%;" class="fltLft">
+        <div class="line" id="pdLft">
+        </div>
+      </div>
+      <div style="width: 20%;" class="fltLft">
+        <img
+          src="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/4/21/w900X450/logo-on-gray.jpg?w=400&dpr=2.6"
+          height="60px" width="100%">
+      </div>
+      <div style="width:40%" class="fltLft">
+        <div class="line" id="pdRyt"></div>
+      </div>
+    </div>
+    <div id="footerIcons">
+      <div>
+        <i class="fa fa-facebook-f"></i>
+      </div>
+      <div>
+        <i class="fa fa-twitter"></i>
+      </div>
+      <div>
+        <i class="fa fa-instagram"></i>
+      </div>
+      <div>
+        <i class="fa fa-youtube"></i>
+      </div>
+      <div>
+        <i class="fa fa-pinterest-p"></i>
+      </div>
+      <div>
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </div>
+    <div id="footerPara">
+      <p>
+        Copyright 2021 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+        The content and images used on this site are copyright protected and copyrights vests with the respective
+        owners. The usage of the content and images on this website is intended to promote the works and no endorsement
+        of the artist
+        shall be implied. Unauthorized use is prohibited and punishable by law.
+      </p>
+    </div>
+
+
+  </footer>
+</body>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
+
+</script>
+
+<script>
+  document.getElementById("close").style.display = "none";
+  function openNav() {
+    document.getElementById("mySidenav").style.display = "block";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.display = "none";
+  }
+
+  let dropDown = document.getElementById("dropDown");
+  dropDown.addEventListener("click", () => {
+    var ncrContent = document.getElementById("ncr-Content");
+    ncrContent.style.display = "block";
+    document.getElementById("navBarSeconfLine").style.display = "none";
+    document.getElementById("navBarSeconfLine").style.backgroundColor = "white";
+    document.getElementById("close").style.display = "block";
+    // document.getElementById("navBarSeconfLine").style.backgroundColor = ;
+
+  })
+
+
+  document.querySelector('.close').addEventListener("click", function () {
+    document.getElementById("ncr-Content").style.display = "none";
+    document.getElementById("navBarSeconfLine").style.display = "block";
+    document.getElementById("close").style.display = "none";
+  });
+
+// <-------------------------------Welcome Message--------------------------------->
+  function welcomeMsg() {
+    alert("Thankyou for showing interest in our Service. We will get back to you soon!");
+  }
+
+</script>
+
+</html>
