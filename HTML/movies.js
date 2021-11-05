@@ -1,13 +1,13 @@
 // 
-
-let region='ncr'
-const getMovies=(params)=>{
-    
+var region = "ncr";
+region= JSON.parse(localStorage.getItem("regionName"));
+console.log(region);
+var getMovies=(params)=>{
     return fetch(`http://localhost:3000/movies?region_like=${params}`)
     .then(res=>res.json())
     .catch(e=>console.log(error))
 }
-const fetchMovies=async(filter)=>{
+var fetchMovies=async(filter)=>{
     try{
         let query=await createParam(region,filter)
        
@@ -19,28 +19,27 @@ const fetchMovies=async(filter)=>{
     }
 }
 
-const displayMovies=data=>{
-    
+var displayMovies=data=>{
     let container=document.getElementById('movie-box-container')
     container.innerHTML=null;
-    const fragment = new DocumentFragment()
+    var fragment = new DocumentFragment()
     for(item of data)
     {
-        const card=createCard(item)
-        fragment.append(card)
+        var card=createCard(item);
+        fragment.append(card);
     }
-    container.append(fragment)
+    container.append(fragment);
 }
 
-const createCard=(item)=>{
+var createCard=(item)=>{
     let outerDiv=document.createElement('div')
     let innerDiv=document.createElement('div')
     let movieInfo=document.createElement('div')
     movieInfo.className="movieInfo"
-    const title=document.createElement('h5')
-    const category=document.createElement('p')
+    var title=document.createElement('h5')
+    var category=document.createElement('p')
     category.textContent=item.category;
-    const availLang=document.createElement('p')
+    var availLang=document.createElement('p')
     let alllang=""
     let i=0;
     for(let lang of item.language)
@@ -54,20 +53,29 @@ const createCard=(item)=>{
     }
     availLang.textContent=alllang
     title.className="title"
-    title.textContent=item.name
-    movieInfo.append(title,category,availLang)
-    const img=document.createElement('img')
-    const vote=document.createElement('p')
-    vote.className="movie-vote"
+    title.textContent=item.name;
+    movieInfo.append(title,category,availLang);
+    var img=document.createElement('img');
+    var vote=document.createElement('p');
+    vote.className="movie-vote";
     vote.innerHTML=`<i class="fa fa-heart" style="color:red;font-size:14px;"></i> &nbsp${item.like}%&nbsp; &nbsp;${item.votes}K&nbsp; Vote`
     img.src=item.poster
-    innerDiv.append(img,vote)
-    outerDiv.append(innerDiv,movieInfo)
-    return outerDiv
-
+    innerDiv.append(img,vote);
+    outerDiv.append(innerDiv,movieInfo);
+    outerDiv.addEventListener("click",()=>{
+       var val =  confirm("Do you want to book tickets for this movie?");
+       if(val){
+            console.log(item.name);
+            localStorage.setItem("movie",JSON.stringify(item.name));
+            window.location.href="bookSeat.html";
+        
+       }
+    //  console.log(event.target.parentNode.parentNode);
+    })
+    return outerDiv;
 }
 /* Apply Some Filter */
-const handleLanguage=()=>
+var handleLanguage=()=>
 {   
     event.stopImmediatePropagation()
     //event.stopPropagation()
@@ -97,12 +105,12 @@ const handleLanguage=()=>
 
 
 
-const filterObject={
+var filterObject={
     "language":[],
     "format":[],
     "genres":[]
 }
-const removeFilter=(key,value)=>
+var removeFilter=(key,value)=>
 {
     for(let i=0;i<filterObject[key].length;i++)
     {
@@ -115,13 +123,13 @@ const removeFilter=(key,value)=>
     
     return
 }
-const addFilter=(key,value)=>
+var addFilter=(key,value)=>
 {
    
     filterObject[key].push(value)
     return
 }
-const handleFormat=()=>{
+var handleFormat=()=>{
    
     event.stopImmediatePropagation()
     event.stopPropagation()
@@ -144,7 +152,7 @@ fetchMovies(filterObject)
 
 selectFormatBtn(filterObject['format'])
 }
-const handleGenres=()=>{
+var handleGenres=()=>{
     event.stopImmediatePropagation()
     event.stopPropagation()
     if(event.target.textContent==""||event.target.textContent=='\n')
@@ -170,7 +178,7 @@ selectGenresBtn(filterObject['genres'])
 }
 
 
-const createQuery=(query,data,key)=>{
+var createQuery=(query,data,key)=>{
    
 for(let item of data)
 {
@@ -180,7 +188,7 @@ for(let item of data)
 }
 return query
 }
-const createParam=(region,filter)=>{
+var createParam=(region,filter)=>{
     let query=region
    
    let key;
@@ -277,7 +285,7 @@ let aboutEle=document.getElementById('about')
 aboutEle.innerHTML=about
 
 }
-const filterOff=()=>{
+var filterOff=()=>{
     event.stopImmediatePropagation()
  if(event.target.textContent!='clear'&&event.target.parentNode.className=='filter-off')
  {
@@ -303,9 +311,9 @@ const filterOff=()=>{
 
 
 
-const resetFilter=(target)=>{
+var resetFilter=(target)=>{
 let key=target.children[0].children[1].textContent
-const key2=target.children[1]
+var key2=target.children[1]
 key=key.toLowerCase()
 
 for(let i=0;i<key2.children.length;i++)
@@ -329,7 +337,7 @@ filterObject[key]=[]
 }
 
 
-const createSelectedFilterBtn=(arr,selectedId)=>{
+var createSelectedFilterBtn=(arr,selectedId)=>{
     let container=document.getElementById(selectedId)
     let fragmented=document.createDocumentFragment()
     let items;
@@ -339,9 +347,9 @@ const createSelectedFilterBtn=(arr,selectedId)=>{
     container.innerHTML=null;
     let count=0;
     //console.log(Array.isArray(arr))
-    for(const item of arr)
+    for(var item of arr)
     {
-        const btn=document.createElement('button')
+        var btn=document.createElement('button')
        
          btn.setAttribute('class','one4f selected-filter')
          btn.name="1"
@@ -361,7 +369,7 @@ const createSelectedFilterBtn=(arr,selectedId)=>{
     console.log(count)
     container.append(fragmented)
 }
-const selectGenresBtn=(arr)=>{
+var selectGenresBtn=(arr)=>{
 
     let genresArray=Object.assign([],arr)
 //const selectedGenres=[...object]
@@ -369,14 +377,14 @@ const selectGenresBtn=(arr)=>{
 genresArray.sort()
 createSelectedFilterBtn(genresArray,"selected-genres");
 }
-const selectLanguageBtn=(arr)=>{
+var selectLanguageBtn=(arr)=>{
     let languageArray=Object.assign([],arr)
     languageArray.sort()
     console.log(languageArray)
     createSelectedFilterBtn(languageArray,'selected-language')
     removeSelectedLanguage(languageArray)
 }
-const selectFormatBtn=(arr)=>{
+var selectFormatBtn=(arr)=>{
     let formatArray=Object.assign([],arr)
     formatArray.sort()
     createSelectedFilterBtn(arr,'selected-format')
@@ -384,12 +392,12 @@ const selectFormatBtn=(arr)=>{
 
 window.addEventListener('load',()=>{
     fetchMovies(filterObject)
-    const languageBtn=document.getElementById('button-language')
+    var languageBtn=document.getElementById('button-language')
 languageBtn.addEventListener('click',handleLanguage)
-const genresBtn=document.getElementById('genres')
+var genresBtn=document.getElementById('genres')
 genresBtn.addEventListener('click',handleGenres)
-const formatBtn=document.getElementById('format')
-formatBtn.addEventListener('click',handleFormat)
+var formatBtn=document.getElementById('format')
+formatBtn.addEventListener('click',handleFormat) 
 locationChange(region)
 let filter_drop=document.getElementsByClassName('filter-off')
 for(let i=0;i<filter_drop.length;i++)
@@ -399,17 +407,17 @@ for(let i=0;i<filter_drop.length;i++)
 removeSelectedLanguage([])
 })
 
-const removeSelectedLanguage=(arr)=>{
-    const total=["English","Hindi","kannada","Punjabi","Tamil","Telugu"]
+var removeSelectedLanguage=(arr)=>{
+    var total=["English","Hindi","kannada","Punjabi","Tamil","Telugu"]
     let set=new Set(arr)
-    const container=document.getElementById('button-language2')
-    const fragment=new DocumentFragment()
+    var container=document.getElementById('button-language2')
+    var fragment=new DocumentFragment()
     container.innerHTML=null;
     for(let item of total )
     {
         if(!set.has(item))
         {
-            const btn=document.createElement('button')
+            var btn=document.createElement('button')
             btn.className="one4f filter-color"
             btn.textContent=item
             fragment.append(btn)
