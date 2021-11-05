@@ -11,7 +11,7 @@
         "votes":"9",
         "category":"A",
         "poster":"./image/conjuring.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
         
       },
       {
@@ -25,7 +25,7 @@
         "votes":"10",
         "category":"UA",
         "poster":"./image/hs.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
 
       },
       {
@@ -39,7 +39,7 @@
         "votes":"39.3",
         "category":"UA",
         "poster":"./image/venom.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":4,
@@ -52,7 +52,8 @@
         "votes":"6.8",
         "category":"UA",
         "poster":"./image/dune.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+        
       },
     
     
@@ -67,7 +68,7 @@
         "votes":"35.1",
         "category":"UA",
         "poster":"./image/ntod.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":6,
@@ -80,7 +81,7 @@
         "votes":"1.9",
         "category":"UA",
         "poster":"./image/yias.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
 
       },
       {
@@ -94,7 +95,7 @@
         "votes":"63.5",
         "category":"UA",
         "poster":"./image/scl.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":8,
@@ -107,7 +108,7 @@
         "votes":"13.4",
         "category":"UA",
         "poster":"./image/q2.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":9,
@@ -120,7 +121,7 @@
         "votes":"0.6",
         "category":"A",
         "poster":"./image/lastduel.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":10,
@@ -133,7 +134,7 @@
         "votes":"66.4",
         "category":"UA",
         "poster":"./image/doctor.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":11,
@@ -146,7 +147,7 @@
         "votes":"1.3",
         "category":"U",
         "poster":"./image/bossbaby.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":12,
@@ -159,7 +160,7 @@
         "votes":"21.4",
         "category":"UA",
         "poster":"./image/faf9.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":13,
@@ -172,7 +173,7 @@
         "votes":"6.7",
         "category":"UA",
         "poster":"./image/jc.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":14,
@@ -185,7 +186,7 @@
         "votes":"8.2",
         "category":"U",
         "poster":"./image/chalputt.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":15,
@@ -198,7 +199,7 @@
         "votes":"0.986",
         "category":"UA",
         "poster":"./image/crood.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":16,
@@ -224,7 +225,7 @@
         "votes":"2.9",
         "category":"A",
         "poster":"./image/aqp.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":18,
@@ -237,7 +238,7 @@
         "votes":"31.6k",
         "category":"UA",
         "poster":"./image/bell-bottom.jpg",
-        "region":["ncr"]
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
       },
       {
         "id":19,
