@@ -723,7 +723,7 @@
 
     <div id="footer-1">
         <div class="footerSpace"></div>
-        <div id="pay"></div>
+        <div id="pay" onclick="sucessmsg()"></div>
         <div class="footerSpace"></div>
     </div>
     <script>
@@ -780,6 +780,11 @@
                     }
                 
             });
+        }
+
+        function sucessmsg(){
+            alert("Thank you you have successfully booked your tickets!");
+            window.location.reload();
         }
     </script>
 </body>

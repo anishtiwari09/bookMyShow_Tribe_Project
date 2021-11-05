@@ -1,0 +1,313 @@
+{
+  "movies": [
+      {
+        "id":1,
+        "name":"The Conjuring: The Devil Made Me Do It",
+        "format":["2D","MX4D","4DX","IMAX 2D"],
+        "genres":["horror"],
+        "language":["English","Tamil","Hindi","Telugu"],
+        "trailer":"",
+        "like":"70",
+        "votes":"9",
+        "category":"A",
+        "poster":"./image/conjuring.jpg",
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+        
+      },
+      {
+        "id":2,
+        "name":"Honsla Rakh",
+        "format":["2D"],
+        "genres":["comedy","romantic"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"91",
+        "votes":"10",
+        "category":"UA",
+        "poster":"./image/hs.jpg",
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+
+      },
+      {
+        "id":3,
+        "name":"Venom: Let There Be Carnage",
+        "format":["2D","3D SCREEN X","MX4D","4DX 3D","IMAX 2D","3D","4DX","IMAX 3D","2D SCREEN X"],
+        "genres":["Action","Thriller","Horror","Sci-Fy"],
+        "language":["English","Tamil","Hindi","Telugu"],
+        "trailer":"",
+        "like":"81",
+        "votes":"39.3",
+        "category":"UA",
+        "poster":"./image/venom.jpg",
+        "region":["mumbai","ncr","bengaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":4,
+        "name":"Dune",
+        "format":["2D","4DX","IMAX 3D","4DX 3D","IMAX 2D","3D"],
+        "genres":["Action","Adventure","Drama","Sci-Fy"],
+        "language":["English","Hindi"],
+        "trailer":"",
+        "like":"86",
+        "votes":"6.8",
+        "category":"UA",
+        "poster":"./image/dune.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+        
+      },
+    
+    
+      {
+        "id":5,
+        "name":"No Time To Die",
+        "format":["2D","IMAX 2D","4DX 3D","4DX","3D","MX4D","3D SCREEN X","IMAX 3D"],
+        "genres":["Action","Adventure","Thriller"],
+        "language":["English","Tamil","Hindi","Telugu","Kannada"],
+        "trailer":"",
+        "like":"82",
+        "votes":"35.1",
+        "category":"UA",
+        "poster":"./image/ntod.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":6,
+        "name":"Yes I Am Student",
+        "format":["2D"],
+        "genres":["Drama"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"84",
+        "votes":"1.9",
+        "category":"UA",
+        "poster":"./image/yias.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+
+      },
+      {
+        "id":7,
+        "name":"Shang-Chi and the Legend of the Ten Rings",
+        "format":["2D","MX4D","4DX","IMAX 2D","4DX 3D","IMAX 3D","4DX","3D"],
+        "genres":["Action","Adventure","Fantasy"],
+        "language":["English","Tamil","Hindi","Telugu","Kannada","Malayalam"],
+        "trailer":"",
+        "like":"90",
+        "votes":"63.5",
+        "category":"UA",
+        "poster":"./image/scl.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":8,
+        "name":"Qismat 2",
+        "format":["2D"],
+        "genres":["Drama","Romantic"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"82",
+        "votes":"13.4",
+        "category":"UA",
+        "poster":"./image/q2.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":9,
+        "name":"The Last Duel",
+        "format":["2D"],
+        "genres":["Drama","Historical"],
+        "language":["English"],
+        "trailer":"",
+        "like":"78",
+        "votes":"0.6",
+        "category":"A",
+        "poster":"./image/lastduel.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":10,
+        "name":"Doctor",
+        "format":["2D"],
+        "genres":["Action","comedy","Thriller"],
+        "language":["Tamil"],
+        "trailer":"",
+        "like":"90",
+        "votes":"66.4",
+        "category":"UA",
+        "poster":"./image/doctor.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":11,
+        "name":"The Boss Baby: Family Business",
+        "format":["2D","3D","MX4D"],
+        "genres":["Adventure","Animation","comedy"],
+        "language":["English","Hindi","Tamil","Telugu"],
+        "trailer":"",
+        "like":"83",
+        "votes":"1.3",
+        "category":"U",
+        "poster":"./image/bossbaby.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":12,
+        "name":"Fast and Furious 9",
+        "format":["2D","MX4D","4DX","IMAX 2D"],
+        "genres":["Action","Adventure","Crime","Thriller"],
+        "language":["English","Hindi","Tamil","Telugu","Kannada"],
+        "trailer":"",
+        "like":"77",
+        "votes":"21.4",
+        "category":"UA",
+        "poster":"./image/faf9.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":13,
+        "name":"Jungle Cruise",
+        "format":["2D","3D","MX4D","4DX 3D","IMAX 2D","IMAX 3D"],
+        "genres":["Adventure","Fantasy","Family","Comedy"],
+        "language":["English","Tamil","Telugu","Hindi"],
+        "trailer":"",
+        "like":"75",
+        "votes":"6.7",
+        "category":"UA",
+        "poster":"./image/jc.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":14,
+        "name":"Chal Mera Putt 3",
+        "format":["2D"],
+        "genres":["Drama","Comedy"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"78",
+        "votes":"8.2",
+        "category":"U",
+        "poster":"./image/chalputt.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":15,
+        "name":"The Croods: A New Age",
+        "format":["2D","3D","4DX","MX4D"],
+        "genres":["Adventur","Animation","Comedy"],
+        "language":["English","Hindi"],
+        "trailer":"",
+        "like":"85",
+        "votes":"0.986",
+        "category":"UA",
+        "poster":"./image/crood.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":16,
+        "name":"The House of Dead Horror",
+        "format":["3D"],
+        "genres":["Adventure","Horror"],
+        "language":["English"],
+        "trailer":"",
+        "like":"59",
+        "votes":"1.4",
+        "category":"UA",
+        "poster":"./image/thodh.jpg",
+        "region":[]
+      },
+      {
+        "id":17,
+        "name":"A Quiet Place - Part 2",
+        "format":["2D","4DX","MX4D","IMAX 2D"],
+        "genres":["Horror","Thriller"],
+        "language":["English","Tamil","Telugu"],
+        "trailer":"",
+        "like":"76",
+        "votes":"2.9",
+        "category":"A",
+        "poster":"./image/aqp.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":18,
+        "name":"Bell Bottom",
+        "format":["2D","3D"],
+        "genres":["Action","Thriller"],
+        "language":["Hindi"],
+        "trailer":"",
+        "like":"79",
+        "votes":"31.6k",
+        "category":"UA",
+        "poster":"./image/bell-bottom.jpg",
+        "region":["mumbai","ncr","bangaluru","hyderabad","ahmedabad","chandigarh","chennai","pune"]
+      },
+      {
+        "id":19,
+        "name":"The Last Duel",
+        "format":["2D"],
+        "genres":["Drama","Historical"],
+        "language":["English"],
+        "trailer":"",
+        "like":"78",
+        "votes":"0.6",
+        "category":"A",
+        "poster":"https://in.bmscdn.com/iedb/movies/images/mobile/th…/the-last-duel-et00122518-11-10-2021-02-34-31.jpg",
+        "region":[]
+      },
+      {
+        "id":20,
+        "name":"Qismat 2",
+        "format":["2D"],
+        "genres":["Drama","Romantic"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"82",
+        "votes":"13.4",
+        "category":"UA",
+        "poster":"https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/qismat-2-et00132576-21-09-2021-11-56-00.jpg",
+        "region":[]
+      },
+      {
+        "id":21,
+        "name":"The Last Duel",
+        "format":["2D"],
+        "genres":["Drama","Historical"],
+        "language":["English"],
+        "trailer":"",
+        "like":"78",
+        "votes":"0.6",
+        "category":"A",
+        "poster":"https://in.bmscdn.com/iedb/movies/images/mobile/th…/the-last-duel-et00122518-11-10-2021-02-34-31.jpg",
+        "region":[]
+      },
+      {
+        "id":22,
+        "name":"Qismat 2",
+        "format":["2D"],
+        "genres":["Drama","Romantic"],
+        "language":["punjabi"],
+        "trailer":"",
+        "like":"82",
+        "votes":"13.4",
+        "category":"UA",
+        "poster":"https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/qismat-2-et00132576-21-09-2021-11-56-00.jpg",
+        "region":[]
+      },
+      {
+        "id":23,
+        "name":"The Last Duel",
+        "format":["2D"],
+        "genres":["Drama","Historical"],
+        "language":["English"],
+        "trailer":"",
+        "like":"78",
+        "votes":"0.6",
+        "category":"A",
+        "poster":"https://in.bmscdn.com/iedb/movies/images/mobile/th…/the-last-duel-et00122518-11-10-2021-02-34-31.jpg",
+        "region":[]
+      }
+    ]
+
+    
+
+  }
+  

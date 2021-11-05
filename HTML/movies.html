@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      /*<-------------------------------- universal font family----------------------------> */
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* <------------------------------- body color and margin padding of body element ---------------------------------------> */
+      body {
+        background-color: rgb(245, 245, 245);
+        margin: 0;
+        padding: 0;
+      }
+
+      /* <----------------------------------- NavBar CSS -------------------------------------------> */
+      .navbar {
+        overflow: hidden;
+        background-color: rgb(50, 53, 69);
+      }
+
+      .navbar a {
+        float: right;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: right;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+
+      .dropdown-content {
+        border: 1px solid grey;
+        display: none;
+        /* position: absolute; */
+        background-color: #f9f9f9;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        height:520px;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+        .close {
+          position: absolute;
+          top: 14%;
+          right: 1%;
+          font-size: 42px;
+          color: rgb(15, 15, 15);
+          transform: rotate(45deg);
+          cursor: pointer;
+        }
+        
+      .fleft {
+        float: left;
+        color: white;
+        padding-top: 10px;
+        font-size: 28px;
+        /* font-weight: 600; */
+      }
+      #logoDiv {
+        margin-left: 20px;
+      }
+      #logobyJchy {
+        height: 40px;
+        width: 40px;
+      }
+
+      #userInput {
+        height: 30px;
+        width: 50%;
+        margin-top: 10px;
+        margin-left: 20px;
+        border-radius: 5px;
+        padding-left: 10px;
+        font-size: 14px;
+      }
+      #signIn {
+        height: 10px;
+        width: 50px;
+        font-size: 14px;
+        margin-top: 8px;
+        background-color: rgb(248, 67, 100);
+        border-radius: 3px;
+        padding-top: 4px;
+        margin-right: 20px;
+      }
+
+      #sideMenu {
+        font-size: 30px;
+        cursor: pointer;
+        float: right;
+        margin-right: 20px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .sidenav {
+        display: none;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        text-decoration: none;
+        text-align: left;
+        font-size: 16px;
+        color: black;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+      }
+
+      .sidenav div > a {
+        display: block;
+        width: 200px;
+        text-align: left;
+        border-bottom: 0.1px solid grey;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+
+      .ncr-img {
+        height: 100px;
+        width: 100%;
+        margin: 0.5%;
+      }
+      #ncr-input {
+        display: inline-block;
+        height: 35px;
+        width: 80%;
+        /* margin: 2%; */
+        color: grey;
+        margin-top:3rem;
+        margin-left: 10%;
+        margin-right:10%;
+        border: 1px solid grey;
+        font-size: 14px;
+        padding-left: 1rem;
+      }
+
+      .txtCenter {
+        text-align: center;
+        padding-right: 35%;
+      }
+
+      .floatLeft {
+        float: left;
+        text-align: center;
+        /* width:11%; */
+      }
+/* navbar second row*/
+      #navBarSeconfLine {
+        background-color: rgb(34, 37, 57);
+        padding-bottom: 1.4rem;
+        padding-top: 15px;
+        font-size: 14px;
+      }
+
+      #navBarSeconfLine > a {
+        text-decoration: none;
+        color: black;
+        height: 30px;
+        width: 8%;
+        color: white;
+        padding: 10px;
+      }
+
+      .floatRyt {
+        float: right;
+        padding-bottom: 10px;
+        padding-top: 15px;
+        height: 25px;
+      }
+
+      #buzz {
+        margin-right: 28%;
+      }
+      #nav2MoviesTag {
+        margin-left: 10%;
+      }
+
+
+
+
+      /* <-------------------------------------- FOOTER -------------------------------------------> */
+
+
+
+            /* <-------------------------------------------- Privacy Note --------------------------------> */
+
+            .privacyNote{
+                padding:10px;
+                padding-left: 110px;
+                background-color: rgb(216, 215, 215);
+            }
+
+            .privacyNote > h4{
+                font-weight: 300;
+                color: rgb(127,127, 127);
+            }
+            
+            .privacyNote > p{
+                font-size: 12px;
+                color: rgb(127,127, 127);
+            }
+            
+    /* <-------------------------------------------- Contact Today --------------------------------*/
+            .contactToday{
+                display: flex;
+                flex-wrap: wrap;
+                padding:20px;
+                padding-left:250px;
+            }
+
+            .contactP{
+                margin-left: 20px;
+                margin-right: 20px;
+                padding-top: 10px;
+            }
+            .contactBtn{
+                background-color:rgb(245, 80, 102);
+                padding:8px;
+                font-size: 14px;
+                margin-top:20px;
+                width:150px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .contactTodaySection{
+                background-color:rgb(49,48,53);
+                color: rgb(212, 212, 212);
+                font-weight: 300;
+            }
+
+
+      .footer {
+        display: flex;
+        gap: 2rem;
+        color: white;
+        background-color: rgb(51,51,56);
+      }
+      .footer h4 {
+        color: rgb(90, 89, 89);
+      }
+      .firstCol {
+        margin-left: 10%;
+      }
+      .lastCol {
+        margin-left: 5%;
+        margin-right: 10%;
+      }
+     
+      .icon {
+        border: 1px solid grey;
+        height: 30px;
+        width: 40px;
+        border: 1px solid grey;
+        float: left;
+        text-align: center;
+        padding-top: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+      }
+      #lastP {
+        clear: both;
+        margin-top: 100px;
+      }
+
+      .widthFooter {
+        width: 30%;
+      }
+      #logoFooter {
+        height: 60px;
+        width: 80px;
+        background-color: rgb(31, 31, 46);
+        margin-top: 20px;
+        border: 1px solid grey;
+        border-radius: 20px;
+      }
+
+      .footerTop{
+          background-color:rgb(49,48,53);
+          padding:50px;
+          font-size: 12px;
+          color: rgb(101,101,103);
+      }
+      #footer{
+          background-color:rgb(51,51,56);
+          padding-top: 20px;
+          /* padding: 20px; */
+      }
+
+
+      #foooterIconBar{
+        display: flex;
+        gap: 12rem;
+        text-align:center;
+        color:rgb(134,137,141);
+        font-size: 11px;
+        background-color:rgb(64,64,67);
+        padding:20px;
+        /* background-color:black; */
+      }
+      
+
+      #foooterIconBar > div > img{
+        border-radius: 30px;
+        padding:3px;
+      }
+
+
+      #customerCare{
+          margin-left: 12rem;
+      }
+      .footer > div > h4{
+        font-size:12px;
+        color:rgb(165,165,165,165);
+        /* color: red; */
+      }
+      .footer > div > p{
+        font-size: 11px;
+        color: rgb(101,101,103);
+        /* color: red; */
+      }
+     
+      #logoDiv2 {
+        margin-left: 20px;
+        background-color:rgb(64,64,67);
+        color:red;
+      }
+      #logobyJchy2 {
+        height: 40px;
+        width: 40px;
+      }
+
+      .fltLft{
+          float: left;
+      }
+
+      #footerLogo{
+          background-color:rgb(88,89,91);
+          height: 60px;
+      }
+
+      .line{
+          height: 0.5px;
+          background-color:rgb(169, 169, 170);
+          margin-top:30px;
+      }
+
+      #pdLft{
+          padding-left: 20px;
+      }
+      #pdRyt{
+          padding-right: 20px;
+      }
+      #footerIcons{
+        padding-top: 50px;
+        display: flex;
+        clear: both;
+        padding-left:35%;
+      }
+      #footerIcons > div{
+        height: 50px;
+        width: 58px;
+        font-size:30px;
+        background-color:rgb(93,93,95);
+        border-radius: 34px;
+        text-align:center; 
+        margin: 10px;
+        border: 1px solid black;
+        padding-top: 10px;
+      }
+      #footerIcons > div:hover{
+        background-color:white;
+      }
+
+      #footerPara{
+        font-size:12px;
+        padding:50px;
+      }
+
+      .contentList > p:hover{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!------------------------------------------------ Navbar first Row -------------------------------------------->
+
+      
+  <div class="navbar">
+    <div id="logoDiv" onclick="gotoHome()">
+      <div class="fleft">book</div>
+      <div class="fleft">
+        <img
+          src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
+          id="logobyJchy" />
+      </div>
+      <div class="fleft">show</div>
+    </div>
+
+    <span id="sideMenu" onclick="openNav()">&#9776;</span>
+    <a href="Login.html" id="signIn">Sign in</a>
+
+    <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
+
+    <div class="dropdown">
+      <button class="dropbtn" id="dropDown">
+        NCR
+        <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="close" id="close">+</div>
+
+      <div class="dropdown-content" id="ncr-Content">
+        <div>
+          <input type="text" placeholder=" 🔍 Search for your city" id="ncr-input" />
+          <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
+          <div style="margin-left: 20px" class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" class="ncr-img" />
+            <p>Mumbai</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr.png" class="ncr-img" />
+            <p>NCR</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png" class="ncr-img" />
+            <p>Bengaluru</p>
+          </div>
+          <div class="floatLeft" class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" class="ncr-img" />
+            <p>Hyderabad</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" class="ncr-img" />
+            <p>Ahmedabad</p>
+          </div>
+          <div class="floatLeft" style="margin-left: 15%;" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" class="ncr-img" />
+            <p>Chandigarh</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" class="ncr-img" />
+            <p>Chennai</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" class="ncr-img" />
+            <p>Pune</p>
+          </div>
+        </div>
+        
+        <p style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter">
+          View All Cities
+        </p>
+
+      </div>
+    </div>
+      <!----------------------------------------- Side Navbar  ------------------------------------------------------->
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+
+        <div>
+          <a href="#"> <h2>Hey!</h2> </a>
+        </div>
+
+        <div>
+          <a href="#">Unlock special offers and great benefits</a>
+        </div>
+
+        <div>
+          <a href="#">Notifications</a>
+        </div>
+
+        <div>
+          <a href="#">QuickPay</a>
+        </div>
+
+        <div>
+          <a href="#">Booking History</a>
+        </div>
+
+        <div>
+          <a href="#">Stream Library</a>
+        </div>
+
+        <div>
+          <a href="#">Rewards</a>
+        </div>
+
+        <div>
+          <a href="#">BookASmile</a>
+        </div>
+        <div>
+          <a href="#">Help & Support</a>
+        </div>
+        <div>
+          <a href="#">Settings</a>
+        </div>
+      </div>
+    </div>
+
+    <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
+
+    <div id="navBarSeconfLine">
+      <a href="movies.html" id="nav2MoviesTag">Movies</a>
+      <a href="Stream.html">Stream</a>
+      <a href="#">Events</a>
+      <a href="#">Plays</a>
+      <a href="#">Sports</a>
+      <a href="#">Activities</a>
+      <a href="Buzz.html" id="buzz">Buzz</a>
+      <a href="listYourShow.html">ListYourShow </a>
+      <a href="">Corporates</a>
+      <a href="">Offers</a>
+      <a href="">Gift Cards</a>
+    </div>
+
+    <div id="main-container" class="container">
+        
+        <div id="inner-container">
+            <div id="filter-container">
+                <div>
+                    <h2 class="two4f">Filter</h2>
+                </div>
+                <div class="filter-dropdown">
+                    <ul class="filter-off">
+                        <li class="angular-filter angular-down">&#62;</li>
+                        <li class="one4f">Language</li>
+                        <li class="one4f">clear</li>
+                    </ul>
+                    <div id="button-language" class="hidden filter-button">
+                        <button class="one4f filter-color" name="0">English</button>
+                        <button class="one4f filter-color" name="0">Hindi</button>
+                        <button class="one4f filter-color" name="0">Punjabi</button>
+                        <button class="one4f filter-color" name="0">Telugu</button>
+                        <button class="one4f filter-color" name="0">kannada</button>
+                        <button class="one4f filter-color" name="0">Tamil</button>
+                    </div>
+                </div>
+                <div class="filter-dropdown">
+                    <ul class="filter-off">
+                        <li class="angular-filter angular-down">&#62;</li>
+                        <li class="one4f">Genres</li>
+                        <li class="one4f">clear</li>
+                    </ul>
+                    <div id="genres" class="hidden filter-button">
+                        <button class="one4f filter-color" name="0">Action</button>
+                        <button class="one4f filter-color" name="0">Adventure</button>
+                        <button class="one4f filter-color" name="0">Thriller</button>
+                        <button class="one4f filter-color" name="0">Comedy</button>
+                        <button class="one4f filter-color" name="0">Sci-fy</button>
+
+                        <button class="one4f filter-color" name="0">Drama</button>
+                        <button class="one4f filter-color" name="0">Romantic</button>
+                        <button class="one4f filter-color" name="0">Horror</button>
+                        <button class="one4f filter-color" name="0">Animation</button>
+                        <button class="one4f filter-color" name="0">Crime</button>
+
+
+                    </div>
+                </div>
+                <div class="filter-dropdown">
+                    <ul class="filter-off">
+                        <li class="angular-filter angular-down">&#62;</li>
+                        <li class="one4f">format</li>
+                        <li class="one4f">clear</li>
+                    </ul>
+                    <div id="format" class="hidden filter-button">
+                        <button class="one4f filter-color">2D</button>
+                        <button class="one4f filter-color">3D</button>
+                        <button class="one4f filter-color">4DX 3D</button>
+                        <button class="one4f filter-color">7D</button>
+                        <button class="one4f filter-color">4DX</button>
+                    </div>
+                </div>
+                <div id="browse" class="filter-color"><p>Browse By Cinemas</p></div>
+            </div>
+            <div id="movie-container">
+                <div>
+                    <h2 class="two4f" id="locationChange"></h2>
+                    <div id="selected-filter">
+                        <span id="selected-language" class="selected-filter"></span>
+                        <span id="selected-genres" class="selected-filter"></span>
+                        <span id="selected-format" class="selected-filter"></span>
+                    <span id="button-language2">
+                        <!-- <button class="one4f filter-color" name="0">English</button>
+                        <button class="one4f filter-color" name="0">Hindi</button>
+                        <button class="one4f filter-color" name="0">Punjabi</button>
+                        <button class="one4f filter-color" name="0">Telugu</button>
+                        <button class="one4f filter-color" name="0">kannada</button> -->
+                    </span>
+                    </div>
+                </div>
+                <div id="coming-soon">
+                    <p class="filter-color">Explore Upcoming Movies > </p>
+                    <h2>Coming Soon</h2>
+                    
+                </div>
+                <div id="movie-box-container">
+
+                </div>
+
+            </div>
+            <!-- <div id="alternate-filter">
+                <div id="filter-icon" class="filter-background-color">
+                    <img src="filter-icon">
+                </div>
+                <div id="filter-list">
+                    <header>
+                        <h3>Filters</h3>
+                    </header>
+                    <div>
+                        <h4>Language</h4>
+                    </div>
+                    <ul>
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Punjabi</li>
+                        <li>Telugu</li>
+                        <li>English</li>
+                    </ul>
+
+                    <div>
+                        <h4>Genres</h4>
+                    </div>
+                    <ul>
+                        <li class="one4f ">Action</li>
+                        <li class="one4f ">Adventure</li>
+                        <li class="one4f ">Thriller</li>
+                        <li class="one4f ">Comedy</li>
+                        <li class="one4f ">Sci-fy</li>
+
+                        <li class="one4f ">Drama</li>
+                        <li class="one4f ">Romantic</li>
+                        <li class="one4f ">Horror</li>
+                        <li class="one4f ">Animation</li>
+                        <li class="one4f ">Crime</li>
+                    </ul>
+                    <div>
+                        <h4>Format</h4>
+                    </div>
+                    <ul>
+                        <li class="one4f ">2D</li>
+                        <li class="one4f ">3D</li>
+                        <li class="one4f ">4DX 3D</li>
+                        <li class="one4f ">7D</li>
+                        <li class="one4f ">4DX</li>
+                    </ul>
+
+                </div>
+                <div id="apply_filter">
+                    <button class="one4f">Apply</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <section id="white-space"></section>
+    <div class="container" id="about">
+
+    </div>
+    <script type="text/javascript" src="movies.js">
+
+    </script>
+
+
+
+
+
+    <!----------------------------------------------- Footer ---------------------------------------->
+
+
+
+
+<!-- <----------------------------- Privacy Note ---------------------------------------- -->
+
+
+
+
+<!-- <----------------------------- Contact Today ---------------------------------------- -->
+
+<section class="contactTodaySection">
+  <div class="contactToday">
+      <span>
+          <h4 contactH4> 🏠 List your Show</h4>
+      </span>
+      
+      <span>
+          <p class="contactP">Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</p>
+      </span>
+      <span>
+          <button class="contactBtn">
+              Contact Today
+          </button>
+      </span>
+  </div>
+</section>
+
+
+
+
+
+    <footer id="footer">
+
+        <div id="foooterIconBar">
+            <div id="customerCare">
+                <img src="https://library.kissclipart.com/20180912/wjq/kissclipart-customer-services-icon-clipart-customer-service-ca-55a1d16250a29475.png" height="60px" width="60px">
+                <p>24/7 CUSTOMER CARE</p>
+            </div>
+            <div>
+                <img src="https://static.thenounproject.com/png/210570-200.png" height="60px" width="60px">
+                <p>RESEND BOOKING CONFIRMATION</p>
+            </div>
+            <div>
+                <img src="https://www.netclipart.com/pp/m/31-313150_letter-send-inbox-newsletter-svg-png-icon-email.png" height="60px" width="60px">
+                <p>SUBSCRIBE TO THE NEWSLETTER</p>
+            </div>
+        </div>
+
+        <div class="footerTop">
+            <p>
+                Online Movie Ticket Booking Mumbai|Online Movie Ticket Booking Delhi|Online Movie Ticket Booking Bengaluru
+                |Online Movie Ticket Booking Hyderabad|Online Movie Ticket Booking Chennai|
+                Online Movie Ticket Booking Kolkata|Online Movie Ticket Booking Noida|Online Movie Ticket Booking Ahmedabad|Online Movie Ticket Booking Pune
+            </p>
+        </div>
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+
+          <h4>BEST LANGUAGE GENRE MOVIES</h4>
+          <p>
+            Hindi Comedy Movies
+            |<br>
+            Hindi Action Movies
+            |<br>
+            English Animated Movies
+            |<br>
+            English Fantasy Movies
+            |<br>
+            English Comedy Movies
+            |<br>
+            English Action Movies
+            |<br>
+            Tamil Action Movies
+            |<br>
+            Tamil Comedy Movies
+            |<br>
+            Telugu Action Movies
+            |<br>
+            Gujarati Comedy Movies
+            |<br>
+            Marathi Drama Movies
+            |<br>
+            Marathi Comedy Movies
+            |<br>
+            Hindi Animated Movies
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>MOVIES BY GENRE</h4>
+          <p>
+            Best Action Movies
+            |<br>
+            Best Romantic Movies
+            |<br>
+            Best Comedy Movies
+            |<br>
+            Best Adult Movies
+            |<br>
+            Best Adventure Movies
+            |<br>
+            Best Biography Movies
+            |<br>
+            Best Classic Movies
+            |<br>
+            Best Crime Movies
+            |<br>
+            Best Drama Movies
+            |<br>
+            Best Family Movies
+            |<br>
+            Best Fantasy Movies
+            |<br>
+            Best History Movies
+            |<br>
+            Best Musical Movies
+            |<br>
+            Best Mystery Movies
+            |<br>
+            Best Sci-Fi Movies
+            |<br>
+            Best Suspense Movies
+            |<br>
+            Best Thriller Movies
+            |<br>
+            Best Western Movies</p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>POPULAR MOVIES BY LANGUAGE</h4>
+          <p>
+            Popular Hindi Movies
+            |<br>
+            Popular English Movies
+            |<br>
+            Popular Marathi Movies
+            |<br>
+            Popular Bengali Movies
+            |<br>
+            Popular Tamil Movies
+            |<br>
+            Popular Telugu Movies
+            |<br>
+            Popular Malayalam Movies
+            |<br>
+            Popular Bhojpuri Movies
+            |<br>
+            Popular Kannada Movies
+            |<br>
+            Popular Punjabi Movies
+            |<br>
+            Popular Gujarati Movies
+            |<br>
+            Popular Sindhi Movies
+          </p>
+        </div>
+
+        <div class="contentList widthFooter">
+          <h4>MOVIE REVIEWS</h4>
+          <p>
+            Trending Articles
+            |<br>
+            Latest News on Movies, Events, Plays & Sports
+            |<br>
+            Rajeev Masand Movie Reviews
+            |<br>
+            Anupama Chopra Movie Review
+            |<br>
+            Film Reviews
+            |<br>
+            Guest Blogging
+          </p>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+          <h4>THINGS TO DO</h4>
+          <p>
+            Adventure Activities
+            |<br>
+            Food Events
+            |<br>
+            Family Tours
+            |<br>
+            Amusement Parks
+            |<br>
+            Gaming Events
+            |<br>
+            Nightlife Events
+            |<br>
+            Places To Visit
+            |<br>
+            Tourist Attractions
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>EVENTS TICKETS BOOKING ONLINE</h4>
+         <p>
+            Upcoming Events in Mumbai
+            |<br>
+            Upcoming Events in Delhi
+            |<br>
+            Upcoming Events in Bengaluru
+            |<br>
+            Upcoming Events in Chennai
+            |<br>
+            Upcoming Events in Hyderabad
+            |<br>
+            Upcoming Events in Pune
+            |<br>
+            Upcoming Events in Noida
+            |<br>
+            Upcoming Events in Ahmedabad
+         </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4> MOVIES, CINEMAS & CELEBRITY</h4>
+          <p>
+            Latest Upcoming Movies
+            |<br>
+            Best Now Showing Movies
+            |<br>
+            Cinemas & Theatres
+            |<br>
+            Movie Stars & Celebrities
+            |<br>
+            Cinema Chains
+            |<br>
+            All regions Cinemas 
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>ARCHIVED COLLECTION</h4>
+          <p>
+            Old Movies
+            |<br>
+            Past Events
+            |<br>
+            Classic Sports Events
+            |<br>
+            Old Theatre Plays
+            |<br>
+            Best Movies 2016
+            |<br>
+            Best Movies 2017
+            |<br>
+            Best Movies 2018
+          </p>
+        </div>
+        </div>
+      </div>
+
+      
+
+
+      <div class="footer">
+        <div class="contentList widthFooter firstCol">
+          <h4> BOOKMYSHOW APP</h4>
+         <p>
+            BMS Ticketing iOS App
+            |<br>
+            BMS Ticketing Android App
+         </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>BOOKMYSHOW NEWS</h4>
+          <p>
+            Buzz
+            |<br>
+            Press Release
+            |<br>
+            Press Coverage
+            |<br>
+            Current Openings
+            |<br>
+            Contact Us
+            |<br>
+            About Us
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>EXCLUSIVES</h4>
+          <p>
+            BookASmile
+            |<br>
+            Superstar
+            |<br>
+            Corporate Vouchers
+            |<br>
+            Gift Cards
+            |<br>
+            My Coupons
+            |<br>
+            Box Office Collection
+            |<br>
+            Watch Guide
+          </p>
+        </div>
+        <div class="contentList widthFooter">
+          <h4>HELP</h4>
+          <p>
+            Sitemap
+            |<br>
+            FAQs
+            |<br>
+            Terms and Conditions
+            |<br>
+            Privacy Policy
+          </p>
+        </div>
+        </div>
+
+        <div id="footerLogo">
+            <div style="width: 40%;" class="fltLft">
+                <div  class="line" id="pdLft">
+                </div>
+            </div>
+            <div style="width: 20%;" class="fltLft">
+                <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2021/4/21/w900X450/logo-on-gray.jpg?w=400&dpr=2.6" height="60px" width="100%">
+            </div>
+            <div style="width:40%" class="fltLft">
+               <div class="line" id="pdRyt"></div>
+            </div>
+        </div>
+        <div id="footerIcons">
+          <div>
+            <i class="fa fa-facebook-f"></i>
+          </div>
+          <div>
+            <i class="fa fa-twitter"></i>
+          </div>
+          <div>
+            <i class="fa fa-instagram"></i>
+          </div>
+          <div>
+            <i class="fa fa-youtube"></i>
+          </div>
+          <div>
+            <i class="fa fa-pinterest-p"></i>
+          </div>
+          <div>
+            <i class="fa fa-linkedin"></i>
+          </div>
+        </div>
+        <div id="footerPara">
+          <p>
+            Copyright 2021 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+            The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist 
+            shall be implied. Unauthorized use is prohibited and punishable by law.
+          </p>
+        </div>
+
+
+    </footer>
+  </body>
+
+  <script>
+     document.getElementById("close").style.display = "none";
+    function openNav() {
+      document.getElementById("mySidenav").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.display = "none";
+    }
+
+    let dropDown = document.getElementById("dropDown");
+    dropDown.addEventListener("click",()=>{
+      var ncrContent = document.getElementById("ncr-Content");
+      ncrContent.style.display = "block";
+      document.getElementById("navBarSeconfLine").style.display = "none";
+      document.getElementById("navBarSeconfLine").style.backgroundColor = "white";
+      document.getElementById("close").style.display = "block";
+      // document.getElementById("navBarSeconfLine").style.backgroundColor = ;
+      
+    })
+
+
+    document.querySelector('.close').addEventListener("click", function() {
+	document.getElementById("ncr-Content").style.display = "none";
+  document.getElementById("navBarSeconfLine").style.display = "block";
+  document.getElementById("close").style.display = "none";
+});
+
+function gotoHome(){
+    window.location.href ="Home.html";
+  }
+
+
+  //  change Region 
+
+var initialRegionArr = ["mumbai","ncr","bang","hyd","ahd","chd","chen","pune"];
+
+function changeRegion(){
+  var regionArray = document.getElementsByClassName("floatLeft");
+  for(let i = 0;i<regionArray.length;i++){
+    if(event.target.parentNode.children[1].textContent === regionArray[i].children[1].textContent){
+      event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+      document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+      localStorage.setItem("regionName",JSON.stringify(event.target.parentNode.children[1].textContent));
+    }
+    else{
+      regionArray[i].children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}.png`;
+    }
+  }
+ }
+  </script>
+  <script type="text/javascript" src="movies.js"></script>
+</html>
