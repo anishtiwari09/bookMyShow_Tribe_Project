@@ -67,7 +67,7 @@ var createCard=(item)=>{
        if(val){
             console.log(item.name);
             localStorage.setItem("movie",JSON.stringify(item.name));
-            window.location.href="bookSeat.html";
+            window.location.href="bookSeats.html";
         
        }
     //  console.log(event.target.parentNode.parentNode);
