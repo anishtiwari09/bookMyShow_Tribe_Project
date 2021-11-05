@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+        }
+
+        /* ----------------------------------header------------------------------------  */
+
+
+
+        /* ----------------------------------body---------------------------------------  */
+        #grid {
+            display: grid;
+            grid-template-rows: repeat(8, 1fr);
+            grid-template-columns: repeat(26, 1fr);
+            margin: auto;
+            gap: 10px;
+            width: 900px;
+        }
+        .alpha {
+            color: rgb(167, 161, 161);
+            font-size: 14px;
+        }
+        .seat {
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+            padding: 4px;
+        }
+        #flex {
+            justify-items: center;
+            padding-top: 30px;
+        }
+        .blocked {
+            background-color: rgb(231, 227, 227);
+            color: white;
+        }
+        .available {
+            color: #1ea83c;
+            border: 1px solid #1ea83c;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .selected {
+            background-color: #1ea83c;
+            color: white;
+        }
+        .sold {
+            background-color: red;
+            border: 1px solid red;
+            color: white;
+            border-radius: 4px;
+        }
+        .space {
+            height: 18px;
+        }
+        img {
+            height: 180px;
+            width: 300px;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            color: black;
+            margin-top: 60px;
+        }
+        .text-top {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        /* ------------------------------------footer------------------------------- */
+
+
+        #footer, ._sold, ._available, ._selected, ._social-distancing {
+            display: flex;
+            margin: 0px 34px 0px 0px;
+            color: rgb(88, 87, 87);
+        }
+
+        #footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            background-color: white;
+            padding-bottom: 10px;
+            display: none;
+        }
+        
+        .box {
+            box-sizing: border-box;
+            height: 16px;
+            width: 16px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+        .footer-sides {
+            flex-grow: 1;
+        }
+        ._selected .box {
+            background-color: #1ea83c;
+        }
+        ._sold .box {
+            background-color: red;
+        }
+        ._available .box {
+            border: 1px solid #1ea83c;
+        }
+        ._social-distancing .box{
+            background-color: rgb(212, 207, 207);
+        }
+
+        /* ------------------------------------ */
+        .header {
+            color: white;
+            background-color: #1f2533;
+            box-sizing: border-box;
+            padding: 20px;
+            font-size: 14px;
+            top: 0px;
+            width: 100%;
+            position: fixed;
+        }
+        .line-one {
+            display: flex;
+            padding-bottom: 10px;
+        }
+        .movie {
+            flex-grow: 1;
+        }
+        .seats-number {
+            margin-right: 68px;
+            font-size: 13px;
+        }
+        .place {
+            color: rgb(199, 196, 196);
+            font-size: 13px;
+        }
+        .data {
+            padding: 86px 0px 60px 20px;
+            font-size: 13px;
+            color: rgb(167, 165, 165);
+        }
+        .seat-type-1 {
+            grid-area: 1 / 1 / 1 / 27;
+            font-size: 13px;
+            color: rgb(167, 165, 165);
+        }
+        .seat-type-2 {
+            grid-area: 12 / 1 / 13 / 27;
+            font-size: 13px;
+            color: rgb(167, 165, 165);
+            padding-bottom: 12px;
+        }
+        #pop-up {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(17, 17, 17, 0.6);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #content {
+            height: 440px;
+            width: 540px;
+            box-sizing: border-box;
+            padding: 28px;
+            border-radius: 10px;
+            background-color: white;
+            opacity: 1;
+            align-items: center;
+            text-align: center;
+        }
+        .flex-seats {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+        .number {
+            flex-grow: 1;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 50%;
+            width: 32px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .after-click{
+            border: 4px solid white;
+            background-color: #f84464;
+            color: white;
+        }
+        .in-flex {
+            display: flex;
+            margin-bottom: 18px;
+        }
+        .types-of-seats {
+            flex-grow: 1;
+        }
+        .availablity {
+            color: #1ea83c;
+            font-size: 14px;
+        }
+        .price {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .type {
+            font-size: 14px;
+            color: rgb(138, 135, 135);
+        }
+        #btn {
+            width: 100%;
+            box-sizing: border-box;
+            margin: auto;
+            padding: 12px;
+            background-color: #f84464;
+            color: white;
+            border-radius: 10px;
+            position: relative;
+            bottom: 0px;
+        }
+
+        /* -----------------------------footer - 1---------------------------- */
+        
+        #footer-1 {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            padding: 6px;
+            background-color: white;
+            display: none;
+            box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+        }
+        .footerSpace {
+            flex-grow: 1;
+        }
+        #pay {
+            width: 380px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            background-color: #f84464;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!------------------------------------ pop up----------------------------- -->
+    <div class="pop-up" id="pop-up">
+        <div id="content">
+            <div>How Many Seats?</div>
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" alt=""  style="height: 100px; width: 120px; padding: 50px;">
+            <div class="flex-seats">
+                <div id="1" class="number" onclick="setSeat(this)">1</div>
+                <div id="2" class="number" onclick="setSeat(this)">2</div>
+                <div id="3" class="number" onclick="setSeat(this)">3</div>
+                <div id="4" class="number" onclick="setSeat(this)">4</div>
+                <div id="5" class="number" onclick="setSeat(this)">5</div>
+                <div id="6" class="number" onclick="setSeat(this)">6</div>
+                <div id="7" class="number" onclick="setSeat(this)">7</div>
+                <div id="8" class="number" onclick="setSeat(this)">8</div>
+                <div id="9" class="number" onclick="setSeat(this)">9</div>
+                <div id="10" class="number" onclick="setSeat(this)">10</div>
+            </div>
+            <div class="in-flex">
+                <div class="types-of-seats types-of-seats-1">
+                    <div class="type">CLASSIC</div>
+                    <div class="price">Rs. 165.00</div>
+                    <div class="availablity">Available</div>
+                </div>
+                <div class="types-of-seats types-of-seats-2">
+                    <div class="type">RECLINER</div>
+                    <div class="price">Rs. 507.00</div>
+                    <div class="availablity">Available</div>
+                </div>
+            </div>
+            <div id="btn">Select Seats</div>
+        </div>
+    </div>
+
+    <!----------------------------------- header ------------------------------ -->
+    <div class="header">
+        <div class="details">
+            <div class="line-one">
+                <div class="movie" id="bookedMovie">Venom: Let There Be Carnage</div>
+                <div class="seats-number">0 Tickets &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                <i class="fa fa-times" id="cross" aria-hidden="true"></i>
+            </div>
+            <div class="place">PVR: 4DX Elante Chandigarh</div>
+        </div>
+    </div>
+
+    <div class="data">Today, 2 Nov, 04:05 PM</div>
+    <!-- ----------------------------------body ---------------------------------- -->
+    <div id="flex">
+        <div id="grid">
+
+        <div class="seat-type-1">RECLINER-Rs. 507.00</div>
+
+        <div class="alpha">L</div>
+        <div class="space"></div>
+        <div class="seat blocked">24</div>
+        <div class="seat available" value="507">23</div>
+        <div class="seat blocked">22</div>
+        <div class="seat available" value="507">21</div>
+        <div class="seat blocked">20</div>
+        <div class="seat available" value="507">19</div>
+        <div class="seat blocked">18</div>
+        <div class="seat available" value="507">17</div>
+        <div class="seat blocked">16</div>
+        <div class="seat available" value="507">15</div>
+        <div class="seat blocked">14</div>
+        <div class="seat available" value="507">13</div>
+        <div class="seat blocked">12</div>
+        <div class="seat available" value="507">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available" value="507">9</div>
+        <div class="seat blocked">8</div>
+        <div class="seat available" value="507">7</div>
+        <div class="seat blocked">6</div>
+        <div class="seat available" value="507">5</div>
+        <div class="seat blocked">4</div>
+        <div class="seat available" value="507">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available" value="507">1</div>
+
+        <div class="alpha">K</div>
+        <div class="space"></div>
+        <div class="seat available" value="507">20</div>
+        <div class="seat blocked">19</div>
+        <div class="seat available" value="507">18</div>
+        <div class="seat blocked">17</div>
+        <div class="seat available" value="507">16</div>
+        <div class="seat blocked">15</div>
+        <div class="seat available" value="507">14</div>
+        <div class="seat blocked">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available" value="507">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available" value="507">10</div>
+        <div class="seat blocked">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat available" value="507">8</div>
+        <div class="seat blocked">7</div>
+        <div class="seat available" value="507">6</div>
+        <div class="seat blocked">5</div>
+        <div class="seat available" value="507">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available" value="507">2</div>
+        <div class="seat blocked">1</div>
+
+        <div class="alpha">J</div>
+        <div class="space"></div>
+        <div class="seat blocked">20</div>
+        <div class="seat available" value="507">19</div>
+        <div class="seat blocked">18</div>
+        <div class="seat available" value="507">17</div>
+        <div class="seat blocked">16</div>
+        <div class="seat available" value="507">15</div>
+        <div class="seat blocked">14</div>
+        <div class="seat available" value="507">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">12</div>
+        <div class="seat available" value="507">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available" value="507">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat blocked">8</div>
+        <div class="seat available" value="507">7</div>
+        <div class="seat blocked">6</div>
+        <div class="seat available" value="507">5</div>
+        <div class="seat blocked">4</div>
+        <div class="seat available" value="507">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available" value="507">1</div>
+
+        <div class="alpha">I</div>
+        <div class="space"></div>
+        <div class="seat available" value="507">20</div>
+        <div class="seat blocked">19</div>
+        <div class="seat available" value="507">18</div>
+        <div class="seat blocked">17</div>
+        <div class="seat available" value="507">16</div>
+        <div class="seat blocked">15</div>
+        <div class="seat available" value="507">14</div>
+        <div class="seat blocked">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available" value="507">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available" value="507">10</div>
+        <div class="seat blocked">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat available" value="507">8</div>
+        <div class="seat blocked">7</div>
+        <div class="seat available" value="507">6</div>
+        <div class="seat blocked">5</div>
+        <div class="seat available" value="507">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available" value="507">2</div>
+        <div class="seat blocked">1</div>
+    
+        <div class="alpha">H</div>
+        <div class="space"></div>
+        <div class="seat blocked">20</div>
+        <div class="seat available" value="507">19</div>
+        <div class="seat blocked">18</div>
+        <div class="seat available" value="507">17</div>
+        <div class="seat blocked">16</div>
+        <div class="seat available" value="507">15</div>
+        <div class="seat blocked">14</div>
+        <div class="seat available" value="507">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">12</div>
+        <div class="seat available" value="507">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available" value="507">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat blocked">8</div>
+        <div class="seat available" value="507">7</div>
+        <div class="seat blocked">6</div>
+        <div class="seat available" value="507">5</div>
+        <div class="seat blocked">4</div>
+        <div class="seat available" value="507">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available" value="507">1</div>
+
+        <div class="alpha">G</div>
+        <div class="space"></div>
+        <div class="seat available" value="507">20</div>
+        <div class="seat blocked">19</div>
+        <div class="seat available" value="507">18</div>
+        <div class="seat blocked">17</div>
+        <div class="seat available" value="507">16</div>
+        <div class="seat blocked">15</div>
+        <div class="seat available" value="507">14</div>
+        <div class="seat blocked">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available" value="507">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available" value="507">10</div>
+        <div class="seat blocked">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat available" value="507">8</div>
+        <div class="seat blocked">7</div>
+        <div class="seat available" value="507">6</div>
+        <div class="seat blocked">5</div>
+        <div class="seat available" value="507">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available" value="507">2</div>
+        <div class="seat blocked">1</div>
+
+        <div class="alpha">F</div>
+        <div class="space"></div>
+        <div class="seat blocked">20</div>
+        <div class="seat available" value="507">19</div>
+        <div class="seat blocked">18</div>
+        <div class="seat available" value="507">17</div>
+        <div class="seat blocked">16</div>
+        <div class="seat available" value="507">15</div>
+        <div class="seat blocked">14</div>
+        <div class="seat available" value="507">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">12</div>
+        <div class="seat available" value="507">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available" value="507">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat blocked">8</div>
+        <div class="seat available" value="507">7</div>
+        <div class="seat blocked">6</div>
+        <div class="seat available" value="507">5</div>
+        <div class="seat blocked">4</div>
+        <div class="seat available" value="507">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available" value="507">1</div>
+
+        <div class="alpha">E</div>
+        <div class="space"></div>
+        <div class="seat available" value="507">20</div>
+        <div class="seat blocked">19</div>
+        <div class="seat available" value="507">18</div>
+        <div class="seat blocked">17</div>
+        <div class="seat available" value="507">16</div>
+        <div class="seat blocked">15</div>
+        <div class="seat available" value="507">14</div>
+        <div class="seat blocked">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available" value="507">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available" value="507">10</div>
+        <div class="seat blocked">9</div>
+            <div class="space"></div>
+            <div class="space"></div>
+        <div class="seat available" value="507">8</div>
+        <div class="seat blocked">7</div>
+        <div class="seat available" value="507">6</div>
+        <div class="seat blocked">5</div>
+        <div class="seat available" value="507">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available" value="507">2</div>
+        <div class="seat blocked">1</div>
+
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+
+        <div class="seat-type-2">CLASSIC-Rs. 165.00</div>
+
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+
+        <div class="alpha">D</div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">20</div>
+        <div class="seat blocked">19</div>
+        <div class="seat available"  value="165">18</div>
+        <div class="seat blocked">17</div>
+        <div class="seat available"  value="165">16</div>
+        <div class="seat blocked">15</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">14</div>
+        <div class="seat blocked">13</div>
+        <div class="seat available"  value="165">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available"  value="165">10</div>
+        <div class="seat blocked">9</div>
+        <div class="seat available"  value="165">8</div>
+        <div class="seat blocked">7</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">6</div>
+        <div class="seat blocked">5</div>
+        <div class="seat available"  value="165">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available"  value="165">2</div>
+        <div class="seat blocked">1</div>
+
+        <div class="alpha">C</div>
+        <div class="space"></div>
+        <div class="seat blocked">20</div>
+        <div class="seat available"  value="165">19</div>
+        <div class="seat blocked">18</div>
+        <div class="seat available"  value="165">17</div>
+        <div class="seat blocked">16</div>
+        <div class="seat available"  value="165">15</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">14</div>
+        <div class="seat available"  value="165">13</div>
+        <div class="seat blocked">12</div>
+        <div class="seat available"  value="165">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available"  value="165">9</div>
+        <div class="seat blocked">8</div>
+        <div class="seat available"  value="165">7</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">6</div>
+        <div class="seat available"  value="165">5</div>
+        <div class="seat blocked">4</div>
+        <div class="seat available"  value="165">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available"  value="165">1</div>
+
+        <div class="alpha">B</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">16</div>
+        <div class="seat blocked">15</div>
+        <div class="seat available"  value="165">14</div>
+        <div class="seat blocked">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">12</div>
+        <div class="seat blocked">11</div>
+        <div class="seat available"  value="165">10</div>
+        <div class="seat blocked">9</div>
+        <div class="seat available"  value="165">8</div>
+        <div class="seat blocked">7</div>
+        <div class="seat available"  value="165">6</div>
+        <div class="seat blocked">5</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat available"  value="165">4</div>
+        <div class="seat blocked">3</div>
+        <div class="seat available"  value="165">2</div>
+        <div class="seat blocked">1</div>
+        <div class="space"></div>
+        <div class="space"></div>
+
+        <div class="alpha">A</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">16</div>
+        <div class="seat available"  value="165">15</div>
+        <div class="seat blocked">14</div>
+        <div class="seat available"  value="165">13</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">12</div>
+        <div class="seat available"  value="165">11</div>
+        <div class="seat blocked">10</div>
+        <div class="seat available"  value="165">9</div>
+        <div class="seat blocked">8</div>
+        <div class="seat available"  value="165">7</div>
+        <div class="seat blocked">6</div>
+        <div class="seat available"  value="165">5</div>
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="seat blocked">4</div>
+        <div class="seat available"  value="165">3</div>
+        <div class="seat blocked">2</div>
+        <div class="seat available"  value="165">1</div>
+        <div class="space"></div>
+        <div class="space"></div>
+    </div>
+    <div class="container">
+        <img src="https://media.istockphoto.com/vectors/vector-tvflatscreencurvedsmarttelevision-vector-id917496640?k=20&m=917496640&s=612x612&w=0&h=dj_f8HA6hmjbtgm33kLK8yMLBzNI6amPNpp2XC-Gyno=" alt="">
+        <div class="text-top">All eyes this way please!</div>
+    </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer-sides"></div>
+        <div class="_sold">
+            <div class="box"></div>
+            <div>Sold</div>
+        </div>
+        <div class="_available">
+            <div class="box"></div>
+            <div>Available</div>
+        </div>
+        <div class="_selected">
+            <div class="box"></div>
+            <div>Selected</div>
+        </div>
+        <div class="_social-distancing">
+            <div class="box"></div>
+            <div>Social Distancing Seats</div>
+        </div>
+        <div class="footer-sides"></div>
+    </div>
+
+    <div id="footer-1">
+        <div class="footerSpace"></div>
+        <div id="pay" onclick="sucessmsg()"></div>
+        <div class="footerSpace"></div>
+    </div>
+    <script>
+        var seats = document.getElementsByClassName("available");
+        var selectedSeat = document.getElementById("btn");
+        var popUp = document.getElementById("pop-up");
+        var numberOfSeats = document.getElementsByClassName("number");
+        var seatsNumber = document.getElementsByClassName("seats-number")[0];
+        var footer = document.getElementById("footer");
+        var footer1 = document.getElementById("footer-1");
+        var pay = document.getElementById("pay");
+        
+        var total = 0;
+        var amount = 0.00;
+
+        console.log(popUp.style.display);
+        seatsNumber.addEventListener("click", () => {
+            popUp.style.display = "flex";
+            footer.style.display = "none";
+            footer1.style.display = "none";
+        })
+
+        function changeSeatNumber(num){
+            total = num;
+            var html_ = seatsNumber.innerHTML;
+            html_ = html_.split(" ");
+            html_[0] = num;
+            seatsNumber.innerHTML = html_.join(" ");
+        }
+
+        function setSeat( element ){
+            for( var i = 1; i <= 10; i++ ){
+                document.getElementById(i).classList.remove("after-click");
+            }
+            element.classList.add("after-click");
+            changeSeatNumber(element.innerHTML);
+        }
+        
+        selectedSeat.addEventListener("click", () => {
+            popUp.style.display = "none";
+            footer.style.display = "flex";
+        });
+        
+        for( var i = 0; i < seats.length; i++ ){
+            seats[i].addEventListener("click", (e) => {
+                
+                    e.target.classList.add("selected");
+                    total -= 1;
+                    amount += Number( e.target.getAttribute("value") );
+                    if( total == 0 ){
+                        footer.style.display = "none";
+                        footer1.style.display = "flex";
+                        pay.textContent = `Pay Rs.${amount}.00`;
+                    }
+                
+            });
+        }
+
+        function sucessmsg(){
+            alert("Thank you you have successfully booked your tickets!");
+            window.location.replace('Home.html');
+        }
+
+        var bookedMovie = document.getElementById("bookedMovie").innerHTML = JSON.parse(localStorage.getItem("movie"));
+
+    </script>
+</body>
+</html>
