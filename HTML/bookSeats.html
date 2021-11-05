@@ -299,7 +299,7 @@
     <div class="header">
         <div class="details">
             <div class="line-one">
-                <div class="movie">Venom: Let There Be Carnage</div>
+                <div class="movie" id="bookedMovie">Venom: Let There Be Carnage</div>
                 <div class="seats-number">0 Tickets &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></div>
                 <i class="fa fa-times" id="cross" aria-hidden="true"></i>
             </div>
@@ -723,7 +723,7 @@
 
     <div id="footer-1">
         <div class="footerSpace"></div>
-        <div id="pay"></div>
+        <div id="pay" onclick="sucessmsg()"></div>
         <div class="footerSpace"></div>
     </div>
     <script>
@@ -781,6 +781,14 @@
                 
             });
         }
+
+        function sucessmsg(){
+            alert("Thank you you have successfully booked your tickets!");
+            window.location.replace('Home.html');
+        }
+
+        var bookedMovie = document.getElementById("bookedMovie").innerHTML = JSON.parse(localStorage.getItem("movie"));
+
     </script>
 </body>
 </html>

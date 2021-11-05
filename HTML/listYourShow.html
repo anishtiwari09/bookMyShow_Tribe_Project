@@ -899,7 +899,7 @@
   <!------------------------------------------------ Navbar first Row -------------------------------------------->
 
   <div class="navbar">
-    <div id="logoDiv">
+    <div id="logoDiv" onclick="gotoHome()">
       <div class="fleft">book</div>
       <div class="fleft">
         <img
@@ -926,41 +926,40 @@
         <div>
           <input type="text" placeholder=" 🔍 Search for your city" id="ncr-input" />
           <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
-          <div style="margin-left: 20px" class="floatLeft">
+          <div style="margin-left: 20px" class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" class="ncr-img" />
             <p>Mumbai</p>
           </div>
-          <div class="floatLeft">
-            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr-selected.png" class="ncr-img" />
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr.png" class="ncr-img" />
             <p>NCR</p>
           </div>
-          <div class="floatLeft">
+          <div class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png" class="ncr-img" />
             <p>Bengaluru</p>
           </div>
-          <div class="floatLeft" class="floatLeft">
+          <div class="floatLeft" class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" class="ncr-img" />
             <p>Hyderabad</p>
           </div>
-          <div class="floatLeft">
+          <div class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" class="ncr-img" />
             <p>Ahmedabad</p>
           </div>
-          <div class="floatLeft" style="margin-left: 15%;">
+          <div class="floatLeft" style="margin-left: 15%;" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" class="ncr-img" />
             <p>Chandigarh</p>
           </div>
-          <div class="floatLeft">
+          <div class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" class="ncr-img" />
             <p>Chennai</p>
           </div>
-          <div class="floatLeft">
+          <div class="floatLeft" onclick="changeRegion()">
             <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" class="ncr-img" />
             <p>Pune</p>
           </div>
-
-
         </div>
+        
         <p style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
           class="txtCenter">
           View All Cities
@@ -1019,14 +1018,14 @@
   <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
 
   <div id="navBarSeconfLine">
-    <a href="" id="nav2MoviesTag">Movies</a>
-    <a href="">Stream</a>
-    <a href="">Events</a>
-    <a href="">Plays</a>
-    <a href="">Sports</a>
-    <a href="">Activities</a>
-    <a href="" id="buzz">Buzz</a>
-    <a href="">ListYourShow </a>
+    <a href="movies.html" id="nav2MoviesTag">Movies</a>
+    <a href="Stream.html">Stream</a>
+    <a href="#">Events</a>
+    <a href="#">Plays</a>
+    <a href="#">Sports</a>
+    <a href="#">Activities</a>
+    <a href="Buzz.html" id="buzz">Buzz</a>
+    <a href="listYourShow.html">ListYourShow </a>
     <a href="">Corporates</a>
     <a href="">Offers</a>
     <a href="">Gift Cards</a>
@@ -1950,6 +1949,29 @@
   function welcomeMsg() {
     alert("Thankyou for showing interest in our Service. We will get back to you soon!");
   }
+  function gotoHome(){
+    window.location.href ="Home.html";
+  }
+
+
+
+  //  change Region 
+
+  var initialRegionArr = ["mumbai","ncr","bang","hyd","ahd","chd","chen","pune"];
+
+  function changeRegion(){
+    var regionArray = document.getElementsByClassName("floatLeft");
+    for(let i = 0;i<regionArray.length;i++){
+      if(event.target.parentNode.children[1].textContent === regionArray[i].children[1].textContent){
+        event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+        document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+        localStorage.setItem("regionName",JSON.stringify(event.target.parentNode.children[1].textContent));
+      }
+      else{
+        regionArray[i].children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}.png`;
+      }
+    }
+   }
 
 </script>
 

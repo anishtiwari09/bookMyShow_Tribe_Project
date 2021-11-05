@@ -452,112 +452,76 @@
   <body>
     <!------------------------------------------------ Navbar first Row -------------------------------------------->
 
-    <div class="navbar">
-      <div id="logoDiv">
-        <div class="fleft">book</div>
-        <div class="fleft">
-          <img
-            src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
-            id="logobyJchy"
-          />
-        </div>
-        <div class="fleft">show</div>
+      
+  <div class="navbar">
+    <div id="logoDiv" onclick="gotoHome()">
+      <div class="fleft">book</div>
+      <div class="fleft">
+        <img
+          src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
+          id="logobyJchy" />
       </div>
+      <div class="fleft">show</div>
+    </div>
 
-      <span id="sideMenu" onclick="openNav()">&#9776;</span>
-      <a href="Login.html" id="signIn">Sign in</a>
+    <span id="sideMenu" onclick="openNav()">&#9776;</span>
+    <a href="Login.html" id="signIn">Sign in</a>
 
-      <input
-        type="text"
-        placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities"
-        id="userInput"
-      />
+    <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
 
-      <div class="dropdown" >
-        <button class="dropbtn"id="dropDown" >
-          NCR 
-          <i class="fa fa-caret-down"></i>
-        </button>
+    <div class="dropdown">
+      <button class="dropbtn" id="dropDown">
+        NCR
+        <i class="fa fa-caret-down"></i>
+      </button>
 
-        <div class="close" id="close">+</div>
+      <div class="close" id="close">+</div>
 
-        <div class="dropdown-content" id="ncr-Content">
-          <div>
-            <input
-              type="text"
-              placeholder=" 🔍 Search for your city"
-              id="ncr-input"
-            />
-            <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
-            <div style="margin-left: 20px" class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png"
-                class="ncr-img"
-              />
-              <p>Mumbai</p>
-            </div>
-            <div class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr-selected.png"
-                class="ncr-img"
-              />
-              <p>NCR</p>
-            </div>
-            <div class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png"
-                class="ncr-img"
-              />
-              <p>Bengaluru</p>
-            </div>
-            <div class="floatLeft" class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png"
-                class="ncr-img"
-              />
-              <p>Hyderabad</p>
-            </div>
-            <div class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png"
-                class="ncr-img"
-              />
-              <p>Ahmedabad</p>
-            </div>
-            <div class="floatLeft" style="margin-left: 15%;">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png"
-                class="ncr-img"
-              />
-              <p>Chandigarh</p>
-            </div>
-            <div class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png"
-                class="ncr-img"
-              />
-              <p>Chennai</p>
-            </div>
-            <div class="floatLeft">
-              <img
-                src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png"
-                class="ncr-img"
-              />
-              <p>Pune</p>
-            </div>
-
-           
+      <div class="dropdown-content" id="ncr-Content">
+        <div>
+          <input type="text" placeholder=" 🔍 Search for your city" id="ncr-input" />
+          <p class="txtCenter" style="margin-left: 20%;font-weight: bold;font-size:24px">Popular Cities</p>
+          <div style="margin-left: 20px" class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" class="ncr-img" />
+            <p>Mumbai</p>
           </div>
-           <p
-          style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
-          class="txtCenter"
-        >
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr.png" class="ncr-img" />
+            <p>NCR</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png" class="ncr-img" />
+            <p>Bengaluru</p>
+          </div>
+          <div class="floatLeft" class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" class="ncr-img" />
+            <p>Hyderabad</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" class="ncr-img" />
+            <p>Ahmedabad</p>
+          </div>
+          <div class="floatLeft" style="margin-left: 15%;" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" class="ncr-img" />
+            <p>Chandigarh</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" class="ncr-img" />
+            <p>Chennai</p>
+          </div>
+          <div class="floatLeft" onclick="changeRegion()">
+            <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" class="ncr-img" />
+            <p>Pune</p>
+          </div>
+        </div>
+        
+        <p style="color: red; text-align: center; padding-bottom: 20px ;margin-top: 320px;padding-left: 20%;"
+          class="txtCenter">
           View All Cities
         </p>
 
-        </div>
       </div>
-
+    </div>
       <!----------------------------------------- Side Navbar  ------------------------------------------------------->
 
       <div id="mySidenav" class="sidenav">
@@ -608,14 +572,14 @@
     <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
 
     <div id="navBarSeconfLine">
-      <a href="#" id="nav2MoviesTag">Movies</a>
+      <a href="movies.html" id="nav2MoviesTag">Movies</a>
       <a href="Stream.html">Stream</a>
-      <a href="">Events</a>
-      <a href="">Plays</a>
-      <a href="">Sports</a>
-      <a href="">Activities</a>
-      <a href="" id="buzz">Buzz</a>
-      <a href="">ListYourShow </a>
+      <a href="#">Events</a>
+      <a href="#">Plays</a>
+      <a href="#">Sports</a>
+      <a href="#">Activities</a>
+      <a href="Buzz.html" id="buzz">Buzz</a>
+      <a href="listYourShow.html">ListYourShow </a>
       <a href="">Corporates</a>
       <a href="">Offers</a>
       <a href="">Gift Cards</a>
@@ -1159,6 +1123,29 @@
   document.getElementById("navBarSeconfLine").style.display = "block";
   document.getElementById("close").style.display = "none";
 });
+
+function gotoHome(){
+    window.location.href ="Home.html";
+  }
+
+
+  //  change Region 
+
+var initialRegionArr = ["mumbai","ncr","bang","hyd","ahd","chd","chen","pune"];
+
+function changeRegion(){
+  var regionArray = document.getElementsByClassName("floatLeft");
+  for(let i = 0;i<regionArray.length;i++){
+    if(event.target.parentNode.children[1].textContent === regionArray[i].children[1].textContent){
+      event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+      document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+      localStorage.setItem("regionName",JSON.stringify(event.target.parentNode.children[1].textContent));
+    }
+    else{
+      regionArray[i].children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}.png`;
+    }
+  }
+ }
   </script>
   <script type="text/javascript" src="movies.js"></script>
 </html>
