@@ -156,6 +156,9 @@
       .sidenav a:hover {
         color: #f1f1f1;
       }
+      .sidenav :hover {
+        background-color: rgb(193, 80, 80);
+      }
 
       .sidenav .closebtn {
         position: absolute;
@@ -565,12 +568,12 @@
     <!------------------------------------------------ Navbar first Row -------------------------------------------->
 
     <div class="navbar">
-      <div id="logoDiv" onclick="gotoHome()">
+      <div id="logoDiv" onclick="gotoHome()" style="cursor:pointer">
         <div class="fleft">book</div>
         <div class="fleft">
           <img
             src="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png"
-            id="logobyJchy" />
+            id="logobyJchy" / >
         </div>
         <div class="fleft">show</div>
       </div>
@@ -581,7 +584,7 @@
       <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
   
       <div class="dropdown">
-        <button class="dropbtn" id="dropDown">
+        <button class="dropbtn" id="dropDown" style="cursor:pointer">
           NCR
           <i class="fa fa-caret-down"></i>
         </button>
@@ -1769,20 +1772,81 @@
 
 //  change Region 
 
-var initialRegionArr = ["mumbai","ncr","bang","hyd","ahd","chd","chen","pune"];
-
-function changeRegion(){
-  var regionArray = document.getElementsByClassName("floatLeft");
-  for(let i = 0;i<regionArray.length;i++){
-    if(event.target.parentNode.children[1].textContent === regionArray[i].children[1].textContent){
-      event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
-      document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
-      localStorage.setItem("regionName",JSON.stringify(event.target.parentNode.children[1].textContent));
+var initialRegionObj = {
+  "Mumbai":"mumbai",
+  "NCR":"ncr",
+  "Bengaluru":"bang",
+  "Hyderabad":"hyd",
+  "Ahmedabad":"ahd",
+  "Chandigarh":"chd",
+  "Chennai":"chen",
+  "Pune":"pune"};
+  //var initialSelectedRegion={'NCR':'ncr'}
+  function updateReactRegionLocation()
+  {
+    var obj=JSON.parse(localStorage.getItem('regionName'))
+    var regionArray = document.getElementsByClassName("floatLeft");
+    let j=0;
+    for(let key in initialRegionObj)
+    {
+      console.log(key)
+      regionArray[j].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionObj[key]}.png`
+      j++;
     }
-    else{
-      regionArray[i].children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}.png`;
+    for(let key in obj)
+    {
+      
+      //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+      //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+     for(let i=0;i<regionArray.length;i++)
+     {
+     //
+     if(regionArray[i].children[1].textContent==key) {
+      regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
+      document.getElementById("dropDown").textContent=key
+      break;
+     
+     }
     }
   }
- }
+  window.location.reload()
+  }
+  function updateRegionLocation()
+  {
+    event.preventDefault()
+    var obj=JSON.parse(localStorage.getItem('regionName'))
+    var regionArray = document.getElementsByClassName("floatLeft");
+   
+    for(let key in obj)
+    {
+      
+      //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+      //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+     for(let i=0;i<regionArray.length;i++)
+     {
+     //
+     if(regionArray[i].children[1].textContent==key) {
+      regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
+      document.getElementById("dropDown").textContent=key
+      break;
+     
+     }
+    }
+  }
+  
+  }
+  
+  function changeRegion(){
+    var targetKey=event.target.parentNode.children[1].textContent
+    
+      var payload={}
+      payload[targetKey]=initialRegionObj[targetKey]
+      localStorage.setItem("regionName",JSON.stringify(payload));
+      updateReactRegionLocation()
+    //window.location.reload()
+   }
+   //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+   //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+  window.addEventListener('load',updateRegionLocation)
   </script>
 </html>

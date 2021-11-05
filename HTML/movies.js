@@ -1,6 +1,9 @@
 // 
-var region = "ncr";
-region= JSON.parse(localStorage.getItem("regionName"));
+var region='NCR'
+var obj_Region=JSON.parse(localStorage.getItem("regionName"))
+for(var key in obj_Region)
+region=key
+console.log(region)
 console.log(region);
 var getMovies=(params)=>{
     return fetch(`http://localhost:3000/movies?region_like=${params}`)
@@ -206,7 +209,7 @@ function locationChange(region)
     let locationEle=document.getElementById('locationChange')
     let loc;
     locationEle.innerHTML=null;
-    if(region=="ncr")
+    if(region=="ncr"||region=="NCR")
     {
         loc='National Capital Region (NCR)'
     locationEle.textContent='Movies In National Capital Region (NCR)'
@@ -389,23 +392,85 @@ var selectFormatBtn=(arr)=>{
     formatArray.sort()
     createSelectedFilterBtn(arr,'selected-format')
 }
-
-window.addEventListener('load',()=>{
+/* ------------------------------Location Change------------------------------------------------ */
+var initialRegionObj = {
+    "Mumbai":"mumbai",
+    "NCR":"ncr",
+    "Bengaluru":"bang",
+    "Hyderabad":"hyd",
+    "Ahmedabad":"ahd",
+    "Chandigarh":"chd",
+    "Chennai":"chen",
+    "Pune":"pune"};
+    //var initialSelectedRegion={'NCR':'ncr'}
+    function updateReactRegionLocation()
+    {
+      var obj=JSON.parse(localStorage.getItem('regionName'))
+      var regionArray = document.getElementsByClassName("floatLeft");
+      let j=0;
+      for(let key in initialRegionObj)
+      {
+        console.log(key)
+        regionArray[j].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionObj[key]}.png`
+        j++;
+      }
+      for(let key in obj)
+      {
+        region= obj[key];
+        
+        //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+        //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+       for(let i=0;i<regionArray.length;i++)
+       {
+       //
+       if(regionArray[i].children[1].textContent==key) {
+        regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
+        document.getElementById("dropDown").textContent=key
+        break;
+        
+       }
+      }
+    }
+    window.location.reload()
+    }
+    function updateRegionLocation()
+    {
+      event.preventDefault()
+      var obj=JSON.parse(localStorage.getItem('regionName'))
+      var regionArray = document.getElementsByClassName("floatLeft");
+     
+      for(let key in obj)
+      {
+        
+        //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+        //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+       for(let i=0;i<regionArray.length;i++)
+       {
+       //
+       if(regionArray[i].children[1].textContent==key) {
+        regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
+        document.getElementById("dropDown").textContent=key
+        break;
+        
+       }
+      }
+    }
     fetchMovies(filterObject)
-    var languageBtn=document.getElementById('button-language')
-languageBtn.addEventListener('click',handleLanguage)
-var genresBtn=document.getElementById('genres')
-genresBtn.addEventListener('click',handleGenres)
-var formatBtn=document.getElementById('format')
-formatBtn.addEventListener('click',handleFormat) 
-locationChange(region)
-let filter_drop=document.getElementsByClassName('filter-off')
-for(let i=0;i<filter_drop.length;i++)
-{
-    filter_drop[i].addEventListener('click',filterOff)
-}
-removeSelectedLanguage([])
-})
+    }
+    
+    function changeRegion(){
+      var targetKey=event.target.parentNode.children[1].textContent
+      
+        var payload={}
+        payload[targetKey]=initialRegionObj[targetKey]
+        localStorage.setItem("regionName",JSON.stringify(payload));
+        updateReactRegionLocation()
+      //window.location.reload()
+     }
+     //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+     //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+    
+/* -------------------------------remove filter ------------------------------------*/
 
 var removeSelectedLanguage=(arr)=>{
     var total=["English","Hindi","kannada","Punjabi","Tamil","Telugu"]
@@ -426,3 +491,24 @@ var removeSelectedLanguage=(arr)=>{
     }
     container.append(fragment)
 }
+
+/* -------------------------------window load-------------------------------------------------*/
+
+window.addEventListener('load',()=>{
+    updateRegionLocation()
+    fetchMovies(filterObject)
+    var languageBtn=document.getElementById('button-language')
+languageBtn.addEventListener('click',handleLanguage)
+var genresBtn=document.getElementById('genres')
+genresBtn.addEventListener('click',handleGenres)
+var formatBtn=document.getElementById('format')
+formatBtn.addEventListener('click',handleFormat) 
+locationChange(region)
+let filter_drop=document.getElementsByClassName('filter-off')
+for(let i=0;i<filter_drop.length;i++)
+{
+    filter_drop[i].addEventListener('click',filterOff)
+}
+removeSelectedLanguage([])
+
+})
