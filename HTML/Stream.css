@@ -98,8 +98,8 @@
       }
       #signIn {
         height: 10px;
-        width: 50px;
-        font-size: 14px;
+        width: 80px;
+        font-size: 16px;
         margin-top: 8px;
         background-color: rgb(248, 67, 100);
         border-radius: 3px;
@@ -137,10 +137,10 @@
       }
 
       .sidenav a:hover {
-        color: #f1f1f1;
+        color: white;
       }
       .sidenav :hover {
-        background-color: rgb(193, 80, 80);
+        background-color: rgb(34, 37, 57);
       }
 
       .sidenav .closebtn {

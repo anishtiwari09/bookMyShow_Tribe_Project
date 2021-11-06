@@ -18,10 +18,6 @@
       * {
         font-family: "Roboto", sans-serif;
       }
-      #visible-caret
-      {
-        display:inline;
-      }
 
       /* <------------------------------- body color and margin padding of body element ---------------------------------------> */
       body {
@@ -117,8 +113,8 @@
       }
       #signIn {
         height: 10px;
-        width: 50px;
-        font-size: 14px;
+        width: 80px;
+        font-size: 16px;
         margin-top: 8px;
         background-color: rgb(248, 67, 100);
         border-radius: 3px;
@@ -154,13 +150,12 @@
         font-size: 16px;
         color: black;
       }
-
       .sidenav a:hover {
-        color: #f1f1f1;
-      }
-      .sidenav :hover {
-        background-color: rgb(193, 80, 80);
-      }
+      color: white;
+    }
+    .sidenav :hover {
+      background-color: rgb(34, 37, 57);
+    }
 
       .sidenav .closebtn {
         position: absolute;
@@ -627,7 +622,7 @@
 
 
   <div class="navbar">
-    <div id="logoDiv" onclick="gotoHome()" style="cursor:pointer">
+    <div id="logoDiv" onclick="gotoHome()">
       <div class="fleft">book</div>
       <div class="fleft">
         <img
@@ -638,14 +633,14 @@
     </div>
 
     <span id="sideMenu" onclick="openNav()">&#9776;</span>
-    <a href="Login.html" id="signIn">Sign in</a>
+    <a href="Home.html" id="signIn">Sign out</a>
 
     <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
 
     <div class="dropdown">
-      <button class="dropbtn" id="dropDown" style="cursor:pointer">
+      <button class="dropbtn" id="dropDown">
         NCR
-        <i class="fa fa-caret-down" id="visible-caret"></i>
+        <i class="fa fa-caret-down"></i>
       </button>
 
       <div class="close" id="close">+</div>
@@ -709,19 +704,19 @@
         </div>
 
         <div>
-          <a href="#">Unlock special offers and great benefits</a>
+          <a href="movies.html">Book Movies</a>
         </div>
 
         <div>
-          <a href="#">Notifications</a>
+          <a href="Buzz.html">Explore Buzz</a>
         </div>
 
         <div>
-          <a href="#">QuickPay</a>
+          <a href="listYourShow.html">Host Your Show</a>
         </div>
 
         <div>
-          <a href="#">Booking History</a>
+          <a href="Stream.html">Got to Stream</a>
         </div>
 
         <div>
@@ -733,13 +728,16 @@
         </div>
 
         <div>
-          <a href="#">BookASmile</a>
+          <a href="movies.html">BookASmile</a>
+        </div>
+        <div>
+          <a href="#">Settings</a>
         </div>
         <div>
           <a href="#">Help & Support</a>
         </div>
         <div>
-          <a href="#">Settings</a>
+          <a href="Home.html">Log Out</a>
         </div>
       </div>
     </div>
@@ -1264,85 +1262,21 @@
 
   //  change Region 
 
-  var initialRegionObj = {
-    "Mumbai":"mumbai",
-    "NCR":"ncr",
-    "Bengaluru":"bang",
-    "Hyderabad":"hyd",
-    "Ahmedabad":"ahd",
-    "Chandigarh":"chd",
-    "Chennai":"chen",
-    "Pune":"pune"};
-    //var initialSelectedRegion={'NCR':'ncr'}
-    function updateReactRegionLocation()
-    {
-      var obj=JSON.parse(localStorage.getItem('regionName'))
-      var regionArray = document.getElementsByClassName("floatLeft");
-      let j=0;
-      for(let key in initialRegionObj)
-      {
-        console.log(key)
-        regionArray[j].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionObj[key]}.png`
-        j++;
-      }
-      for(let key in obj)
-      {
-        
-        //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
-        //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
-       for(let i=0;i<regionArray.length;i++)
-       {
-       //
-       if(regionArray[i].children[1].textContent==key) {
-        regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
-        document.getElementById("dropDown").textContent=key
-        break;
+var initialRegionArr = ["mumbai","ncr","bang","hyd","ahd","chd","chen","pune"];
 
-       }
-      }
+function changeRegion(){
+  var regionArray = document.getElementsByClassName("floatLeft");
+  for(let i = 0;i<regionArray.length;i++){
+    if(event.target.parentNode.children[1].textContent === regionArray[i].children[1].textContent){
+      event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
+      document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
+      localStorage.setItem("regionName",JSON.stringify(event.target.parentNode.children[1].textContent));
     }
-    window.location.reload()
+    else{
+      regionArray[i].children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}.png`;
     }
-    function updateRegionLocation()
-    {
-      event.preventDefault()
-      var obj=JSON.parse(localStorage.getItem('regionName'))
-      var regionArray = document.getElementsByClassName("floatLeft");
-     
-      for(let key in obj)
-      {
-        
-        //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
-        //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
-       for(let i=0;i<regionArray.length;i++)
-       {
-       //
-       if(regionArray[i].children[1].textContent==key) {
-        regionArray[i].children[0].src=`https://in.bmscdn.com/m6/images/common-modules/regions/${obj[key]}-selected.png`
-        document.getElementById("dropDown").textContent=key
-        break;
-        console.log('working')
-       }
-      }
-    }
-    
-    }
-    
-    function changeRegion(){
-      var targetKey=event.target.parentNode.children[1].textContent
-      
-        var payload={}
-        payload[targetKey]=initialRegionObj[targetKey]
-        localStorage.setItem("regionName",JSON.stringify(payload));
-        updateReactRegionLocation()
-      //window.location.reload()
-     }
-     //event.target.parentNode.children[0].src = `https://in.bmscdn.com/m6/images/common-modules/regions/${initialRegionArr[i]}-selected.png`;
-     //document.getElementById("dropDown").textContent=event.target.parentNode.children[1].textContent;
-    window.addEventListener('load',()=>{
-      updateRegionLocation()
-      document.getElementById('visible-care').style.display='inline'
-      document.getElementById('visible-care').style.zIndex='17899'
-    })
+  }
+  document.getElementById("navBarSeconfLine").style.backgroundColor = "rgb(34,37,57)";
+ }
   </script>
 </html>

@@ -115,7 +115,7 @@
       }
       #signIn {
         height: 10px;
-        width: 50px;
+        width: 80px;
         font-size: 16px;
         margin-top: 8px;
         background-color: rgb(248, 67, 100);
@@ -578,7 +578,7 @@
       </div>
   
       <span id="sideMenu" onclick="openNav()">&#9776;</span>
-      <a href="Login.html" id="signIn">Sign in</a>
+      <a href="Home.html" id="signIn">Sign out</a>
   
       <input type="text" placeholder="🔍 Search for Movies, Events, Plays, Sports and Activities" id="userInput" />
   
@@ -646,44 +646,44 @@
         >
 
         <div>
-          <a href="Login.html"> <h2>Hey!</h2> </a>
+          <a href="#"> <h2>Hey!</h2> </a>
         </div>
 
         <div>
-          <a href="Login.html">Book Movies</a>
+          <a href="movies.html">Book Movies</a>
         </div>
 
         <div>
-          <a href="Login.html">Explore Buzz</a>
+          <a href="Buzz.html">Explore Buzz</a>
         </div>
 
         <div>
-          <a href="Login.html">Host Your Show</a>
+          <a href="listYourShow.html">Host Your Show</a>
         </div>
 
         <div>
-          <a href="Login.html">Got to Stream</a>
+          <a href="Stream.html">Got to Stream</a>
         </div>
 
         <div>
-          <a href="Login.html">Stream Library</a>
+          <a href="Stream.html">Stream Library</a>
         </div>
 
         <div>
-          <a href="Login.html">Rewards</a>
+          <a href="#">Rewards</a>
         </div>
 
         <div>
-          <a href="Login.html">BookASmile</a>
+          <a href="movies.html">BookASmile</a>
         </div>
         <div>
-          <a href="Login.html">Settings</a>
+          <a href="#">Settings</a>
         </div>
         <div>
-          <a href="Login.html">Help & Support</a>
+          <a href="#">Help & Support</a>
         </div>
         <div>
-          <a href="Login.html">Login</a>
+          <a href="Home.html">Log Out</a>
         </div>
       </div>
     </div>
@@ -691,17 +691,17 @@
     <!---------------------------------------------------------- NavBar row 2 ------------------------------------------>
 
     <div id="navBarSeconfLine">
-      <a href="Login.html" id="nav2MoviesTag">Movies</a>
-      <a href="Login.html">Stream</a>
-      <a href="Login.html">Events</a>
-      <a href="Login.html">Plays</a>
-      <a href="Login.html">Sports</a>
-      <a href="Login.html">Activities</a>
-      <a href="Login.html" id="buzz">Buzz</a>
-      <a href="Login.html">ListYourShow </a>
-      <a href="Login.html">Corporates</a>
-      <a href="Login.html">Offers</a>
-      <a href="Login.html">Gift Cards</a>
+      <a href="movies.html" id="nav2MoviesTag">Movies</a>
+      <a href="Stream.html">Stream</a>
+      <a href="#">Events</a>
+      <a href="#">Plays</a>
+      <a href="#">Sports</a>
+      <a href="#">Activities</a>
+      <a href="Buzz.html" id="buzz">Buzz</a>
+      <a href="listYourShow.html">ListYourShow </a>
+      <a href="">Corporates</a>
+      <a href="">Offers</a>
+      <a href="">Gift Cards</a>
     </div>
 
     <!-- --------------------------- Sliding horizontal bar ---------------------------------- -->
@@ -1373,8 +1373,6 @@
     </div>
 </section>
 
-
-
 <!-- <----------------------------- Privacy Note ---------------------------------------- -->
 
 <section>
@@ -1406,9 +1404,6 @@
         </span>
     </div>
 </section>
-
-
-
 
 
     <!----------------------------------------------- Footer ---------------------------------------->
@@ -1735,8 +1730,6 @@
             shall be implied. Unauthorized use is prohibited and punishable by law.
           </p>
         </div>
-
-
     </footer>
   </body>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
@@ -1766,13 +1759,11 @@
       
     })
 
-
     document.querySelector('.close').addEventListener("click", function() {
 	document.getElementById("ncr-Content").style.display = "none";
   document.getElementById("navBarSeconfLine").style.display = "block";
   document.getElementById("close").style.display = "none";
 });
-
 
 //  change Region 
 
