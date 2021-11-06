@@ -33,6 +33,7 @@ var displayMovies=data=>{
 
 var createCard=(item)=>{
     let outerDiv=document.createElement('div')
+    outerDiv.style.cursor="pointer";
     let innerDiv=document.createElement('div')
     let movieInfo=document.createElement('div')
     movieInfo.className="movieInfo"
