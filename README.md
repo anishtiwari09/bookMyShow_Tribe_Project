@@ -31,7 +31,7 @@
 - This is a very short video of our presentation which you can watch within 3mins;
 - Exact duration of presentation video: 2min 56Sec
 
-## learning from this project:
+## Learning from this project:
 - We have learned using npm server at grass root level
 - We have learnt how to build our own private api
 - We have learnt to use external icons and fonts in our projects
