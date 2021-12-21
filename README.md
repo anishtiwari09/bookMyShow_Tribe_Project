@@ -60,6 +60,20 @@ https://anishtiwari09.github.io/bookmyshowclones/HTML/Home2.html
 - We are not going to publish any of these pages to anywhere 
 - It was purely a practice of what we learnt till now
 
+## Snap Shots: 
+
+### Home Page
+![Header](https://rawat2511.github.io/images/BookMyShow_1.png)
+
+### Buzz Page
+![Header](https://rawat2511.github.io/images/BookMyShow_2.png)
+
+### Ticket Booking Page
+![Header](https://rawat2511.github.io/images/BookMyShow_3.png)
+
+### Seat Selection Page
+![Header](https://rawat2511.github.io/images/BookMyShow_4.png)
+
 ## Terms and Conditons for using this project: 
 - Please do not deploy any webpage at any plateform as we don't have permission from any of the onwer
 - You can use it just for personal learning purpose
