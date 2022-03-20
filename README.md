@@ -1,8 +1,5 @@
 # bookMyShow_Tribe_Project
 
-## Deployed Link
-https://anishtiwari09.github.io/bookmyshowclones/HTML/Home.html
-
 ## Team Members: 
 1. Jaswant Chaudhary
 2. Anish Tiwari
